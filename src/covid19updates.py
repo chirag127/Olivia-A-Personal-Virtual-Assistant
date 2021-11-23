@@ -1,3 +1,4 @@
+import pandas as pd
 import requests
 import json
 import win10toast as toastnotifier
@@ -28734,36 +28735,26 @@ def update_data():
 }
 """
 
-import json
-import requests
-import pandas as pd
-
 
 # create a python code to parse the json data from the above json file and return the covid19 case today
 
 def tell_covid19_today():
-	url = "https://api.covid19india.org/data.json"
-	response = requests.get(url)
-	data = response.json()
-	covid19_today = data['cases_time_series'][-1]
-	return covid19_today
+    url = "https://api.covid19india.org/data.json"
+    response = requests.get(url)
+    data = response.json()
+    covid19_today = data['cases_time_series'][-1]
+    return covid19_today
 
 
 def give_dailycomfirmedcases():
-	covid19_today = tell_covid19_today()
-	daily_confirmed_cases = covid19_today['dailyconfirmed']
-	return daily_confirmed_cases
-
-	
-
-
-
+    covid19_today = tell_covid19_today()
+    daily_confirmed_cases = covid19_today['dailyconfirmed']
+    return daily_confirmed_cases
 
 
 if __name__ == "__main__":
-	covid19_today = tell_covid19_today()
-	print(covid19_today)
+    covid19_today = tell_covid19_today()
+    print(covid19_today)
 
-	daily_confirmed_cases = give_dailycomfirmedcases()
-	print(daily_confirmed_cases)
-
+    daily_confirmed_cases = give_dailycomfirmedcases()
+    print(daily_confirmed_cases)
