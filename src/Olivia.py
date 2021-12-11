@@ -27,7 +27,7 @@ import wikipedia                   # The get article from wikipedia
 import winshell                    # The use winshell for opening the specified file
 from jokes import neutral_joke
 from time import sleep
-import removewatchedvideo
+import playwl
 from functions import *
 
 
@@ -1206,7 +1206,7 @@ if __name__ == "__main__":
 
             if 'watch' in query and 'later' in query:
 
-                removewatchedvideo.main()
+                playwl.main()
 
             else:
                 song_name = query.replace("play ", "")
@@ -1298,17 +1298,18 @@ if __name__ == "__main__":
 
                     pyautogui.hotkey('ctrl', 'm')
 
-                # increase the volume by pressing control + up arrow
+                # increase the volume by pressing up arrow
 
                 # if the query contains 'increase volume' or 'volume up' or 'louder'
 
                 # if the query contains not this then check next elif statement
 
                 elif 'increase volume' in query or 'volume up' in query or 'louder' in query:
+                    
+                    for i in range(0,2):
+                        pyautogui.press('up')
 
-                    pyautogui.hotkey('ctrl', 'up')
-
-                # decrease the volume by pressing control + down arrow
+                # decrease the volume by pressing down arrow
 
                 # if the query contains 'decrease volume' or 'volume down' or 'quieter'
 
@@ -1316,9 +1317,11 @@ if __name__ == "__main__":
 
                 elif 'decrease volume' in query or 'volume down' in query or 'quieter' in query:
 
-                    pyautogui.hotkey('ctrl', 'down')
+                    for i in range(0, 2):
+                        pyautogui.press('down')
+                    
 
-                # increase the speed of the video by pressing control + up arrow
+                # increase the speed of the video by pressing shift + . arrow
 
                 # if the query contains 'increase speed' or 'speed up' or 'faster'
 
@@ -1328,7 +1331,7 @@ if __name__ == "__main__":
 
                     pyautogui.hotkey('shift', '.')
 
-                # decrease the speed of the video by pressing control + down arrow
+                # decrease the speed of the video by pressing shift + , arrow
 
                 # if the query contains 'decrease speed' or 'speed down' or 'slower'
 
