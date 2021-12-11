@@ -27,6 +27,7 @@ import wikipedia                   # The get article from wikipedia
 import winshell                    # The use winshell for opening the specified file
 from jokes import neutral_joke
 from time import sleep
+import time
 import playwl
 from functions import *
 
@@ -1228,18 +1229,6 @@ if __name__ == "__main__":
 
                     exit()
 
-                # close the video by pressing control + w
-
-                # if the query contains 'close'
-
-                # if the query contains not this then check next elif statement
-
-                elif 'close' in query:
-
-                    pyautogui.hotkey('ctrl', 'w')
-
-                    break
-
                 elif 'pause' in query or 'pass' in query or 'stop' in query:
 
                     pyautogui.press('space')
@@ -1257,6 +1246,7 @@ if __name__ == "__main__":
                 # if the query contains 'next tab' or 'next tab'
 
                 # if the query contains not this then check next elif statement
+
 
                 elif 'next' in query and 'tab' in query:
 
@@ -1320,6 +1310,7 @@ if __name__ == "__main__":
                     for i in range(0, 2):
                         pyautogui.press('down')
                     
+
 
                 # increase the speed of the video by pressing shift + . arrow
 
@@ -1403,7 +1394,20 @@ if __name__ == "__main__":
 
                     pyautogui.hotkey('ctrl', 'shift', 'b')
 
-                # show the bookmark mark bar by pressing control + shift + b
+
+                # close the video by pressing control + w
+
+                # if the query contains 'close'
+
+                # if the query contains not this then check next elif statement
+
+                elif 'close' in query:
+
+                    pyautogui.hotkey('ctrl', 'w')
+
+                    break
+
+                # close other tabs by pressing control + shift + t
 
         elif 'news' in query and 'latest' in query:
 
