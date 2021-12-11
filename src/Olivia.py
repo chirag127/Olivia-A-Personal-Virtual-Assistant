@@ -21,12 +21,14 @@ import smtplib                     # The smtplib is used for sending emails
 import speech_recognition as sr
 import subprocess
 import sys                         # The sys library is used to exit the program
-import time                        # The time library is used for timezones
 import tkinter as tk               # The tkinter is used for gui
 import webbrowser
 import wikipedia                   # The get article from wikipedia
 import winshell                    # The use winshell for opening the specified file
 from jokes import neutral_joke
+from time import sleep
+import removewatchedvideo
+from functions import *
 
 
 headers = {
@@ -118,7 +120,7 @@ def takeCommand():
     # if the user does not say anything then the program will listen again
     except sr.UnknownValueError as e:
 
-        print("I could not understand what you said" , e)
+        print("I could not understand what you said", e)
         print("Say that again please...")
         return "None"
 
@@ -132,7 +134,6 @@ def takeCommand():
         print("Wait timeout exceeded")
         print("Please Check your internet connection")
         print("Try after sometime")
-        return "None"
         return "None"
 
     except Exception as e:
@@ -621,7 +622,7 @@ def send_whatapp(to, content):
     webbrowser.open('https://web.whatsapp.com/send?phone=' +
                     to + '&text=' + content)
     import time
-    time.sleep(20)
+    sleep(20)
     pyautogui.press('enter')
 
 
@@ -1056,7 +1057,7 @@ if __name__ == "__main__":
                         # save the file if the type sentence contains save
                         if 'save' in type_sentence:
                             pyautogui.hotkey('ctrl', 's')
-                            time.sleep(1)
+                            sleep(1)
                             pyautogui.press('enter')
                             speak('file has been saved')
 
@@ -1202,10 +1203,18 @@ if __name__ == "__main__":
         # the user should be able to go to the previous tab by saying "previous tab"
 
         elif 'play' in query:
-            song_name = query.replace("play ", "")
-            speak("Playing " + song_name)
-            print(song_name)
-            pywhatkit.playonyt(song_name)
+
+            if 'watch' in query and 'later' in query:
+
+                removewatchedvideo.main()
+
+            else:
+                song_name = query.replace("play ", "")
+                speak("Playing " + song_name)
+                print(song_name)
+                pywhatkit.playonyt(song_name)
+                sleep(5)
+            
 
             while True:
 
@@ -1490,7 +1499,7 @@ if __name__ == "__main__":
 
         elif "don't listen" in query or "stop listening" in query:
             speak("for how much time you want to stop olivia from listening commands")
-            time.sleep(120)
+            sleep(120)
             speak("Olivia is listening again")
 
         elif 'recycle bin' in query:
@@ -1603,7 +1612,7 @@ if __name__ == "__main__":
 
         elif "don't listen" in query or "stop listening" in query:
             speak("for how much time you want to stop olivia from listening commands")
-            time.sleep(120)
+            sleep(120)
             speak("Olivia is listening again")
 
         elif 'recycle bin' in query:
