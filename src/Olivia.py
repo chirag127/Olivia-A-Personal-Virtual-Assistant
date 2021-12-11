@@ -1,4 +1,4 @@
-from platform import platform
+import platform
 from googletrans import Translator
 from pyowm import OWM
 from tkinter import *
@@ -116,9 +116,9 @@ def takeCommand():
         print(f"User said: {query}\n")
 
     # if the user does not say anything then the program will listen again
-    except sr.UnknownValueError:
+    except sr.UnknownValueError as e:
 
-        print("Google Speech Recognition could not understand audio")
+        print("I could not understand what you said" , e)
         print("Say that again please...")
         return "None"
 
@@ -131,6 +131,8 @@ def takeCommand():
     except sr.WaitTimeoutError:
         print("Wait timeout exceeded")
         print("Please Check your internet connection")
+        print("Try after sometime")
+        return "None"
         return "None"
 
     except Exception as e:
@@ -785,6 +787,8 @@ if __name__ == "__main__":
                 os.system('rundll32.exe user32.dll,LockWorkStation')
                 running = False
                 sys.exit()
+            elif "what" in query and " operating system" in query:
+                speak("Your operating system is windows")
 
         # give the current date and time if 'date' is in query
         if 'date' in query and "current" in query:
