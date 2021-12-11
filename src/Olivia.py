@@ -115,7 +115,7 @@ def takeCommand():
 
         print(f"User said: {query}\n")
 
-    # if the user does not say anything then the program will listen again 
+    # if the user does not say anything then the program will listen again
     except sr.UnknownValueError:
 
         print("Google Speech Recognition could not understand audio")
@@ -123,7 +123,8 @@ def takeCommand():
         return "None"
 
     except sr.RequestError as e:
-        print("Could not request results from Google Speech Recognition service; {0}".format(e))
+        print(
+            "Could not request results from Google Speech Recognition service; {0}".format(e))
         print("Please Check your internet connection")
         return "None"
 
@@ -135,7 +136,7 @@ def takeCommand():
     except Exception as e:
 
         # print the error to the console
-        
+
         print("Say that again please...")
 
         # return the function to takeCommand()
@@ -146,9 +147,11 @@ def takeCommand():
 
     return query
 
+
 def sp(text):
     print(text)
     speak(text)
+
 
 def NewsFromBBC():
     query_params = {
@@ -171,8 +174,6 @@ def NewsFromBBC():
 
         print(i + 1, results[i])
         speak(results[i])
-
-
 
 
 def text2speech():
@@ -2552,8 +2553,18 @@ if __name__ == "__main__":
 
                 # translating the text to the afrikaans and storing the result in a variable named result
                 result = translator.translate(query, dest='af')
-                # speaking and printing the result
-                sp(result.text)
+                # printing the result
+
+                print(f"The Translated Text is: {result.text}")
+
+                # printing the pronunciation of the result
+
+                print(
+                    f"The pronunciation of the result is {result.pronunciation}")
+
+                # speaking result pronunciation
+
+                speak(result.pronunciation)
 
             # translate to the albanian
 
@@ -2567,8 +2578,18 @@ if __name__ == "__main__":
 
                 # translating the text to the albanian and storing the result in a variable named result
                 result = translator.translate(query, dest='sq')
-                # speaking and printing the result
-                sp(result.text)
+                # printing the result
+
+                print(f"The Translated Text is: {result.text}")
+
+                # printing the pronunciation of the result
+
+                print(
+                    f"The pronunciation of the result is {result.pronunciation}")
+
+                # speaking result pronunciation
+
+                speak(result.pronunciation)
 
             # translate to the amharic
 
@@ -2582,8 +2603,18 @@ if __name__ == "__main__":
 
                 # translating the text to the amharic and storing the result in a variable named result
                 result = translator.translate(query, dest='am')
-                # speaking and printing the result
-                sp(result.text)
+                # printing the result
+
+                print(f"The Translated Text is: {result.text}")
+
+                # printing the pronunciation of the result
+
+                print(
+                    f"The pronunciation of the result is {result.pronunciation}")
+
+                # speaking result pronunciation
+
+                speak(result.pronunciation)
 
             # translate to the arabic
 
@@ -2597,8 +2628,18 @@ if __name__ == "__main__":
 
                 # translating the text to the arabic and storing the result in a variable named result
                 result = translator.translate(query, dest='ar')
-                # speaking and printing the result
-                sp(result.text)
+                # printing the result
+
+                print(f"The Translated Text is: {result.text}")
+
+                # printing the pronunciation of the result
+
+                print(
+                    f"The pronunciation of the result is {result.pronunciation}")
+
+                # speaking result pronunciation
+
+                speak(result.pronunciation)
 
             # translate to the armenian
 
@@ -2612,8 +2653,18 @@ if __name__ == "__main__":
 
                 # translating the text to the armenian and storing the result in a variable named result
                 result = translator.translate(query, dest='hy')
-                # speaking and printing the result
-                sp(result.text)
+                # printing the result
+
+                print(f"The Translated Text is: {result.text}")
+
+                # printing the pronunciation of the result
+
+                print(
+                    f"The pronunciation of the result is {result.pronunciation}")
+
+                # speaking result pronunciation
+
+                speak(result.pronunciation)
 
             # translate to the azerbaijani
 
@@ -2628,8 +2679,18 @@ if __name__ == "__main__":
 
                 # translating the text to the azerbaijani and storing the result in a variable named result
                 result = translator.translate(query, dest='az')
-                # speaking and printing the result
-                sp(result.text)
+                # printing the result
+
+                print(f"The Translated Text is: {result.text}")
+
+                # printing the pronunciation of the result
+
+                print(
+                    f"The pronunciation of the result is {result.pronunciation}")
+
+                # speaking result pronunciation
+
+                speak(result.pronunciation)
 
             # translate to the basque
 
@@ -2643,8 +2704,18 @@ if __name__ == "__main__":
 
                 # translating the text to the basque and storing the result in a variable named result
                 result = translator.translate(query, dest='eu')
-                # speaking and printing the result
-                sp(result.text)
+                # printing the result
+
+                print(f"The Translated Text is: {result.text}")
+
+                # printing the pronunciation of the result
+
+                print(
+                    f"The pronunciation of the result is {result.pronunciation}")
+
+                # speaking result pronunciation
+
+                speak(result.pronunciation)
 
             # translate to the bengali
 
@@ -2658,8 +2729,18 @@ if __name__ == "__main__":
 
                 # translating the text to the bengali and storing the result in a variable named result
                 result = translator.translate(query, dest='bn')
-                # speaking and printing the result
-                sp(result.text)
+                # printing the result
+
+                print(f"The Translated Text is: {result.text}")
+
+                # printing the pronunciation of the result
+
+                print(
+                    f"The pronunciation of the result is {result.pronunciation}")
+
+                # speaking result pronunciation
+
+                speak(result.pronunciation)
 
             # translate to the bosnian
 
@@ -2673,8 +2754,18 @@ if __name__ == "__main__":
 
                 # translating the text to the bosnian and storing the result in a variable named result
                 result = translator.translate(query, dest='bs')
-                # speaking and printing the result
-                sp(result.text)
+                # printing the result
+
+                print(f"The Translated Text is: {result.text}")
+
+                # printing the pronunciation of the result
+
+                print(
+                    f"The pronunciation of the result is {result.pronunciation}")
+
+                # speaking result pronunciation
+
+                speak(result.pronunciation)
 
             # translate to the bulgarian
             elif 'bulgarian' in query:
@@ -2687,8 +2778,18 @@ if __name__ == "__main__":
 
                 # translating the text to the bulgarian and storing the result in a variable named result
                 result = translator.translate(query, dest='bg')
-                # speaking and printing the result
-                sp(result.text)
+                # printing the result
+
+                print(f"The Translated Text is: {result.text}")
+
+                # printing the pronunciation of the result
+
+                print(
+                    f"The pronunciation of the result is {result.pronunciation}")
+
+                # speaking result pronunciation
+
+                speak(result.pronunciation)
 
             # translate to the catalan
             elif 'catalan' in query:
@@ -2701,8 +2802,18 @@ if __name__ == "__main__":
 
                 # translating the text to the catalan and storing the result in a variable named result
                 result = translator.translate(query, dest='ca')
-                # speaking and printing the result
-                sp(result.text)
+                # printing the result
+
+                print(f"The Translated Text is: {result.text}")
+
+                # printing the pronunciation of the result
+
+                print(
+                    f"The pronunciation of the result is {result.pronunciation}")
+
+                # speaking result pronunciation
+
+                speak(result.pronunciation)
 
             # translate to the cebuano
             elif 'cebuano' in query:
@@ -2715,8 +2826,18 @@ if __name__ == "__main__":
 
                 # translating the text to the cebuano and storing the result in a variable named result
                 result = translator.translate(query, dest='ceb')
-                # speaking and printing the result
-                sp(result.text)
+                # printing the result
+
+                print(f"The Translated Text is: {result.text}")
+
+                # printing the pronunciation of the result
+
+                print(
+                    f"The pronunciation of the result is {result.pronunciation}")
+
+                # speaking result pronunciation
+
+                speak(result.pronunciation)
 
             # translate to the chinese
             elif 'chinese' in query:
@@ -2729,8 +2850,18 @@ if __name__ == "__main__":
 
                 # translating the text to the chinese and storing the result in a variable named result
                 result = translator.translate(query, dest='zh-CN')
-                # speaking and printing the result
-                sp(result.text)
+                # printing the result
+
+                print(f"The Translated Text is: {result.text}")
+
+                # printing the pronunciation of the result
+
+                print(
+                    f"The pronunciation of the result is {result.pronunciation}")
+
+                # speaking result pronunciation
+
+                speak(result.pronunciation)
 
             # translate to the croatian
             elif 'croatian' in query:
@@ -2743,8 +2874,18 @@ if __name__ == "__main__":
 
                 # translating the text to the croatian and storing the result in a variable named result
                 result = translator.translate(query, dest='hr')
-                # speaking and printing the result
-                sp(result.text)
+                # printing the result
+
+                print(f"The Translated Text is: {result.text}")
+
+                # printing the pronunciation of the result
+
+                print(
+                    f"The pronunciation of the result is {result.pronunciation}")
+
+                # speaking result pronunciation
+
+                speak(result.pronunciation)
 
             # translate to the czech
             elif 'czech' in query:
@@ -2757,8 +2898,18 @@ if __name__ == "__main__":
 
                 # translating the text to the czech and storing the result in a variable named result
                 result = translator.translate(query, dest='cs')
-                # speaking and printing the result
-                sp(result.text)
+                # printing the result
+
+                print(f"The Translated Text is: {result.text}")
+
+                # printing the pronunciation of the result
+
+                print(
+                    f"The pronunciation of the result is {result.pronunciation}")
+
+                # speaking result pronunciation
+
+                speak(result.pronunciation)
 
             # translate to the danish
             elif 'danish' in query:
@@ -2771,8 +2922,18 @@ if __name__ == "__main__":
 
                 # translating the text to the danish and storing the result in a variable named result
                 result = translator.translate(query, dest='da')
-                # speaking and printing the result
-                sp(result.text)
+                # printing the result
+
+                print(f"The Translated Text is: {result.text}")
+
+                # printing the pronunciation of the result
+
+                print(
+                    f"The pronunciation of the result is {result.pronunciation}")
+
+                # speaking result pronunciation
+
+                speak(result.pronunciation)
 
             # translate to the dutch
             elif 'dutch' in query:
@@ -2785,8 +2946,18 @@ if __name__ == "__main__":
 
                 # translating the text to the dutch and storing the result in a variable named result
                 result = translator.translate(query, dest='nl')
-                # speaking and printing the result
-                sp(result.text)
+                # printing the result
+
+                print(f"The Translated Text is: {result.text}")
+
+                # printing the pronunciation of the result
+
+                print(
+                    f"The pronunciation of the result is {result.pronunciation}")
+
+                # speaking result pronunciation
+
+                speak(result.pronunciation)
 
             # translate to the english
             elif 'english' in query:
@@ -2799,8 +2970,18 @@ if __name__ == "__main__":
 
                 # translating the text to the english and storing the result in a variable named result
                 result = translator.translate(query, dest='en')
-                # speaking and printing the result
-                sp(result.text)
+                # printing the result
+
+                print(f"The Translated Text is: {result.text}")
+
+                # printing the pronunciation of the result
+
+                print(
+                    f"The pronunciation of the result is {result.pronunciation}")
+
+                # speaking result pronunciation
+
+                speak(result.pronunciation)
 
             # translate to the esperanto
             elif 'esperanto' in query:
@@ -2813,8 +2994,18 @@ if __name__ == "__main__":
 
                 # translating the text to the esperanto and storing the result in a variable named result
                 result = translator.translate(query, dest='eo')
-                # speaking and printing the result
-                sp(result.text)
+                # printing the result
+
+                print(f"The Translated Text is: {result.text}")
+
+                # printing the pronunciation of the result
+
+                print(
+                    f"The pronunciation of the result is {result.pronunciation}")
+
+                # speaking result pronunciation
+
+                speak(result.pronunciation)
 
             # translate to the estonian
             elif 'estonian' in query:
@@ -2827,8 +3018,18 @@ if __name__ == "__main__":
 
                 # translating the text to the estonian and storing the result in a variable named result
                 result = translator.translate(query, dest='et')
-                # speaking and printing the result
-                sp(result.text)
+                # printing the result
+
+                print(f"The Translated Text is: {result.text}")
+
+                # printing the pronunciation of the result
+
+                print(
+                    f"The pronunciation of the result is {result.pronunciation}")
+
+                # speaking result pronunciation
+
+                speak(result.pronunciation)
 
             # translate to the filipino
             elif 'filipino' in query:
@@ -2841,8 +3042,18 @@ if __name__ == "__main__":
 
                 # translating the text to the filipino and storing the result in a variable named result
                 result = translator.translate(query, dest='tl')
-                # speaking and printing the result
-                sp(result.text)
+                # printing the result
+
+                print(f"The Translated Text is: {result.text}")
+
+                # printing the pronunciation of the result
+
+                print(
+                    f"The pronunciation of the result is {result.pronunciation}")
+
+                # speaking result pronunciation
+
+                speak(result.pronunciation)
 
             # translate to the finnish
             elif 'finnish' in query:
@@ -2855,8 +3066,18 @@ if __name__ == "__main__":
 
                 # translating the text to the finnish and storing the result in a variable named result
                 result = translator.translate(query, dest='fi')
-                # speaking and printing the result
-                sp(result.text)
+                # printing the result
+
+                print(f"The Translated Text is: {result.text}")
+
+                # printing the pronunciation of the result
+
+                print(
+                    f"The pronunciation of the result is {result.pronunciation}")
+
+                # speaking result pronunciation
+
+                speak(result.pronunciation)
 
             # translate to the french
             elif 'french' in query:
@@ -2869,8 +3090,18 @@ if __name__ == "__main__":
 
                 # translating the text to the french and storing the result in a variable named result
                 result = translator.translate(query, dest='fr')
-                # speaking and printing the result
-                sp(result.text)
+                # printing the result
+
+                print(f"The Translated Text is: {result.text}")
+
+                # printing the pronunciation of the result
+
+                print(
+                    f"The pronunciation of the result is {result.pronunciation}")
+
+                # speaking result pronunciation
+
+                speak(result.pronunciation)
 
             # translate to the frisian
             elif 'frisian' in query:
@@ -2883,8 +3114,18 @@ if __name__ == "__main__":
 
                 # translating the text to the frisian and storing the result in a variable named result
                 result = translator.translate(query, dest='fy')
-                # speaking and printing the result
-                sp(result.text)
+                # printing the result
+
+                print(f"The Translated Text is: {result.text}")
+
+                # printing the pronunciation of the result
+
+                print(
+                    f"The pronunciation of the result is {result.pronunciation}")
+
+                # speaking result pronunciation
+
+                speak(result.pronunciation)
 
             # translate to the galician
             elif 'galician' in query:
@@ -2897,8 +3138,18 @@ if __name__ == "__main__":
 
                 # translating the text to the galician and storing the result in a variable named result
                 result = translator.translate(query, dest='gl')
-                # speaking and printing the result
-                sp(result.text)
+                # printing the result
+
+                print(f"The Translated Text is: {result.text}")
+
+                # printing the pronunciation of the result
+
+                print(
+                    f"The pronunciation of the result is {result.pronunciation}")
+
+                # speaking result pronunciation
+
+                speak(result.pronunciation)
 
             # translate to the georgian
             elif 'georgian' in query:
@@ -2912,8 +3163,18 @@ if __name__ == "__main__":
 
                 # translating the text to the georgian and storing the result in a variable named result
                 result = translator.translate(query, dest='ka')
-                # speaking and printing the result
-                sp(result.text)
+                # printing the result
+
+                print(f"The Translated Text is: {result.text}")
+
+                # printing the pronunciation of the result
+
+                print(
+                    f"The pronunciation of the result is {result.pronunciation}")
+
+                # speaking result pronunciation
+
+                speak(result.pronunciation)
 
             # translate to the german
             elif 'german' in query:
@@ -2926,8 +3187,18 @@ if __name__ == "__main__":
 
                 # translating the text to the german and storing the result in a variable named result
                 result = translator.translate(query, dest='de')
-                # speaking and printing the result
-                sp(result.text)
+                # printing the result
+
+                print(f"The Translated Text is: {result.text}")
+
+                # printing the pronunciation of the result
+
+                print(
+                    f"The pronunciation of the result is {result.pronunciation}")
+
+                # speaking result pronunciation
+
+                speak(result.pronunciation)
 
             # translate to the greek
             elif 'greek' in query:
@@ -2940,8 +3211,18 @@ if __name__ == "__main__":
 
                 # translating the text to the greek and storing the result in a variable named result
                 result = translator.translate(query, dest='el')
-                # speaking and printing the result
-                sp(result.text)
+                # printing the result
+
+                print(f"The Translated Text is: {result.text}")
+
+                # printing the pronunciation of the result
+
+                print(
+                    f"The pronunciation of the result is {result.pronunciation}")
+
+                # speaking result pronunciation
+
+                speak(result.pronunciation)
 
             # translate to the gujarati
             elif 'gujarati' in query:
@@ -2954,8 +3235,18 @@ if __name__ == "__main__":
 
                 # translating the text to the gujarati and storing the result in a variable named result
                 result = translator.translate(query, dest='gu')
-                # speaking and printing the result
-                sp(result.text)
+                # printing the result
+
+                print(f"The Translated Text is: {result.text}")
+
+                # printing the pronunciation of the result
+
+                print(
+                    f"The pronunciation of the result is {result.pronunciation}")
+
+                # speaking result pronunciation
+
+                speak(result.pronunciation)
 
             # translate to the haitian creole
             elif 'haitian creole' in query:
@@ -2968,8 +3259,18 @@ if __name__ == "__main__":
 
                 # translating the text to the haitian creole and storing the result in a variable named result
                 result = translator.translate(query, dest='ht')
-                # speaking and printing the result
-                sp(result.text)
+                # printing the result
+
+                print(f"The Translated Text is: {result.text}")
+
+                # printing the pronunciation of the result
+
+                print(
+                    f"The pronunciation of the result is {result.pronunciation}")
+
+                # speaking result pronunciation
+
+                speak(result.pronunciation)
 
             # translate to the hausa
             elif 'hausa' in query:
@@ -2983,8 +3284,18 @@ if __name__ == "__main__":
 
                 # translating the text to the hausa and storing the result in a variable named result
                 result = translator.translate(query, dest='ha')
-                # speaking and printing the result
-                sp(result.text)
+                # printing the result
+
+                print(f"The Translated Text is: {result.text}")
+
+                # printing the pronunciation of the result
+
+                print(
+                    f"The pronunciation of the result is {result.pronunciation}")
+
+                # speaking result pronunciation
+
+                speak(result.pronunciation)
 
             # translate to the hawaiian
             elif 'hawaiian' in query:
@@ -2997,8 +3308,18 @@ if __name__ == "__main__":
 
                 # translating the text to the hawaiian and storing the result in a variable named result
                 result = translator.translate(query, dest='haw')
-                # speaking and printing the result
-                sp(result.text)
+                # printing the result
+
+                print(f"The Translated Text is: {result.text}")
+
+                # printing the pronunciation of the result
+
+                print(
+                    f"The pronunciation of the result is {result.pronunciation}")
+
+                # speaking result pronunciation
+
+                speak(result.pronunciation)
 
             # translate to the hebrew
             elif 'hebrew' in query:
@@ -3011,8 +3332,18 @@ if __name__ == "__main__":
 
                 # translating the text to the hebrew and storing the result in a variable named result
                 result = translator.translate(query, dest='he')
-                # speaking and printing the result
-                sp(result.text)
+                # printing the result
+
+                print(f"The Translated Text is: {result.text}")
+
+                # printing the pronunciation of the result
+
+                print(
+                    f"The pronunciation of the result is {result.pronunciation}")
+
+                # speaking result pronunciation
+
+                speak(result.pronunciation)
 
             # translate to the hindi
             elif 'hindi' in query:
@@ -3025,8 +3356,18 @@ if __name__ == "__main__":
 
                 # translating the text to the hindi and storing the result in a variable named result
                 result = translator.translate(query, dest='hi')
-                # speaking and printing the result
-                sp(result.text)
+                # printing the result
+
+                print(f"The Translated Text is: {result.text}")
+
+                # printing the pronunciation of the result
+
+                print(
+                    f"The pronunciation of the result is {result.pronunciation}")
+
+                # speaking result pronunciation
+
+                speak(result.pronunciation)
 
             # translate to the hungarian
             elif 'hungarian' in query:
@@ -3039,8 +3380,18 @@ if __name__ == "__main__":
 
                 # translating the text to the hungarian and storing the result in a variable named result
                 result = translator.translate(query, dest='hu')
-                # speaking and printing the result
-                sp(result.text)
+                # printing the result
+
+                print(f"The Translated Text is: {result.text}")
+
+                # printing the pronunciation of the result
+
+                print(
+                    f"The pronunciation of the result is {result.pronunciation}")
+
+                # speaking result pronunciation
+
+                speak(result.pronunciation)
 
             # translate to the icelandic
             elif 'icelandic' in query:
@@ -3053,8 +3404,18 @@ if __name__ == "__main__":
 
                 # translating the text to the icelandic and storing the result in a variable named result
                 result = translator.translate(query, dest='is')
-                # speaking and printing the result
-                sp(result.text)
+                # printing the result
+
+                print(f"The Translated Text is: {result.text}")
+
+                # printing the pronunciation of the result
+
+                print(
+                    f"The pronunciation of the result is {result.pronunciation}")
+
+                # speaking result pronunciation
+
+                speak(result.pronunciation)
 
             # translate to the igbo
             elif 'igbo' in query:
@@ -3067,8 +3428,18 @@ if __name__ == "__main__":
 
                 # translating the text to the igbo and storing the result in a variable named result
                 result = translator.translate(query, dest='ig')
-                # speaking and printing the result
-                sp(result.text)
+                # printing the result
+
+                print(f"The Translated Text is: {result.text}")
+
+                # printing the pronunciation of the result
+
+                print(
+                    f"The pronunciation of the result is {result.pronunciation}")
+
+                # speaking result pronunciation
+
+                speak(result.pronunciation)
 
             # translate to the indonesian
             elif 'indonesian' in query:
@@ -3081,8 +3452,18 @@ if __name__ == "__main__":
 
                 # translating the text to the indonesian and storing the result in a variable named result
                 result = translator.translate(query, dest='id')
-                # speaking and printing the result
-                sp(result.text)
+                # printing the result
+
+                print(f"The Translated Text is: {result.text}")
+
+                # printing the pronunciation of the result
+
+                print(
+                    f"The pronunciation of the result is {result.pronunciation}")
+
+                # speaking result pronunciation
+
+                speak(result.pronunciation)
 
             # translate to the irish
             elif 'irish' in query:
@@ -3095,8 +3476,18 @@ if __name__ == "__main__":
 
                 # translating the text to the irish and storing the result in a variable named result
                 result = translator.translate(query, dest='ga')
-                # speaking and printing the result
-                sp(result.text)
+                # printing the result
+
+                print(f"The Translated Text is: {result.text}")
+
+                # printing the pronunciation of the result
+
+                print(
+                    f"The pronunciation of the result is {result.pronunciation}")
+
+                # speaking result pronunciation
+
+                speak(result.pronunciation)
 
             # translate to the italian
             elif 'italian' in query:
@@ -3109,8 +3500,18 @@ if __name__ == "__main__":
 
                 # translating the text to the italian and storing the result in a variable named result
                 result = translator.translate(query, dest='it')
-                # speaking and printing the result
-                sp(result.text)
+                # printing the result
+
+                print(f"The Translated Text is: {result.text}")
+
+                # printing the pronunciation of the result
+
+                print(
+                    f"The pronunciation of the result is {result.pronunciation}")
+
+                # speaking result pronunciation
+
+                speak(result.pronunciation)
 
             # translate to the japanese
             elif 'japanese' in query:
@@ -3124,8 +3525,18 @@ if __name__ == "__main__":
 
                 # translating the text to the japanese and storing the result in a variable named result
                 result = translator.translate(query, dest='ja')
-                # speaking and printing the result
-                sp(result.text)
+                # printing the result
+
+                print(f"The Translated Text is: {result.text}")
+
+                # printing the pronunciation of the result
+
+                print(
+                    f"The pronunciation of the result is {result.pronunciation}")
+
+                # speaking result pronunciation
+
+                speak(result.pronunciation)
 
             # translate to the javanese
             elif 'javanese' in query:
@@ -3138,8 +3549,18 @@ if __name__ == "__main__":
 
                 # translating the text to the javanese and storing the result in a variable named result
                 result = translator.translate(query, dest='jw')
-                # speaking and printing the result
-                sp(result.text)
+                # printing the result
+
+                print(f"The Translated Text is: {result.text}")
+
+                # printing the pronunciation of the result
+
+                print(
+                    f"The pronunciation of the result is {result.pronunciation}")
+
+                # speaking result pronunciation
+
+                speak(result.pronunciation)
 
             # translate to the kannada
             elif 'kannada' in query:
@@ -3152,8 +3573,18 @@ if __name__ == "__main__":
 
                 # translating the text to the kannada and storing the result in a variable named result
                 result = translator.translate(query, dest='kn')
-                # speaking and printing the result
-                sp(result.text)
+                # printing the result
+
+                print(f"The Translated Text is: {result.text}")
+
+                # printing the pronunciation of the result
+
+                print(
+                    f"The pronunciation of the result is {result.pronunciation}")
+
+                # speaking result pronunciation
+
+                speak(result.pronunciation)
 
             # translate to the kazakh
             elif 'kazakh' in query:
@@ -3166,8 +3597,18 @@ if __name__ == "__main__":
 
                 # translating the text to the kazakh and storing the result in a variable named result
                 result = translator.translate(query, dest='kk')
-                # speaking and printing the result
-                sp(result.text)
+                # printing the result
+
+                print(f"The Translated Text is: {result.text}")
+
+                # printing the pronunciation of the result
+
+                print(
+                    f"The pronunciation of the result is {result.pronunciation}")
+
+                # speaking result pronunciation
+
+                speak(result.pronunciation)
 
             # translate to the khmer
             elif 'khmer' in query:
@@ -3181,8 +3622,18 @@ if __name__ == "__main__":
 
                 # translating the text to the khmer and storing the result in a variable named result
                 result = translator.translate(query, dest='km')
-                # speaking and printing the result
-                sp(result.text)
+                # printing the result
+
+                print(f"The Translated Text is: {result.text}")
+
+                # printing the pronunciation of the result
+
+                print(
+                    f"The pronunciation of the result is {result.pronunciation}")
+
+                # speaking result pronunciation
+
+                speak(result.pronunciation)
 
             # translate to the korean
             elif 'korean' in query:
@@ -3195,8 +3646,18 @@ if __name__ == "__main__":
 
                 # translating the text to the korean and storing the result in a variable named result
                 result = translator.translate(query, dest='ko')
-                # speaking and printing the result
-                sp(result.text)
+                # printing the result
+
+                print(f"The Translated Text is: {result.text}")
+
+                # printing the pronunciation of the result
+
+                print(
+                    f"The pronunciation of the result is {result.pronunciation}")
+
+                # speaking result pronunciation
+
+                speak(result.pronunciation)
             # translate to the kyrgyz
             elif 'kyrgyz' in query:
 
@@ -3209,8 +3670,18 @@ if __name__ == "__main__":
 
                 # translating the text to the kyrgyz and storing the result in a variable named result
                 result = translator.translate(query, dest='ky')
-                # speaking and printing the result
-                sp(result.text)
+                # printing the result
+
+                print(f"The Translated Text is: {result.text}")
+
+                # printing the pronunciation of the result
+
+                print(
+                    f"The pronunciation of the result is {result.pronunciation}")
+
+                # speaking result pronunciation
+
+                speak(result.pronunciation)
 
             # translate to the lao
             elif 'lao' in query:
@@ -3223,8 +3694,18 @@ if __name__ == "__main__":
 
                 # translating the text to the lao and storing the result in a variable named result
                 result = translator.translate(query, dest='lo')
-                # speaking and printing the result
-                sp(result.text)
+                # printing the result
+
+                print(f"The Translated Text is: {result.text}")
+
+                # printing the pronunciation of the result
+
+                print(
+                    f"The pronunciation of the result is {result.pronunciation}")
+
+                # speaking result pronunciation
+
+                speak(result.pronunciation)
 
             # translate to the latin
             elif 'latin' in query:
@@ -3237,8 +3718,18 @@ if __name__ == "__main__":
 
                 # translating the text to the latin and storing the result in a variable named result
                 result = translator.translate(query, dest='la')
-                # speaking and printing the result
-                sp(result.text)
+                # printing the result
+
+                print(f"The Translated Text is: {result.text}")
+
+                # printing the pronunciation of the result
+
+                print(
+                    f"The pronunciation of the result is {result.pronunciation}")
+
+                # speaking result pronunciation
+
+                speak(result.pronunciation)
 
             # translate to the latvian
             elif 'latvian' in query:
@@ -3252,8 +3743,18 @@ if __name__ == "__main__":
 
                 # translating the text to the latvian and storing the result in a variable named result
                 result = translator.translate(query, dest='lv')
-                # speaking and printing the result
-                sp(result.text)
+                # printing the result
+
+                print(f"The Translated Text is: {result.text}")
+
+                # printing the pronunciation of the result
+
+                print(
+                    f"The pronunciation of the result is {result.pronunciation}")
+
+                # speaking result pronunciation
+
+                speak(result.pronunciation)
 
             # translate to the lithuanian
             elif 'lithuanian' in query:
@@ -3266,8 +3767,18 @@ if __name__ == "__main__":
 
                 # translating the text to the lithuanian and storing the result in a variable named result
                 result = translator.translate(query, dest='lt')
-                # speaking and printing the result
-                sp(result.text)
+                # printing the result
+
+                print(f"The Translated Text is: {result.text}")
+
+                # printing the pronunciation of the result
+
+                print(
+                    f"The pronunciation of the result is {result.pronunciation}")
+
+                # speaking result pronunciation
+
+                speak(result.pronunciation)
 
             # translate to the luxembourgish
             elif 'luxembourgish' in query:
@@ -3280,8 +3791,18 @@ if __name__ == "__main__":
 
                 # translating the text to the luxembourgish and storing the result in a variable named result
                 result = translator.translate(query, dest='lb')
-                # speaking and printing the result
-                sp(result.text)
+                # printing the result
+
+                print(f"The Translated Text is: {result.text}")
+
+                # printing the pronunciation of the result
+
+                print(
+                    f"The pronunciation of the result is {result.pronunciation}")
+
+                # speaking result pronunciation
+
+                speak(result.pronunciation)
 
             # translate to the macedonian
             elif 'macedonian' in query:
@@ -3294,8 +3815,18 @@ if __name__ == "__main__":
 
                 # translating the text to the macedonian and storing the result in a variable named result
                 result = translator.translate(query, dest='mk')
-                # speaking and printing the result
-                sp(result.text)
+                # printing the result
+
+                print(f"The Translated Text is: {result.text}")
+
+                # printing the pronunciation of the result
+
+                print(
+                    f"The pronunciation of the result is {result.pronunciation}")
+
+                # speaking result pronunciation
+
+                speak(result.pronunciation)
 
             # translate to the malagasy
             elif 'malagasy' in query:
@@ -3308,8 +3839,18 @@ if __name__ == "__main__":
 
                 # translating the text to the malagasy and storing the result in a variable named result
                 result = translator.translate(query, dest='mg')
-                # speaking and printing the result
-                sp(result.text)
+                # printing the result
+
+                print(f"The Translated Text is: {result.text}")
+
+                # printing the pronunciation of the result
+
+                print(
+                    f"The pronunciation of the result is {result.pronunciation}")
+
+                # speaking result pronunciation
+
+                speak(result.pronunciation)
 
             # translate to the malay
             elif 'malay' in query:
@@ -3322,8 +3863,18 @@ if __name__ == "__main__":
 
                 # translating the text to the malay and storing the result in a variable named result
                 result = translator.translate(query, dest='ms')
-                # speaking and printing the result
-                sp(result.text)
+                # printing the result
+
+                print(f"The Translated Text is: {result.text}")
+
+                # printing the pronunciation of the result
+
+                print(
+                    f"The pronunciation of the result is {result.pronunciation}")
+
+                # speaking result pronunciation
+
+                speak(result.pronunciation)
 
             # translate to the malayalam
             elif 'malayalam' in query:
@@ -3336,8 +3887,18 @@ if __name__ == "__main__":
 
                 # translating the text to the malayalam and storing the result in a variable named result
                 result = translator.translate(query, dest='ml')
-                # speaking and printing the result
-                sp(result.text)
+                # printing the result
+
+                print(f"The Translated Text is: {result.text}")
+
+                # printing the pronunciation of the result
+
+                print(
+                    f"The pronunciation of the result is {result.pronunciation}")
+
+                # speaking result pronunciation
+
+                speak(result.pronunciation)
 
             # translate to the maltese
             elif 'maltese' in query:
@@ -3350,8 +3911,18 @@ if __name__ == "__main__":
 
                 # translating the text to the maltese and storing the result in a variable named result
                 result = translator.translate(query, dest='mt')
-                # speaking and printing the result
-                sp(result.text)
+                # printing the result
+
+                print(f"The Translated Text is: {result.text}")
+
+                # printing the pronunciation of the result
+
+                print(
+                    f"The pronunciation of the result is {result.pronunciation}")
+
+                # speaking result pronunciation
+
+                speak(result.pronunciation)
 
             # translate to the maori
             elif 'maori' in query:
@@ -3364,8 +3935,18 @@ if __name__ == "__main__":
 
                 # translating the text to the maori and storing the result in a variable named result
                 result = translator.translate(query, dest='mi')
-                # speaking and printing the result
-                sp(result.text)
+                # printing the result
+
+                print(f"The Translated Text is: {result.text}")
+
+                # printing the pronunciation of the result
+
+                print(
+                    f"The pronunciation of the result is {result.pronunciation}")
+
+                # speaking result pronunciation
+
+                speak(result.pronunciation)
 
             # translate to the marathi
             elif 'marathi' in query:
@@ -3378,8 +3959,18 @@ if __name__ == "__main__":
 
                 # translating the text to the marathi and storing the result in a variable named result
                 result = translator.translate(query, dest='mr')
-                # speaking and printing the result
-                sp(result.text)
+                # printing the result
+
+                print(f"The Translated Text is: {result.text}")
+
+                # printing the pronunciation of the result
+
+                print(
+                    f"The pronunciation of the result is {result.pronunciation}")
+
+                # speaking result pronunciation
+
+                speak(result.pronunciation)
 
             # translate to the mongolian
             elif 'mongolian' in query:
@@ -3392,8 +3983,18 @@ if __name__ == "__main__":
 
                 # translating the text to the mongolian and storing the result in a variable named result
                 result = translator.translate(query, dest='mn')
-                # speaking and printing the result
-                sp(result.text)
+                # printing the result
+
+                print(f"The Translated Text is: {result.text}")
+
+                # printing the pronunciation of the result
+
+                print(
+                    f"The pronunciation of the result is {result.pronunciation}")
+
+                # speaking result pronunciation
+
+                speak(result.pronunciation)
 
             # translate to the myanmar
             elif 'myanmar' in query:
@@ -3406,8 +4007,18 @@ if __name__ == "__main__":
 
                 # translating the text to the myanmar and storing the result in a variable named result
                 result = translator.translate(query, dest='my')
-                # speaking and printing the result
-                sp(result.text)
+                # printing the result
+
+                print(f"The Translated Text is: {result.text}")
+
+                # printing the pronunciation of the result
+
+                print(
+                    f"The pronunciation of the result is {result.pronunciation}")
+
+                # speaking result pronunciation
+
+                speak(result.pronunciation)
 
             # translate to the burmese
             elif 'burmese' in query:
@@ -3420,8 +4031,18 @@ if __name__ == "__main__":
 
                 # translating the text to the burmese and storing the result in a variable named result
                 result = translator.translate(query, dest='my')
-                # speaking and printing the result
-                sp(result.text)
+                # printing the result
+
+                print(f"The Translated Text is: {result.text}")
+
+                # printing the pronunciation of the result
+
+                print(
+                    f"The pronunciation of the result is {result.pronunciation}")
+
+                # speaking result pronunciation
+
+                speak(result.pronunciation)
 
             # translate to the nepali
             elif 'nepali' in query:
@@ -3434,8 +4055,18 @@ if __name__ == "__main__":
 
                 # translating the text to the nepali and storing the result in a variable named result
                 result = translator.translate(query, dest='ne')
-                # speaking and printing the result
-                sp(result.text)
+                # printing the result
+
+                print(f"The Translated Text is: {result.text}")
+
+                # printing the pronunciation of the result
+
+                print(
+                    f"The pronunciation of the result is {result.pronunciation}")
+
+                # speaking result pronunciation
+
+                speak(result.pronunciation)
 
             # translate to the norwegian
             elif 'norwegian' in query:
@@ -3448,8 +4079,18 @@ if __name__ == "__main__":
 
                 # translating the text to the norwegian and storing the result in a variable named result
                 result = translator.translate(query, dest='no')
-                # speaking and printing the result
-                sp(result.text)
+                # printing the result
+
+                print(f"The Translated Text is: {result.text}")
+
+                # printing the pronunciation of the result
+
+                print(
+                    f"The pronunciation of the result is {result.pronunciation}")
+
+                # speaking result pronunciation
+
+                speak(result.pronunciation)
 
             # translate to the odia
             elif 'odia' in query:
@@ -3462,8 +4103,18 @@ if __name__ == "__main__":
 
                 # translating the text to the odia and storing the result in a variable named result
                 result = translator.translate(query, dest='or')
-                # speaking and printing the result
-                sp(result.text)
+                # printing the result
+
+                print(f"The Translated Text is: {result.text}")
+
+                # printing the pronunciation of the result
+
+                print(
+                    f"The pronunciation of the result is {result.pronunciation}")
+
+                # speaking result pronunciation
+
+                speak(result.pronunciation)
 
             # translate to the pashto
             elif 'pashto' in query:
@@ -3476,8 +4127,18 @@ if __name__ == "__main__":
 
                 # translating the text to the pashto and storing the result in a variable named result
                 result = translator.translate(query, dest='ps')
-                # speaking and printing the result
-                sp(result.text)
+                # printing the result
+
+                print(f"The Translated Text is: {result.text}")
+
+                # printing the pronunciation of the result
+
+                print(
+                    f"The pronunciation of the result is {result.pronunciation}")
+
+                # speaking result pronunciation
+
+                speak(result.pronunciation)
 
             # translate to the persian
             elif 'persian' in query:
@@ -3490,8 +4151,18 @@ if __name__ == "__main__":
 
                 # translating the text to the persian and storing the result in a variable named result
                 result = translator.translate(query, dest='fa')
-                # speaking and printing the result
-                sp(result.text)
+                # printing the result
+
+                print(f"The Translated Text is: {result.text}")
+
+                # printing the pronunciation of the result
+
+                print(
+                    f"The pronunciation of the result is {result.pronunciation}")
+
+                # speaking result pronunciation
+
+                speak(result.pronunciation)
 
             # translate to the polish
             elif 'polish' in query:
@@ -3504,8 +4175,18 @@ if __name__ == "__main__":
 
                 # translating the text to the polish and storing the result in a variable named result
                 result = translator.translate(query, dest='pl')
-                # speaking and printing the result
-                sp(result.text)
+                # printing the result
+
+                print(f"The Translated Text is: {result.text}")
+
+                # printing the pronunciation of the result
+
+                print(
+                    f"The pronunciation of the result is {result.pronunciation}")
+
+                # speaking result pronunciation
+
+                speak(result.pronunciation)
 
             # translate to the portuguese
             elif 'portuguese' in query:
@@ -3518,8 +4199,18 @@ if __name__ == "__main__":
 
                 # translating the text to the portuguese and storing the result in a variable named result
                 result = translator.translate(query, dest='pt')
-                # speaking and printing the result
-                sp(result.text)
+                # printing the result
+
+                print(f"The Translated Text is: {result.text}")
+
+                # printing the pronunciation of the result
+
+                print(
+                    f"The pronunciation of the result is {result.pronunciation}")
+
+                # speaking result pronunciation
+
+                speak(result.pronunciation)
 
             # translate to the punjabi
             elif 'punjabi' in query:
@@ -3532,8 +4223,18 @@ if __name__ == "__main__":
 
                 # translating the text to the punjabi and storing the result in a variable named result
                 result = translator.translate(query, dest='pa')
-                # speaking and printing the result
-                sp(result.text)
+                # printing the result
+
+                print(f"The Translated Text is: {result.text}")
+
+                # printing the pronunciation of the result
+
+                print(
+                    f"The pronunciation of the result is {result.pronunciation}")
+
+                # speaking result pronunciation
+
+                speak(result.pronunciation)
 
             # translate to the romanian
             elif 'romanian' in query:
@@ -3546,8 +4247,18 @@ if __name__ == "__main__":
 
                 # translating the text to the romanian and storing the result in a variable named result
                 result = translator.translate(query, dest='ro')
-                # speaking and printing the result
-                sp(result.text)
+                # printing the result
+
+                print(f"The Translated Text is: {result.text}")
+
+                # printing the pronunciation of the result
+
+                print(
+                    f"The pronunciation of the result is {result.pronunciation}")
+
+                # speaking result pronunciation
+
+                speak(result.pronunciation)
 
             # translate to the russian
             elif 'russian' in query:
@@ -3560,8 +4271,18 @@ if __name__ == "__main__":
 
                 # translating the text to the russian and storing the result in a variable named result
                 result = translator.translate(query, dest='ru')
-                # speaking and printing the result
-                sp(result.text)
+                # printing the result
+
+                print(f"The Translated Text is: {result.text}")
+
+                # printing the pronunciation of the result
+
+                print(
+                    f"The pronunciation of the result is {result.pronunciation}")
+
+                # speaking result pronunciation
+
+                speak(result.pronunciation)
 
             # translate to the samoan
             elif 'samoan' in query:
@@ -3574,8 +4295,18 @@ if __name__ == "__main__":
 
                 # translating the text to the samoan and storing the result in a variable named result
                 result = translator.translate(query, dest='sm')
-                # speaking and printing the result
-                sp(result.text)
+                # printing the result
+
+                print(f"The Translated Text is: {result.text}")
+
+                # printing the pronunciation of the result
+
+                print(
+                    f"The pronunciation of the result is {result.pronunciation}")
+
+                # speaking result pronunciation
+
+                speak(result.pronunciation)
 
             # translate to the scots gaelic
             elif 'scots gaelic' in query:
@@ -3588,8 +4319,18 @@ if __name__ == "__main__":
 
                 # translating the text to the scots gaelic and storing the result in a variable named result
                 result = translator.translate(query, dest='gd')
-                # speaking and printing the result
-                sp(result.text)
+                # printing the result
+
+                print(f"The Translated Text is: {result.text}")
+
+                # printing the pronunciation of the result
+
+                print(
+                    f"The pronunciation of the result is {result.pronunciation}")
+
+                # speaking result pronunciation
+
+                speak(result.pronunciation)
 
             # translate to the serbian
             elif 'serbian' in query:
@@ -3602,8 +4343,18 @@ if __name__ == "__main__":
 
                 # translating the text to the serbian and storing the result in a variable named result
                 result = translator.translate(query, dest='sr')
-                # speaking and printing the result
-                sp(result.text)
+                # printing the result
+
+                print(f"The Translated Text is: {result.text}")
+
+                # printing the pronunciation of the result
+
+                print(
+                    f"The pronunciation of the result is {result.pronunciation}")
+
+                # speaking result pronunciation
+
+                speak(result.pronunciation)
 
             # translate to the sesotho
             elif 'sesotho' in query:
@@ -3616,8 +4367,18 @@ if __name__ == "__main__":
 
                 # translating the text to the sesotho and storing the result in a variable named result
                 result = translator.translate(query, dest='st')
-                # speaking and printing the result
-                sp(result.text)
+                # printing the result
+
+                print(f"The Translated Text is: {result.text}")
+
+                # printing the pronunciation of the result
+
+                print(
+                    f"The pronunciation of the result is {result.pronunciation}")
+
+                # speaking result pronunciation
+
+                speak(result.pronunciation)
 
             # translate to the shona
             elif 'shona' in query:
@@ -3630,8 +4391,18 @@ if __name__ == "__main__":
 
                 # translating the text to the shona and storing the result in a variable named result
                 result = translator.translate(query, dest='sn')
-                # speaking and printing the result
-                sp(result.text)
+                # printing the result
+
+                print(f"The Translated Text is: {result.text}")
+
+                # printing the pronunciation of the result
+
+                print(
+                    f"The pronunciation of the result is {result.pronunciation}")
+
+                # speaking result pronunciation
+
+                speak(result.pronunciation)
 
             # translate to the sindhi
             elif 'sindhi' in query:
@@ -3644,8 +4415,18 @@ if __name__ == "__main__":
 
                 # translating the text to the sindhi and storing the result in a variable named result
                 result = translator.translate(query, dest='sd')
-                # speaking and printing the result
-                sp(result.text)
+                # printing the result
+
+                print(f"The Translated Text is: {result.text}")
+
+                # printing the pronunciation of the result
+
+                print(
+                    f"The pronunciation of the result is {result.pronunciation}")
+
+                # speaking result pronunciation
+
+                speak(result.pronunciation)
 
             # translate to the sinhala
             elif 'sinhala' in query:
@@ -3658,8 +4439,18 @@ if __name__ == "__main__":
 
                 # translating the text to the sinhala and storing the result in a variable named result
                 result = translator.translate(query, dest='si')
-                # speaking and printing the result
-                sp(result.text)
+                # printing the result
+
+                print(f"The Translated Text is: {result.text}")
+
+                # printing the pronunciation of the result
+
+                print(
+                    f"The pronunciation of the result is {result.pronunciation}")
+
+                # speaking result pronunciation
+
+                speak(result.pronunciation)
 
             # translate to the slovak
             elif 'slovak' in query:
@@ -3672,8 +4463,18 @@ if __name__ == "__main__":
 
                 # translating the text to the slovak and storing the result in a variable named result
                 result = translator.translate(query, dest='sk')
-                # speaking and printing the result
-                sp(result.text)
+                # printing the result
+
+                print(f"The Translated Text is: {result.text}")
+
+                # printing the pronunciation of the result
+
+                print(
+                    f"The pronunciation of the result is {result.pronunciation}")
+
+                # speaking result pronunciation
+
+                speak(result.pronunciation)
 
             # translate to the slovenian
             elif 'slovenian' in query:
@@ -3686,8 +4487,18 @@ if __name__ == "__main__":
 
                 # translating the text to the slovenian and storing the result in a variable named result
                 result = translator.translate(query, dest='sl')
-                # speaking and printing the result
-                sp(result.text)
+                # printing the result
+
+                print(f"The Translated Text is: {result.text}")
+
+                # printing the pronunciation of the result
+
+                print(
+                    f"The pronunciation of the result is {result.pronunciation}")
+
+                # speaking result pronunciation
+
+                speak(result.pronunciation)
 
             # translate to the somali
             elif 'somali' in query:
@@ -3700,8 +4511,18 @@ if __name__ == "__main__":
 
                 # translating the text to the somali and storing the result in a variable named result
                 result = translator.translate(query, dest='so')
-                # speaking and printing the result
-                sp(result.text)
+                # printing the result
+
+                print(f"The Translated Text is: {result.text}")
+
+                # printing the pronunciation of the result
+
+                print(
+                    f"The pronunciation of the result is {result.pronunciation}")
+
+                # speaking result pronunciation
+
+                speak(result.pronunciation)
 
             # translate to the spanish
             elif 'spanish' in query:
@@ -3715,8 +4536,18 @@ if __name__ == "__main__":
 
                 # translating the text to the spanish and storing the result in a variable named result
                 result = translator.translate(query, dest='es')
-                # speaking and printing the result
-                sp(result.text)
+                # printing the result
+
+                print(f"The Translated Text is: {result.text}")
+
+                # printing the pronunciation of the result
+
+                print(
+                    f"The pronunciation of the result is {result.pronunciation}")
+
+                # speaking result pronunciation
+
+                speak(result.pronunciation)
 
             # translate to the sundanese
             elif 'sundanese' in query:
@@ -3729,8 +4560,18 @@ if __name__ == "__main__":
 
                 # translating the text to the sundanese and storing the result in a variable named result
                 result = translator.translate(query, dest='su')
-                # speaking and printing the result
-                sp(result.text)
+                # printing the result
+
+                print(f"The Translated Text is: {result.text}")
+
+                # printing the pronunciation of the result
+
+                print(
+                    f"The pronunciation of the result is {result.pronunciation}")
+
+                # speaking result pronunciation
+
+                speak(result.pronunciation)
 
             # translate to the swahili
             elif 'swahili' in query:
@@ -3743,8 +4584,18 @@ if __name__ == "__main__":
 
                 # translating the text to the swahili and storing the result in a variable named result
                 result = translator.translate(query, dest='sw')
-                # speaking and printing the result
-                sp(result.text)
+                # printing the result
+
+                print(f"The Translated Text is: {result.text}")
+
+                # printing the pronunciation of the result
+
+                print(
+                    f"The pronunciation of the result is {result.pronunciation}")
+
+                # speaking result pronunciation
+
+                speak(result.pronunciation)
 
             # translate to the swedish
             elif 'swedish' in query:
@@ -3757,8 +4608,18 @@ if __name__ == "__main__":
 
                 # translating the text to the swedish and storing the result in a variable named result
                 result = translator.translate(query, dest='sv')
-                # speaking and printing the result
-                sp(result.text)
+                # printing the result
+
+                print(f"The Translated Text is: {result.text}")
+
+                # printing the pronunciation of the result
+
+                print(
+                    f"The pronunciation of the result is {result.pronunciation}")
+
+                # speaking result pronunciation
+
+                speak(result.pronunciation)
 
             # translate to the tajik
             elif 'tajik' in query:
@@ -3771,8 +4632,18 @@ if __name__ == "__main__":
 
                 # translating the text to the tajik and storing the result in a variable named result
                 result = translator.translate(query, dest='tg')
-                # speaking and printing the result
-                sp(result.text)
+                # printing the result
+
+                print(f"The Translated Text is: {result.text}")
+
+                # printing the pronunciation of the result
+
+                print(
+                    f"The pronunciation of the result is {result.pronunciation}")
+
+                # speaking result pronunciation
+
+                speak(result.pronunciation)
 
             # translate to the tamil
             elif 'tamil' in query:
@@ -3785,8 +4656,18 @@ if __name__ == "__main__":
 
                 # translating the text to the tamil and storing the result in a variable named result
                 result = translator.translate(query, dest='ta')
-                # speaking and printing the result
-                sp(result.text)
+                # printing the result
+
+                print(f"The Translated Text is: {result.text}")
+
+                # printing the pronunciation of the result
+
+                print(
+                    f"The pronunciation of the result is {result.pronunciation}")
+
+                # speaking result pronunciation
+
+                speak(result.pronunciation)
 
             # translate to the telugu
             elif 'telugu' in query:
@@ -3799,8 +4680,18 @@ if __name__ == "__main__":
 
                 # translating the text to the telugu and storing the result in a variable named result
                 result = translator.translate(query, dest='te')
-                # speaking and printing the result
-                sp(result.text)
+                # printing the result
+
+                print(f"The Translated Text is: {result.text}")
+
+                # printing the pronunciation of the result
+
+                print(
+                    f"The pronunciation of the result is {result.pronunciation}")
+
+                # speaking result pronunciation
+
+                speak(result.pronunciation)
 
             # translate to the thai
             elif 'thai' in query:
@@ -3813,8 +4704,18 @@ if __name__ == "__main__":
 
                 # translating the text to the thai and storing the result in a variable named result
                 result = translator.translate(query, dest='th')
-                # speaking and printing the result
-                sp(result.text)
+                # printing the result
+
+                print(f"The Translated Text is: {result.text}")
+
+                # printing the pronunciation of the result
+
+                print(
+                    f"The pronunciation of the result is {result.pronunciation}")
+
+                # speaking result pronunciation
+
+                speak(result.pronunciation)
 
             # translate to the turkish
             elif 'turkish' in query:
@@ -3827,8 +4728,18 @@ if __name__ == "__main__":
 
                 # translating the text to the turkish and storing the result in a variable named result
                 result = translator.translate(query, dest='tr')
-                # speaking and printing the result
-                sp(result.text)
+                # printing the result
+
+                print(f"The Translated Text is: {result.text}")
+
+                # printing the pronunciation of the result
+
+                print(
+                    f"The pronunciation of the result is {result.pronunciation}")
+
+                # speaking result pronunciation
+
+                speak(result.pronunciation)
 
             # translate to the ukrainian
             elif 'ukrainian' in query:
@@ -3841,8 +4752,18 @@ if __name__ == "__main__":
 
                 # translating the text to the ukrainian and storing the result in a variable named result
                 result = translator.translate(query, dest='uk')
-                # speaking and printing the result
-                sp(result.text)
+                # printing the result
+
+                print(f"The Translated Text is: {result.text}")
+
+                # printing the pronunciation of the result
+
+                print(
+                    f"The pronunciation of the result is {result.pronunciation}")
+
+                # speaking result pronunciation
+
+                speak(result.pronunciation)
 
             # translate to the urdu
             elif 'urdu' in query:
@@ -3855,8 +4776,18 @@ if __name__ == "__main__":
 
                 # translating the text to the urdu and storing the result in a variable named result
                 result = translator.translate(query, dest='ur')
-                # speaking and printing the result
-                sp(result.text)
+                # printing the result
+
+                print(f"The Translated Text is: {result.text}")
+
+                # printing the pronunciation of the result
+
+                print(
+                    f"The pronunciation of the result is {result.pronunciation}")
+
+                # speaking result pronunciation
+
+                speak(result.pronunciation)
 
             # translate to the uyghur
             elif 'uyghur' in query:
@@ -3869,8 +4800,18 @@ if __name__ == "__main__":
 
                 # translating the text to the uyghur and storing the result in a variable named result
                 result = translator.translate(query, dest='ug')
-                # speaking and printing the result
-                sp(result.text)
+                # printing the result
+
+                print(f"The Translated Text is: {result.text}")
+
+                # printing the pronunciation of the result
+
+                print(
+                    f"The pronunciation of the result is {result.pronunciation}")
+
+                # speaking result pronunciation
+
+                speak(result.pronunciation)
 
             # translate to the uzbek
             elif 'uzbek' in query:
@@ -3883,8 +4824,18 @@ if __name__ == "__main__":
 
                 # translating the text to the uzbek and storing the result in a variable named result
                 result = translator.translate(query, dest='uz')
-                # speaking and printing the result
-                sp(result.text)
+                # printing the result
+
+                print(f"The Translated Text is: {result.text}")
+
+                # printing the pronunciation of the result
+
+                print(
+                    f"The pronunciation of the result is {result.pronunciation}")
+
+                # speaking result pronunciation
+
+                speak(result.pronunciation)
 
             # translate to the vietnamese
             elif 'vietnamese' in query:
@@ -3897,8 +4848,18 @@ if __name__ == "__main__":
 
                 # translating the text to the vietnamese and storing the result in a variable named result
                 result = translator.translate(query, dest='vi')
-                # speaking and printing the result
-                sp(result.text)
+                # printing the result
+
+                print(f"The Translated Text is: {result.text}")
+
+                # printing the pronunciation of the result
+
+                print(
+                    f"The pronunciation of the result is {result.pronunciation}")
+
+                # speaking result pronunciation
+
+                speak(result.pronunciation)
 
             # translate to the welsh
             elif 'welsh' in query:
@@ -3911,8 +4872,18 @@ if __name__ == "__main__":
 
                 # translating the text to the welsh and storing the result in a variable named result
                 result = translator.translate(query, dest='cy')
-                # speaking and printing the result
-                sp(result.text)
+                # printing the result
+
+                print(f"The Translated Text is: {result.text}")
+
+                # printing the pronunciation of the result
+
+                print(
+                    f"The pronunciation of the result is {result.pronunciation}")
+
+                # speaking result pronunciation
+
+                speak(result.pronunciation)
 
             # translate to the xhosa
             elif 'xhosa' in query:
@@ -3925,8 +4896,18 @@ if __name__ == "__main__":
 
                 # translating the text to the xhosa and storing the result in a variable named result
                 result = translator.translate(query, dest='xh')
-                # speaking and printing the result
-                sp(result.text)
+                # printing the result
+
+                print(f"The Translated Text is: {result.text}")
+
+                # printing the pronunciation of the result
+
+                print(
+                    f"The pronunciation of the result is {result.pronunciation}")
+
+                # speaking result pronunciation
+
+                speak(result.pronunciation)
 
             # translate to the yiddish
             elif 'yiddish' in query:
@@ -3939,8 +4920,18 @@ if __name__ == "__main__":
 
                 # translating the text to the yiddish and storing the result in a variable named result
                 result = translator.translate(query, dest='yi')
-                # speaking and printing the result
-                sp(result.text)
+                # printing the result
+
+                print(f"The Translated Text is: {result.text}")
+
+                # printing the pronunciation of the result
+
+                print(
+                    f"The pronunciation of the result is {result.pronunciation}")
+
+                # speaking result pronunciation
+
+                speak(result.pronunciation)
 
             # translate to the yoruba
             elif 'yoruba' in query:
@@ -3953,8 +4944,18 @@ if __name__ == "__main__":
 
                 # translating the text to the yoruba and storing the result in a variable named result
                 result = translator.translate(query, dest='yo')
-                # speaking and printing the result
-                sp(result.text)
+                # printing the result
+
+                print(f"The Translated Text is: {result.text}")
+
+                # printing the pronunciation of the result
+
+                print(
+                    f"The pronunciation of the result is {result.pronunciation}")
+
+                # speaking result pronunciation
+
+                speak(result.pronunciation)
 
             # translate to the zulu
             elif 'zulu' in query:
@@ -3967,8 +4968,18 @@ if __name__ == "__main__":
 
                 # translating the text to the zulu and storing the result in a variable named result
                 result = translator.translate(query, dest='zu')
-                # speaking and printing the result
-                sp(result.text)
+                # printing the result
+
+                print(f"The Translated Text is: {result.text}")
+
+                # printing the pronunciation of the result
+
+                print(
+                    f"The pronunciation of the result is {result.pronunciation}")
+
+                # speaking result pronunciation
+
+                speak(result.pronunciation)
 
         elif 'close' in query:
 
