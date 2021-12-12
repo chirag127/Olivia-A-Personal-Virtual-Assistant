@@ -1229,9 +1229,29 @@ if __name__ == "__main__":
 
                 # if the query contains not this then check next elif statement
 
-                elif 'next' in query and 'tab' in query:
+                elif 'next' in query:
 
-                    pyautogui.hotkey('ctrl', 'tab')
+                    # go to next tab by pressing control + tab
+
+                    if 'tab' in query:
+
+                        pyautogui.hotkey('ctrl', 'tab')
+
+                    # go to next frame by pressing .
+
+                    elif 'frame' in query:
+
+                        pyautogui.press('.')
+
+                    else:
+
+                        # go to next video by pressing shift + n
+
+                        pyautogui.hotkey('shift', 'n')
+
+                elif 'skip' in query and 'video' in query:
+
+                    pyautogui.hotkey('shift', 'n')
 
                 # go to the previous tab by pressing control + shift + tab
 
@@ -1239,17 +1259,25 @@ if __name__ == "__main__":
 
                 # if the query contains not this then check next elif statement
 
-                elif 'previous' in query and 'tab' in query:
+                elif 'previous' in query:
 
-                    pyautogui.hotkey('ctrl', 'shift', 'tab')
+                    # if the query contains 'tab' then go to previous tab by pressing control + shift + tab
 
-                # go the next tab if 'next' is in query and 'tab' is in query
+                    if 'tab' in query:
 
-                # go next video if 'next' is in query.
+                        pyautogui.hotkey('ctrl', 'shift', 'tab')
 
-                elif 'next' in query or 'skip' in query:
+                    # go to previous frame by pressing ,
 
-                    pyautogui.hotkey('shift', 'n')
+                    elif 'frame' in query:
+
+                        pyautogui.press(',')
+
+                    else:
+
+                        # go to previous video by pressing shift + p
+
+                        pyautogui.hotkey('shift', 'p')
 
                 # reload the video by pressing control + r if the
 
@@ -1257,7 +1285,7 @@ if __name__ == "__main__":
 
                 # if the query contains not this then check next elif statement
 
-                elif 'reload' in query or 'refresh' in query or 'reload' in query or 'restart' in query or 'reboot' in query:
+                elif 'reload' in query or 'refresh' in query or 'reload' in query or 'restart' in query or 'reboot' in query and 'tab' in query:
 
                     pyautogui.hotkey('ctrl', 'r')
 
@@ -1269,8 +1297,29 @@ if __name__ == "__main__":
 
                     pyautogui.hotkey('ctrl', 'm')
 
+                # turn on subtitles if the query contains 'subtitles' or 'subtitle' or 'subtitles on' or 'subtitle on' or
 
-                # dislike the video by pressing d if the query contains 'dislike' 
+                # 'captions' by pressing c
+
+                elif 'subtitle' or 'caption' in query:
+
+                    pyautogui.press('c')
+
+                # enter the miniplayer by pressing i
+
+                # if the query contains 'miniplayer' or 'mini player' or 'miniplayer on' or 'mini player on' or 'miniplayer off' or 'mini player off'
+
+                elif 'mini' in query and 'player' in query:
+
+                    pyautogui.press('i')
+
+                # replay the video by pressing home button if the query contains 'replay' or 'replay' or 'replay' or 'replay' or 'replay' or 'replay'
+
+                elif 'replay' in query:
+
+                    pyautogui.press('home')
+
+                # dislike the video by pressing d if the query contains 'dislike'
 
                 elif 'dislike' in query:
 
@@ -1294,6 +1343,55 @@ if __name__ == "__main__":
 
                     pyautogui.hotkey('right')
 
+                # move to full screen mode by pressing f
+
+                # if the query contains 'full screen' or 'full mode' or 'full screen mode'
+
+                # if the query contains not this then check next elif statement
+
+                elif 'full' in query and 'screen' in query or 'mode' in query:
+
+                    pyautogui.press('f')
+
+                # go to download page
+
+                # if the query contains 'download' or 'downloads' or 'download page' or 'downloads page'
+
+                # if the query contains not this then check next elif statement
+
+                elif 'download' in query or 'downloads' in query or 'download page' in query or 'downloads page' in query:
+
+                    pyautogui.hotkey('ctrl', 'j')
+
+                # go to the history page by pressing control + h
+
+                # if the query contains 'history' and 'page'
+
+                # if the query contains not this then check next elif statement
+
+                elif 'history' in query and 'page' in query:
+
+                    pyautogui.hotkey('ctrl', 'h')
+
+                # go to the bookmark page by pressing control + shift + o
+
+                # if the query contains 'bookmark' and 'page'
+
+                # if the query contains not this then check next elif statement
+
+                elif 'bookmark manager' in query or 'bookmark page' in query:
+
+                    pyautogui.hotkey('ctrl', 'shift', 'o')
+
+                # show the bookmark mark bar by pressing control + shift + b
+
+                # if the query contains 'bookmark bar' or 'bookmark bar'
+
+                # if the query contains not this then check next elif statement
+
+                elif 'bookmark bar' in query:
+
+                    pyautogui.hotkey('ctrl', 'shift', 'b')
 
                 # increase the volume by pressing up arrow
 
@@ -1362,11 +1460,10 @@ if __name__ == "__main__":
                         for i in range(no_of_down_presses):
                             pyautogui.press('down')
                             sleep(0.5)
-                    
-                    else
+
+                    else:
                         # volume is decreased by 5 percentage by one down press
                         pyautogui.press('down')
-                        
 
                     # increase the speed of the video by pressing shift + . arrow
 
@@ -1397,10 +1494,13 @@ if __name__ == "__main__":
 
                         no_of_shift_dot_presses = int(percent / 25)
                         for i in range(no_of_shift_dot_presses):
-                            pyautogui.hotkey('shift', '.')
+                            pyautogui.hotkey('>')
                             sleep(0.5)
 
-                    pyautogui.hotkey('shift', '.')
+                    else:
+
+                        # speed is increased by 25 percentage by one shift + . press
+                        pyautogui.hotkey('>')
 
                 # decrease the speed of the video by pressing shift + , arrow
 
@@ -1431,13 +1531,10 @@ if __name__ == "__main__":
 
                         no_of_shift_dot_presses = int(percent / 25)
                         for i in range(no_of_shift_dot_presses):
-                            pyautogui.hotkey('shift', ',')
+                            pyautogui.hotkey('<')
                             sleep(0.5)
 
-                    pyautogui.hotkey('shift', ',')
-
-
-
+                    pyautogui.hotkey('<')
 
                 # exit the video by pressing alt + f4
 
@@ -1451,56 +1548,6 @@ if __name__ == "__main__":
 
                     break
 
-                # move to full screen mode by pressing f
-
-                # if the query contains 'full screen' or 'full mode' or 'full screen mode'
-
-                # if the query contains not this then check next elif statement
-
-                elif 'full' in query and 'screen' in query or 'mode' in query:
-
-                    pyautogui.press('f')
-
-                # go to download page
-
-                # if the query contains 'download' or 'downloads' or 'download page' or 'downloads page'
-
-                # if the query contains not this then check next elif statement
-
-                elif 'download' in query or 'downloads' in query or 'download page' in query or 'downloads page' in query:
-
-                    pyautogui.hotkey('ctrl', 'j')
-
-                # go to the history page by pressing control + h
-
-                # if the query contains 'history' and 'page'
-
-                # if the query contains not this then check next elif statement
-
-                elif 'history' in query and 'page' in query:
-
-                    pyautogui.hotkey('ctrl', 'h')
-
-                # go to the bookmark page by pressing control + shift + o
-
-                # if the query contains 'bookmark' and 'page'
-
-                # if the query contains not this then check next elif statement
-
-                elif 'bookmark manager' in query or 'bookmark page' in query:
-
-                    pyautogui.hotkey('ctrl', 'shift', 'o')
-
-                # show the bookmark mark bar by pressing control + shift + b
-
-                # if the query contains 'bookmark bar' or 'bookmark bar'
-
-                # if the query contains not this then check next elif statement
-
-                elif 'bookmark bar' in query:
-
-                    pyautogui.hotkey('ctrl', 'shift', 'b')
-
                 # if the query contains 50% percent or 50 percent or 50% or 50 then change go to the video length to 50 percent
 
                 # if query contains 10 percent or 10% or 10 then change go to the video length to 10 percent by pressing number pad1
@@ -1512,7 +1559,7 @@ if __name__ == "__main__":
                 elif '20%' in query:
 
                     pyautogui.press('2')
-                
+
                 elif '30%' in query:
 
                     pyautogui.press('3')
@@ -1537,18 +1584,13 @@ if __name__ == "__main__":
 
                     pyautogui.press('8')
 
-                elif                elif '90%' in query:
+                elif '90%' in query:
 
                     pyautogui.press('9')
 
                 elif '100%' in query:
 
                     pyautogui.press('0')
-
-
-
-
-
 
                 # close the video by pressing control + w
 
