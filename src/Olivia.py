@@ -2737,6 +2737,34 @@ if __name__ == "__main__":
 
                 speak(result.pronunciation)
 
+            # translate to the belarusian
+
+            elif 'belarusian' in query:
+                # telling the user that we are translating the text to the belarusian
+                speak("translating to belarusian")
+                # getting the text from the user and replacing the "to belarusian" with nothing so that we can translate the text
+                query = query.replace("to belarusian", "")
+
+                # using the goslate library to translate the text
+
+                translator = Translator()
+
+                # translating the text to the belarusian and storing the result in a variable named result
+                result = translator.translate(query, dest='be')
+                # printing the result
+
+                print(f"The Translated Text is: {result.text}")
+
+                # printing the pronunciation of the result
+
+                print(
+                    f"The pronunciation of the result is {result.pronunciation}")
+
+                # speaking result pronunciation
+
+                speak(result.pronunciation)
+
+
             # translate to the bengali
 
             elif 'bengali' in query:
@@ -2869,6 +2897,34 @@ if __name__ == "__main__":
 
                 speak(result.pronunciation)
 
+
+            # translate to the chichewa
+            elif 'chichewa' in query:
+                # telling the user that we are translating the text to the chichewa
+                speak("translating to chichewa")
+                # getting the text from the user and replacing the "to chichewa" with nothing so that we can translate the text
+                query = query.replace("to chichewa", "")
+
+                # using the goslate library to translate the text
+
+                translator = Translator()
+
+                # translating the text to the chichewa and storing the result in a variable named result
+                result = translator.translate(query, dest='ny')
+                # printing the result
+
+                print(f"The Translated Text is: {result.text}")
+
+                # printing the pronunciation of the result
+
+                print(
+                    f"The pronunciation of the result is {result.pronunciation}")
+
+                # speaking result pronunciation
+
+                speak(result.pronunciation)
+
+
             # translate to the chinese
             elif 'chinese' in query:
                 # telling the user that we are translating the text to the chinese
@@ -2894,6 +2950,33 @@ if __name__ == "__main__":
                 # speaking result pronunciation
 
                 speak(result.pronunciation)
+
+            # translate to the corican
+            elif 'corican' in query:
+                # telling the user that we are translating the text to the corican
+                speak("translating to corican")
+                # getting the text from the user and replacing the "to corican" with nothing so that we can translate the text
+                query = query.replace("to corican", "")
+
+                # using the goslate library to translate the text
+
+                translator = Translator()
+
+                # translating the text to the corican and storing the result in a variable named result
+                result = translator.translate(query, dest='co')
+                # printing the result
+
+                print(f"The Translated Text is: {result.text}")
+
+                # printing the pronunciation of the result
+
+                print(
+                    f"The pronunciation of the result is {result.pronunciation}")
+
+                # speaking result pronunciation
+
+                speak(result.pronunciation)
+
 
             # translate to the croatian
             elif 'croatian' in query:
@@ -3443,6 +3526,33 @@ if __name__ == "__main__":
 
                 speak(result.pronunciation)
 
+            # translate to the hmong
+            elif 'hmong' in query:
+                # telling the user that we are translating the text to the hmong
+                speak("translating to hmong")
+                # getting the text from the user and replacing the "to hmong" with nothing so that we can translate the text
+                query = query.replace("to hmong", "")
+
+                # using the goslate library to translate the text
+
+                translator = Translator()
+
+                # translating the text to the hmong and storing the result in a variable named result
+                result = translator.translate(query, dest='hmn')
+                # printing the result
+
+                print(f"The Translated Text is: {result.text}")
+
+                # printing the pronunciation of the result
+
+                print(
+                    f"The pronunciation of the result is {result.pronunciation}")
+
+                # speaking result pronunciation
+
+                speak(result.pronunciation)
+
+
             # translate to the hungarian
             elif 'hungarian' in query:
                 # telling the user that we are translating the text to the hungarian
@@ -3756,6 +3866,60 @@ if __name__ == "__main__":
                 # speaking result pronunciation
 
                 speak(result.pronunciation)
+
+
+            # translate to the kurdish
+            elif 'kurdish' in query:
+                # telling the user that we are translating the text to the kurdish
+                speak("translating to kurdish")
+                # getting the text from the user and replacing the "to kurdish" with nothing so that we can translate the text
+                query = query.replace("to kurdish", "")
+
+                # using the goslate library to translate the text
+
+                translator = Translator()
+
+                # translating the text to the kurdish and storing the result in a variable named result
+                result = translator.translate(query, dest='ku')
+                # printing the result
+
+                print(f"The Translated Text is: {result.text}")
+
+                # printing the pronunciation of the result
+
+                print(
+                    f"The pronunciation of the result is {result.pronunciation}")
+
+                # speaking result pronunciation
+
+                speak(result.pronunciation)
+
+            # translate to the kurmanji
+            elif 'kurmanji' in query:
+                # telling the user that we are translating the text to the kurmanji
+                speak("translating to kurmanji")
+                # getting the text from the user and replacing the "to kurmanji" with nothing so that we can translate the text
+                query = query.replace("to kurmanji", "")
+
+                # using the goslate library to translate the text
+
+                translator = Translator()
+
+                # translating the text to the kurmanji and storing the result in a variable named result
+                result = translator.translate(query, dest='ku')
+                # printing the result
+
+                print(f"The Translated Text is: {result.text}")
+
+                # printing the pronunciation of the result
+
+                print(
+                    f"The pronunciation of the result is {result.pronunciation}")
+
+                # speaking result pronunciation
+
+                speak(result.pronunciation)
+
             # translate to the kyrgyz
             elif 'kyrgyz' in query:
 
