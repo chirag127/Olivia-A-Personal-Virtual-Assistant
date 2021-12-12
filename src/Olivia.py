@@ -3,15 +3,15 @@ from googletrans import Translator
 from pyowm import OWM
 from tkinter import *
 import pyperclip
-import ctypes                      # The ctypes is used maniplulate the data types
-import datetime                    # The date and time module is for timezones
+import ctypes                      
+import datetime                    
 import json
-import math                        # The math library provides math fuctions .
+import math                        
 import numpy as np
 import os
 import psutil
 import pyautogui
-import pyttsx3                     # The pyttx3 is used for text to speech
+import pyttsx3                     
 import pywhatkit
 import random
 import re
@@ -132,9 +132,20 @@ def takeCommand():
         return "None"
 
     except sr.WaitTimeoutError:
+
+        # print wait timeout error to know that the program is waiting for the user to speak
+
         print("Wait timeout exceeded")
+
+        # Ask user to check his internet connection
+
         print("Please Check your internet connection")
+
+        # print try after soem time to know that the program is trying to listen again
+
         print("Try after sometime")
+
+
         return "None"
 
     except Exception as e:
@@ -200,10 +211,6 @@ def wishMe():
 
         return "Good Evening"
 
-    # tell the user how may i help you
-    return "I am olivia Sir. Please tell me how may I help you"
-
-# It will take microphone input from the user and return string output
 
 
 def pick_card():
@@ -221,27 +228,6 @@ def pick_card():
         return(f"The {rank} of {card}")
 
     sp(pick_a_card())
-
-
-# def contactmanager():
-
-#     import tkinter as tk
-#     import tkinter.messagebox as tkMessageBox
-#     import tkinter.simpledialog as tkSimpleDialog
-
-#     root = tk.Tk()
-#     root.wm_title("Contact Manager")
-
-#     # create a toplevel menu
-#     menubar = tk.Menu(root)
-
-#     # create a pulldown menu, and add it to the menu bar
-#     filemenu = tk.Menu(menubar, tearoff=0)
-#     filemenu.add_command(label="Open", command=donothing)
-#     filemenu.add_command(label="Save", command=donothing)
-#     filemenu.add_separator()
-#     filemenu.add_command(label="Exit", command=root.quit)
-#     menubar.add_cascade(label="File", menu=filemenu)
 
 
 def tictactoe():
@@ -791,6 +777,10 @@ if __name__ == "__main__":
                 sys.exit()
             elif "what" in query and " operating system" in query:
                 speak("Your operating system is windows")
+
+
+
+# explaination of the above code
 
         # give the current date and time if 'date' is in query
         if 'date' in query and "current" in query:
@@ -1631,10 +1621,6 @@ if __name__ == "__main__":
                 winshell.recycle_bin().empty(confirm=False, show_progress=False, sound=True)
 
                 speak("Recycle Bin Recycled")
-
-        elif 'lock window' in query or 'lock screen' in query or 'lock the screen' in query:
-            speak("locking the device")
-            ctypes.windll.user32.LockWorkStation()
 
         elif 'remember that' in query:
 
