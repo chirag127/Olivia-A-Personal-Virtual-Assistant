@@ -607,7 +607,7 @@ def send_whatapp(to, content):
     webbrowser.open('https://web.whatsapp.com/send?phone=' +
                     to + '&text=' + content)
     import time
-    sleep(20)
+    sleep(30)
     pyautogui.press('enter')
 
 
@@ -776,8 +776,6 @@ if __name__ == "__main__":
             elif "what" in query and " operating system" in query:
                 speak("Your operating system is windows")
 
-
-
         # give the current date and time if 'date' is in query
         if 'date' in query and "current" in query:
             now = datetime.datetime.now()
@@ -839,7 +837,6 @@ if __name__ == "__main__":
 
                 speak(e)
 
-
         elif 'game' in query and 'start' in query:
             if 'tic' in query or 'tac' in query or 'toe' in query:
 
@@ -848,11 +845,9 @@ if __name__ == "__main__":
             elif 'guess' in query:
                 pass
 
-            
             elif 'pick' in query and 'card' in query:
 
                 pick_card()
-
 
         # telling the joke when the query of the user contains joke
         elif 'joke' in query:
@@ -860,35 +855,33 @@ if __name__ == "__main__":
 
         elif "send" in query and 'message' in query:
             username = {
-                'chirag': '+91 9999999999',
-                'india': '+91 9999999998',
-                'abhinav': '+91 9999999997',
-                'ram': '+91 1234567891',
-                'shivam': '+91 9999999995',
-                'saurabh': '+91 9999999994',
-                'sahil': '+91 9999999993',
-                'siddharth': '+91 9999999992',
-                'sagar': '+91 9999999991',
-                'shubham': '+91 9999999990',
-                'shivani': '+91 9999999989',
-                'shivam': '+91 9999999988',
-                'shubham': '+91 9999999987',
-                'shivam': '+91 9999999986',
-                'shivam': '+91 9999999985',
-                'shivam': '+91 9999999984',
-                'sourya': '+91 9999999983',
-                'sourya': '+91 9999999982',
-                'aryan': '+91 9999999981',
-                'aviral': '+91 9999999980',
-                'kushi': '+91 9999999979',
-                'kushal': '+91 9999999978',
-                'jatin': '+91 9999999977',
-
-
-                'None': '+91 7428449707'  # if you want to add more contacts
-                # 'None' : '+91 9999999995' # if you want to add more contacts
-                # 'None' : '+91 9999999995' # if you want to default contact
-
+                'abigail': '+91 7428449707',
+                'alex': '+91 7428449707',
+                'amelia': '+91 7428449707',
+                'ava': '+91 7428449707',
+                'chirag': '+91 7428449707',
+                'chloe': '+91 7428449707',
+                'ella': '+91 7428449707',
+                'emily': '+91 7428449707',
+                'emma': '+91 7428449707',
+                'hanna': '+91 7428449707',
+                'hannah': '+91 7428449707',
+                'isabella': '+91 7428449707',
+                'layla': '+91 7428449707',
+                'layla': '+91 7428449707',
+                'lena': '+91 7428449707',
+                'lily': '+91 7428449707',
+                'mahesh': '+91 7428449707',
+                'manish': '+91 7428449707',
+                'mia': '+91 7428449707',
+                'none': '+91 7428449707',
+                'samantha': '+91 7428449707',
+                'shiv': '+91 7428449707',
+                'shivam': '+91 7428449707',
+                'shubham': '+91 7428449707',
+                'sophia': '+91 7428449707',
+                'zoe': '+91 7428449707',
+                'zoya': '+91 7428449707'
 
             }
             try:
@@ -905,8 +898,7 @@ if __name__ == "__main__":
 
             except Exception as e:
                 print(e)
-                speak("Sorry Sir, I am not able to send this message")
-                break
+                speak("Sorry, I am not able to send this message")
 
         # telling the cpu usage when the says a command that contains both cpu and usage.
         elif 'usage' in query and 'cpu' in query:
@@ -940,7 +932,7 @@ if __name__ == "__main__":
             os.startfile(
                 'C:\\Program Files\\Microsoft Office\\root\\Office16\\WINWORD.EXE')
 
-            speak('do you want me to type sir?')
+            speak('do you want me to type ?')
 
             typin = takeCommand().lower()
 
@@ -948,7 +940,7 @@ if __name__ == "__main__":
 
                 pyautogui.press('enter')
 
-                speak('sir you can start. say stop typing if I have to stop')
+                speak('you can start. say stop typing if I have to stop')
 
                 while True:
 
