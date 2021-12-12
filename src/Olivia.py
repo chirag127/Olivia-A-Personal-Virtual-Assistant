@@ -719,8 +719,6 @@ if __name__ == "__main__":
     
     columns_shutil = shutil.get_terminal_size().columns
 
-
-
     result = pyfiglet.figlet_format("WELCOME TO OLIVIA", font = "banner3-D" )
 
     print(result.center(columns_shutil))
@@ -2201,6 +2199,9 @@ if __name__ == "__main__":
 
             # for bing search engine
             # search on the bing if bing is in the resultant query after the execution of the above lines.
+            # for example, if the user says "search for python on bing"
+            # then the query will be "python"
+            # the url will be https://www.bing.com/search?q=python
             elif 'bing' in query:
                 query = query.replace("bing", "")
                 webbrowser.open(
@@ -2208,6 +2209,9 @@ if __name__ == "__main__":
 
             # for yahoo search engine
             # search on the yahoo if yahoo is in the resultant query after the execution of the above lines.
+            # for example, if the user says "search for python on yahoo" 
+            # then the code will search for the query "python" on the yahoo website.
+            # the url for yahoo search is: https://search.yahoo.com/search?p=python
             elif 'yahoo' in query:
                 query = query.replace("yahoo", "")
                 webbrowser.open(
@@ -2224,6 +2228,10 @@ if __name__ == "__main__":
 
             # for wikitionary search engine
             # search on the wikitionary if wikitionary is in the resultant query after the execution of the above lines.
+            # for example, if the user says 'search for the meaning of life on wikitionary' then the query will be 'meaning of life'    
+            # and url will be https://en.wiktionary.org/wiki/meaning_of_life
+
+
             elif 'wiktionary' in query:
                 query = query.replace("wiktionary", "")
                 webbrowser.open(
@@ -2482,10 +2490,14 @@ if __name__ == "__main__":
 
             # for hbo search engine
             # search on the hbo if hbo is in the resultant query after the execution of the above lines.
+            # example https://www.hbo.com/search?q=hbo
+
             elif 'hbo' in query:
                 query = query.replace("hbo", "")
                 webbrowser.open(
                     f"https://www.hbo.com/search?q={query}")
+
+
 
             # for hotstar search engine
             # search on the hotstar if
