@@ -30,6 +30,10 @@ from time import sleep
 import time
 import playwl
 from functions import *
+import shutil
+import pyfiglet
+  
+
 
 
 headers = {
@@ -710,24 +714,18 @@ def username():
 
 if __name__ == "__main__":
 
-    print("""
-    ,----..
-   /   /   \    ,--,
-  /   .     : ,--.'|     ,--,            ,--,
- .   /   ;.  \|  | :   ,--.'|          ,--.'|
-.   ;   /  ` ;:  : '   |  |,      .---.|  |,
-;   |  ; \ ; ||  ' |   `--'_    /.  ./|`--'_      ,--.--.
-|   :  | ; | ''  | |   ,' ,'| .-' . ' |,' ,'|    /       \
-.   |  ' ' ' :|  | :   '  | |/___/ \: |'  | |   .--.  .-. |
-'   ;  \; /  |'  : |__ |  | :.   \  ' .|  | :    \__\/: . .
- \   \  ',  / |  | '.'|'  : |_\   \   ''  : |__  ," .--.; |
-  ;   :    /  ;  :    ;|  | '.'\   \   |  | '.'|/  /  ,.  |
-   \   \ .'   |  ,   / ;  :    ;\   \ |;  :    ;  :   .'   \
-    `---`      ---`-'  |  ,   /  '---" |  ,   /|  ,     .-./
-                        ---`-'          ---`-'  `--`---'
-""")
 
-    print(wishMe())
+
+    
+    columns_shutil = shutil.get_terminal_size().columns
+
+
+
+    result = pyfiglet.figlet_format("WELCOME TO OLIVIA", font = "banner3-D" )
+
+    print(result.center(columns_shutil))
+
+    sp(wishMe())
 
     running = True
 
