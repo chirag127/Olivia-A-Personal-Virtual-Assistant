@@ -5605,6 +5605,15 @@ if __name__ == "__main__":
 
             speak("I was built by Chirag singhal")
 
+        elif "who is your creator" in query or "who is your developer" in query:
+                
+                speak("Chirag singhal is my creator")
+            
+        elif "do you eat" in query:
+
+            speak("I do not eat, I get my energy from answering your questions")
+        
+
         elif 'what' in query and 'you' in query and 'do' in query and 'can' in query:
 
             ans = """I can do lots of things, for example you can ask me time, date,
@@ -5616,13 +5625,14 @@ if __name__ == "__main__":
 
             wishMe()
 
-        else:
-            if query != 'none':
-                webbrowser.open(
-                    f"https://www.google.com/search?q={query}&sourceid=olivia")
 
-            #     sp("Sorry, I could not do that")
-            #     sp("Please try again")
+        # else:
+        #     if query != 'none':
+        #         webbrowser.open(
+        #             f"https://www.google.com/search?q={query}&sourceid=olivia")
+
+        #     #     sp("Sorry, I could not do that")
+        #     #     sp("Please try again")
 
             # # print("else statement is executed")
             # # writing code for the queries or the commands that are not in the above list of commands. so we will ask the user
