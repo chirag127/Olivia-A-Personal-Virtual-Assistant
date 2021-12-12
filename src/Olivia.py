@@ -710,21 +710,21 @@ def username():
 
 if __name__ == "__main__":
 
-    print("""                                                                    
-    ,----..                                                         
-   /   /   \    ,--,                                                
-  /   .     : ,--.'|     ,--,            ,--,                       
- .   /   ;.  \|  | :   ,--.'|          ,--.'|                       
-.   ;   /  ` ;:  : '   |  |,      .---.|  |,                        
-;   |  ; \ ; ||  ' |   `--'_    /.  ./|`--'_      ,--.--.           
-|   :  | ; | ''  | |   ,' ,'| .-' . ' |,' ,'|    /       \          
-.   |  ' ' ' :|  | :   '  | |/___/ \: |'  | |   .--.  .-. |         
-'   ;  \; /  |'  : |__ |  | :.   \  ' .|  | :    \__\/: . .         
- \   \  ',  / |  | '.'|'  : |_\   \   ''  : |__  ," .--.; |         
-  ;   :    /  ;  :    ;|  | '.'\   \   |  | '.'|/  /  ,.  |         
-   \   \ .'   |  ,   / ;  :    ;\   \ |;  :    ;  :   .'   \        
-    `---`      ---`-'  |  ,   /  '---" |  ,   /|  ,     .-./        
-                        ---`-'          ---`-'  `--`---'            
+    print("""
+    ,----..
+   /   /   \    ,--,
+  /   .     : ,--.'|     ,--,            ,--,
+ .   /   ;.  \|  | :   ,--.'|          ,--.'|
+.   ;   /  ` ;:  : '   |  |,      .---.|  |,
+;   |  ; \ ; ||  ' |   `--'_    /.  ./|`--'_      ,--.--.
+|   :  | ; | ''  | |   ,' ,'| .-' . ' |,' ,'|    /       \
+.   |  ' ' ' :|  | :   '  | |/___/ \: |'  | |   .--.  .-. |
+'   ;  \; /  |'  : |__ |  | :.   \  ' .|  | :    \__\/: . .
+ \   \  ',  / |  | '.'|'  : |_\   \   ''  : |__  ," .--.; |
+  ;   :    /  ;  :    ;|  | '.'\   \   |  | '.'|/  /  ,.  |
+   \   \ .'   |  ,   / ;  :    ;\   \ |;  :    ;  :   .'   \
+    `---`      ---`-'  |  ,   /  '---" |  ,   /|  ,     .-./
+                        ---`-'          ---`-'  `--`---'
 """)
 
     print(wishMe())
@@ -1210,21 +1210,19 @@ if __name__ == "__main__":
 
                 # pause the video if 'pause' is in query
 
+                # trim the query
+                query.strip()
+
+
+
                 if query == 'bye' or query == 'goodbye' or query == 'bye bye':
 
                     sp("Bye Sir")
 
                     exit()
 
-                elif 'pause' in query or 'pass' in query or 'stop' in query:
+                elif 'pause' in query or 'pass' in query or 'stop' in query or 'resume' in query or 'continue' in query or 'play' in query:
 
-                    pyautogui.press('space')
-
-                # resume the video
-
-                # if 'resume' is in query or 'continue' is in query or 'play' is in query
-
-                elif 'resume' in query or 'continue' in query or 'play' in query:
 
                     pyautogui.press('space')
 
@@ -1274,6 +1272,18 @@ if __name__ == "__main__":
 
                     pyautogui.hotkey('ctrl', 'm')
 
+
+
+
+
+
+
+
+
+
+
+
+
                 # increase the volume by pressing up arrow
 
                 # if the query contains 'increase volume' or 'volume up' or 'louder'
@@ -1282,7 +1292,37 @@ if __name__ == "__main__":
 
                 elif 'increase volume' in query or 'volume up' in query or 'louder' in query:
 
-                    for i in range(0, 2):
+                    query = query.replace("increase volume by", "")
+                    query = query.replace("volume up by", "")
+                    query = query.replace("louder", "")
+
+                    if 'percent' in query or 'percentage' in query or '%' in query:
+                        query = query.replace("percent", "")
+                        query = query.replace("percentage", "")
+                        query = query.replace("%", "")
+
+                        # volume is increased by the number of percentage mentioned in the query
+                        # volume is increased by 5 percentage by one up press
+                        # volume is increased by 10 percentage by two up presses
+                        # volume is increased by 15 percentage by three up presses
+                        # volume is increased by 20 percentage by four up presses
+                        # volume is increased by 25 percentage by five up presses
+
+                        query = query.replace(" ", "")
+                        percent = int(query)
+
+                        no_of_up_presses = int(percent / 5)
+                        for i in range(no_of_up_presses):
+                            pyautogui.press('up')
+                            sleep(0.5)
+
+                        if percent > 100:
+                            sp("I can only increase the volume to 100%")
+                        else:
+                            pass
+
+                    else:
+                        # volume is increased by 5 percentage by one up press
                         pyautogui.press('up')
 
                 # decrease the volume by pressing down arrow
@@ -1293,14 +1333,34 @@ if __name__ == "__main__":
 
                 elif 'decrease volume' in query or 'volume down' in query or 'quieter' in query:
 
-                    for i in range(0, 2):
+                    query = query.replace("decrease volume by", "")
+                    query = query.replace("volume down by", "")
+                    query = query.replace("quieter", "")
+
+                    if 'percent' in query or 'percentage' in query:
+                        query = query.replace("percent", "")
+                        query = query.replace("percentage", "")
+
+                    # volume is decreased by the number of percentage mentioned in the query
+                    # volume is decreased by 5 percentage by one down press
+                    # volume is decreased by 10 percentage by two down presses
+                    # volume is decreased by 15 percentage by three down presses
+
+                        percentage_to_decrease = int(query)
+                        no_of_down_presses = percentage_to_decrease/5
+
+                        for i in range(no_of_down_presses):
+
+                            pyautogui.press('down')
+                    else:
+
                         pyautogui.press('down')
 
-                # increase the speed of the video by pressing shift + . arrow
+                    # increase the speed of the video by pressing shift + . arrow
 
-                # if the query contains 'increase speed' or 'speed up' or 'faster'
+                    # if the query contains 'increase speed' or 'speed up' or 'faster'
 
-                # if the query contains not this then check next elif statement
+                    # if the query contains not this then check next elif statement
 
                 elif 'increase speed' in query or 'speed up' in query or 'faster' in query:
 
@@ -1313,6 +1373,15 @@ if __name__ == "__main__":
                 # if the query contains not this then check next elif statement
 
                 elif 'decrease speed' in query or 'speed down' in query or 'slower' in query:
+
+                    if 'decrease speed by' in query or 'speed down by' in query or 'slower by' in query:
+
+                        query = query.replace("decrease speed by", "")
+                        query = query.replace("speed down by", "")
+                        query = query.replace("slower by", "")
+
+                        for i in range(0, int(query)):
+                            pyautogui.hotkey('shift', ',')
 
                     pyautogui.hotkey('shift', ',')
 
