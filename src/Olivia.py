@@ -5603,7 +5603,7 @@ if __name__ == "__main__":
         elif 'what' in query and 'you' in query and 'do' in query and 'can' in query:
 
             ans = """I can do lots of things, for example you can ask me time, date,
-            I can open websites for you, launch application and more. See the list of commands-"""
+            I can open websites, play music, play videos, play games and many more."""
             print(ans)
             speak(ans)
 
