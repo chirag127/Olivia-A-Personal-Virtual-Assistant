@@ -1213,8 +1213,6 @@ if __name__ == "__main__":
                 # trim the query
                 query.strip()
 
-
-
                 if query == 'bye' or query == 'goodbye' or query == 'bye bye':
 
                     sp("Bye Sir")
@@ -1222,7 +1220,6 @@ if __name__ == "__main__":
                     exit()
 
                 elif 'pause' in query or 'pass' in query or 'stop' in query or 'resume' in query or 'continue' in query or 'play' in query:
-
 
                     pyautogui.press('space')
 
@@ -1273,15 +1270,29 @@ if __name__ == "__main__":
                     pyautogui.hotkey('ctrl', 'm')
 
 
+                # dislike the video by pressing d if the query contains 'dislike' 
 
+                elif 'dislike' in query:
 
+                    pyautogui.hotkey('d')
 
+                # like the video by pressing s if the query contains 'like'
 
+                elif 'like' in query:
 
+                    pyautogui.hotkey('s')
 
+                # seek backward by pressing  left arrow if the query contains 'backward' or 'rewind'
 
+                if 'backward' in query or 'rewind' in query:
 
+                    pyautogui.hotkey('left')
 
+                # seek forward by pressing right arrow if the query contains 'forward' or 'fast forward'
+
+                elif 'forward' in query:
+
+                    pyautogui.hotkey('right')
 
 
                 # increase the volume by pressing up arrow
@@ -1337,24 +1348,25 @@ if __name__ == "__main__":
                     query = query.replace("volume down by", "")
                     query = query.replace("quieter", "")
 
-                    if 'percent' in query or 'percentage' in query:
+                    if 'percent' in query or 'percentage' in query or '%' in query:
                         query = query.replace("percent", "")
                         query = query.replace("percentage", "")
+                        query = query.replace("%", "")
 
-                    # volume is decreased by the number of percentage mentioned in the query
-                    # volume is decreased by 5 percentage by one down press
-                    # volume is decreased by 10 percentage by two down presses
-                    # volume is decreased by 15 percentage by three down presses
+                        # volume is decreased by the number of percentage mentioned in the query
+                        # volume is decreased by 5 percentage by one down press
 
-                        percentage_to_decrease = int(query)
-                        no_of_down_presses = percentage_to_decrease/5
-
+                        query = query.replace(" ", "")
+                        percent = int(query)
+                        no_of_down_presses = int(percent / 5)
                         for i in range(no_of_down_presses):
-
                             pyautogui.press('down')
-                    else:
-
+                            sleep(0.5)
+                    
+                    else
+                        # volume is decreased by 5 percentage by one down press
                         pyautogui.press('down')
+                        
 
                     # increase the speed of the video by pressing shift + . arrow
 
@@ -1363,6 +1375,30 @@ if __name__ == "__main__":
                     # if the query contains not this then check next elif statement
 
                 elif 'increase speed' in query or 'speed up' in query or 'faster' in query:
+
+                    query = query.replace("increase speed by", "")
+                    query = query.replace("speed up by", "")
+                    query = query.replace("faster", "")
+
+                    if 'percent' in query or 'percentage' in query or '%' in query:
+                        query = query.replace("percent", "")
+                        query = query.replace("percentage", "")
+                        query = query.replace("%", "")
+
+                        # speed is increased by the number of percentage mentioned in the query
+                        # speed is increased by 5 percentage by one shift + . press
+                        # speed is increased by 10 percentage by two shift + . press
+                        # speed is increased by 15 percentage by three shift + . press
+                        # speed is increased by 20 percentage by four shift + . press
+                        # speed is increased by 25 percentage by five shift + . press
+
+                        query = query.replace(" ", "")
+                        percent = int(query)
+
+                        no_of_shift_dot_presses = int(percent / 25)
+                        for i in range(no_of_shift_dot_presses):
+                            pyautogui.hotkey('shift', '.')
+                            sleep(0.5)
 
                     pyautogui.hotkey('shift', '.')
 
@@ -1374,16 +1410,34 @@ if __name__ == "__main__":
 
                 elif 'decrease speed' in query or 'speed down' in query or 'slower' in query:
 
-                    if 'decrease speed by' in query or 'speed down by' in query or 'slower by' in query:
+                    query = query.replace("decrease speed by", "")
+                    query = query.replace("speed down by", "")
+                    query = query.replace("slower", "")
 
-                        query = query.replace("decrease speed by", "")
-                        query = query.replace("speed down by", "")
-                        query = query.replace("slower by", "")
+                    if 'percent' in query or 'percentage' in query or '%' in query:
+                        query = query.replace("percent", "")
+                        query = query.replace("percentage", "")
+                        query = query.replace("%", "")
 
-                        for i in range(0, int(query)):
+                        # speed is decreased by the number of percentage mentioned in the query
+                        # speed is decreased by 5 percentage by one shift + , press
+                        # speed is decreased by 10 percentage by two shift + , press
+                        # speed is decreased by 15 percentage by three shift + , press
+                        # speed is decreased by 20 percentage by four shift + , press
+                        # speed is decreased by 25 percentage by five shift + , press
+
+                        query = query.replace(" ", "")
+                        percent = int(query)
+
+                        no_of_shift_dot_presses = int(percent / 25)
+                        for i in range(no_of_shift_dot_presses):
                             pyautogui.hotkey('shift', ',')
+                            sleep(0.5)
 
                     pyautogui.hotkey('shift', ',')
+
+
+
 
                 # exit the video by pressing alt + f4
 
@@ -1446,6 +1500,55 @@ if __name__ == "__main__":
                 elif 'bookmark bar' in query:
 
                     pyautogui.hotkey('ctrl', 'shift', 'b')
+
+                # if the query contains 50% percent or 50 percent or 50% or 50 then change go to the video length to 50 percent
+
+                # if query contains 10 percent or 10% or 10 then change go to the video length to 10 percent by pressing number pad1
+
+                elif '10%' in query:
+
+                    pyautogui.press('1')
+
+                elif '20%' in query:
+
+                    pyautogui.press('2')
+                
+                elif '30%' in query:
+
+                    pyautogui.press('3')
+
+                elif '40%' in query:
+
+                    pyautogui.press('4')
+
+                elif '50%' in query:
+
+                    pyautogui.press('5')
+
+                elif '60%' in query:
+
+                    pyautogui.press('6')
+
+                elif '70%' in query:
+
+                    pyautogui.press('7')
+
+                elif '80%' in query:
+
+                    pyautogui.press('8')
+
+                elif                elif '90%' in query:
+
+                    pyautogui.press('9')
+
+                elif '100%' in query:
+
+                    pyautogui.press('0')
+
+
+
+
+
 
                 # close the video by pressing control + w
 
