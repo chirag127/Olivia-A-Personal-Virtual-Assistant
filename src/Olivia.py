@@ -3,15 +3,15 @@ from googletrans import Translator
 from pyowm import OWM
 from tkinter import *
 import pyperclip
-import ctypes                      
-import datetime                    
+import ctypes
+import datetime
 import json
-import math                        
+import math
 import numpy as np
 import os
 import psutil
 import pyautogui
-import pyttsx3                     
+import pyttsx3
 import pywhatkit
 import random
 import re
@@ -145,7 +145,6 @@ def takeCommand():
 
         print("Try after sometime")
 
-
         return "None"
 
     except Exception as e:
@@ -210,7 +209,6 @@ def wishMe():
     else:  # if time is between 18 and 24 then say good evening
 
         return "Good Evening"
-
 
 
 def pick_card():
@@ -780,8 +778,6 @@ if __name__ == "__main__":
 
 
 
-# explaination of the above code
-
         # give the current date and time if 'date' is in query
         if 'date' in query and "current" in query:
             now = datetime.datetime.now()
@@ -829,16 +825,20 @@ if __name__ == "__main__":
         elif 'who is' in query:
 
             reg_ex = re.search('who is (.*)', query)
-            if reg_ex:
-                topic = reg_ex.group(1)
-                ny = wikipedia.summary(topic, sentences=2)
-                speak('According to Wikipedia')
-                print(ny)
-                speak(ny)
 
-            elif 'pick' in query and 'card' in query:
+            try:
 
-                pick_card()
+                if reg_ex:
+
+                    topic = reg_ex.group(1)
+
+                    ny = wikipedia.summary(topic, sentences=2)
+
+                    sp(ny)
+            except Exception as e:
+
+                speak(e)
+
 
         elif 'game' in query and 'start' in query:
             if 'tic' in query or 'tac' in query or 'toe' in query:
@@ -848,7 +848,13 @@ if __name__ == "__main__":
             elif 'guess' in query:
                 pass
 
-                # telling the joke when the query of the user contains joke
+            
+            elif 'pick' in query and 'card' in query:
+
+                pick_card()
+
+
+        # telling the joke when the query of the user contains joke
         elif 'joke' in query:
             givejoke()
 
@@ -1205,7 +1211,6 @@ if __name__ == "__main__":
                 print(song_name)
                 pywhatkit.playonyt(song_name)
                 sleep(5)
-            
 
             while True:
 
@@ -1236,7 +1241,6 @@ if __name__ == "__main__":
                 # if the query contains 'next tab' or 'next tab'
 
                 # if the query contains not this then check next elif statement
-
 
                 elif 'next' in query and 'tab' in query:
 
@@ -1285,8 +1289,8 @@ if __name__ == "__main__":
                 # if the query contains not this then check next elif statement
 
                 elif 'increase volume' in query or 'volume up' in query or 'louder' in query:
-                    
-                    for i in range(0,2):
+
+                    for i in range(0, 2):
                         pyautogui.press('up')
 
                 # decrease the volume by pressing down arrow
@@ -1299,8 +1303,6 @@ if __name__ == "__main__":
 
                     for i in range(0, 2):
                         pyautogui.press('down')
-                    
-
 
                 # increase the speed of the video by pressing shift + . arrow
 
@@ -1383,7 +1385,6 @@ if __name__ == "__main__":
                 elif 'bookmark bar' in query:
 
                     pyautogui.hotkey('ctrl', 'shift', 'b')
-
 
                 # close the video by pressing control + w
 
@@ -2764,7 +2765,6 @@ if __name__ == "__main__":
 
                 speak(result.pronunciation)
 
-
             # translate to the bengali
 
             elif 'bengali' in query:
@@ -2897,7 +2897,6 @@ if __name__ == "__main__":
 
                 speak(result.pronunciation)
 
-
             # translate to the chichewa
             elif 'chichewa' in query:
                 # telling the user that we are translating the text to the chichewa
@@ -2923,7 +2922,6 @@ if __name__ == "__main__":
                 # speaking result pronunciation
 
                 speak(result.pronunciation)
-
 
             # translate to the chinese
             elif 'chinese' in query:
@@ -2976,7 +2974,6 @@ if __name__ == "__main__":
                 # speaking result pronunciation
 
                 speak(result.pronunciation)
-
 
             # translate to the croatian
             elif 'croatian' in query:
@@ -3552,7 +3549,6 @@ if __name__ == "__main__":
 
                 speak(result.pronunciation)
 
-
             # translate to the hungarian
             elif 'hungarian' in query:
                 # telling the user that we are translating the text to the hungarian
@@ -3866,7 +3862,6 @@ if __name__ == "__main__":
                 # speaking result pronunciation
 
                 speak(result.pronunciation)
-
 
             # translate to the kurdish
             elif 'kurdish' in query:
@@ -5606,13 +5601,12 @@ if __name__ == "__main__":
             speak("I was built by Chirag singhal")
 
         elif "who is your creator" in query or "who is your developer" in query:
-                
-                speak("Chirag singhal is my creator")
-            
+
+            speak("Chirag singhal is my creator")
+
         elif "do you eat" in query:
 
             speak("I do not eat, I get my energy from answering your questions")
-        
 
         elif 'what' in query and 'you' in query and 'do' in query and 'can' in query:
 
@@ -5624,7 +5618,6 @@ if __name__ == "__main__":
         elif 'wish me' in query:
 
             wishMe()
-
 
         # else:
         #     if query != 'none':
