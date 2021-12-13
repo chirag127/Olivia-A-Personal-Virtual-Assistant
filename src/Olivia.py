@@ -777,19 +777,19 @@ if __name__ == "__main__":
         if 'fullform of abcdef' in query:
             sp("Any body can dance")
 
-        elif 'current weather' in query:
-            reg_ex = re.search('current weather in (.*)', query)
-            if reg_ex:
-                city = reg_ex.group(1)
-                owm = OWM(API_key='ab0d5e80e8dafb2cb81fa9e82431c1fa')
-                obs = owm.weather_at_place(city)
-                w = obs.get_weather()
+        # elif 'current weather' in query:
+        #     reg_ex = re.search('current weather in (.*)', query)
+        #     if reg_ex:
+        #         city = reg_ex.group(1)
+        #         owm = OWM(API_key='ab0d5e80e8dafb2cb81fa9e82431c1fa')
+        #         obs = owm.weather_at_place(city)
+        #         w = obs.get_weather()
 
-                k = w.get_status()
+        #         k = w.get_status()
 
-                x = w.get_temperature(unit='celsius')
-                speak('Current weather in %s is %s. The maximum temperature is %0.2f and the minimum temperature is %0.2f degree celcius' % (
-                    city, k, x['temp_max'], x['temp_min']))
+        #         x = w.get_temperature(unit='celsius')
+        #         speak('Current weather in %s is %s. The maximum temperature is %0.2f and the minimum temperature is %0.2f degree celcius' % (
+        #             city, k, x['temp_max'], x['temp_min']))
 
         # if the query contains 'tell me about (something)', then return the information of that person/organisation from the wikipedia using the information from the wikipedia library
         elif 'tell me about' in query or 'who is' in query:
@@ -904,9 +904,54 @@ if __name__ == "__main__":
             # speak the result
             speak("Here is what i found")
 
+        elif 'weather in' in query:
+
+            # remove the stop words from the query
+            query = query.strip()
+
+            # search for the query in google
+            url = "https://www.google.com/search?q=" + query
+            webbrowser.get().open(url)
+
+            # speak the result
+            speak("Here is what i found")
+
         elif 'news' in query and 'latest' in query:
 
             NewsFromBBC()
+
+        elif 'random' in query and 'advice' in query:
+
+            # remove the stop words from the query
+            query = query.replace("random", "")
+            query = query.replace("advice", "")
+            query = query.strip()
+            url = 'https://api.adviceslip.com/advice'
+
+            # example response
+            # {"slip": { "id": 112, "advice": "It's not about who likes you, it's about who you like."}}
+
+            response = requests.get(url)
+
+            # print(response.text)
+
+            # convert the response to json format
+
+            data = response.json()
+
+            # print(data)
+
+            # get the advice from the json data
+
+            advice = data['slip']['advice']
+
+            # print the advice
+
+            print(advice)
+
+            # speak the advice
+
+            speak(advice)
 
         elif 'game' in query and 'start' in query:
             if 'tic' in query or 'tac' in query or 'toe' in query:
@@ -5928,10 +5973,24 @@ if __name__ == "__main__":
 
             speak("I do not eat, I get my energy from answering your questions")
 
-        elif 'what' in query and 'you' in query and 'do' in query and 'can' in query:
+        elif "do you like" in query:
+
+            speak("I like to answer your questions")
+
+        elif "what is special about oliva" in query:
+
+            speak("I try to be as helpful as possible")
+
+        elif 'what' in query and 'do' in query and 'can' in query:
 
             ans = """I can do lots of things, for example you can ask me time, date,
-            I can open websites, play music, play videos, play games and many more."""
+            I can open websites, play music, play videos, play games 
+            I can tell you about anything you want to know, I can search on google for you,
+            I can tell you about the weather, I can tell you about the news of the day,
+            I can tell you the meaning of a word, I can open apps on your computer,
+            I can tell you the current temperature,
+            I can play music for you, I can search for things on wikipedia and many more things"""
+
             print(ans)
             speak(ans)
 
