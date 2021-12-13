@@ -953,7 +953,74 @@ if __name__ == "__main__":
 
             speak(advice)
 
+        elif 'random' in query and 'dog' in query and 'fact' in query:
+
+            # remove the stop words from the query
+            query = query.replace("random", "")
+            query = query.replace("dog", "")
+            query = query.replace("fact", "")
+            query = query.strip()
+
+            # the url for random dog facts for the api
+            url = "https://dog-api.kinduff.com/api/facts"
+
+            # sample response
+            #{"facts":["The Norwegian Lundehund is the only dog with six toes on each foot."],"success":true}
+
+            # get the response from the api
+            response = requests.get(url)
+
+            # convert the response to json format
+            data = response.json()
+
+            # get the fact from the json data
+            fact = data['facts'][0]
+
+            # print the fact
+
+            print(fact)
+
+            # speak the fact
+
+            speak(fact)
+
+            print("Here is what i found")
+
+        elif 'random' in query and 'useless' in query and 'fact' in query:
+
+            # remove the stop words from the query
+            query = query.replace("random", "")
+            query = query.replace("useless", "")
+            query = query.replace("fact", "")
+            query = query.strip()
+
+            # the url for random dog facts for the api
+            url = "https://uselessfacts.jsph.pl/random.json?language=en"
+
+            # sample response
+            #{"facts":["The Norwegian Lundehund is the only dog with six toes on each foot."],"success":true}
+
+            # get the response from the api
+            response = requests.get(url)
+
+            # convert the response to json format
+            data = response.json()
+
+            # get the fact from the json data
+            fact = data['text']
+
+            # print the fact
+
+            print(fact)
+
+            # speak the fact
+
+            speak(fact)
+
+            print("Here is what i found")
+
         elif 'game' in query and 'start' in query:
+
             if 'tic' in query or 'tac' in query or 'toe' in query:
 
                 tictactoe()
