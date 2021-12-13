@@ -32,8 +32,6 @@ import playwl
 from functions import *
 import shutil
 import pyfiglet
-  
-
 
 
 headers = {
@@ -714,12 +712,9 @@ def username():
 
 if __name__ == "__main__":
 
-
-
-    
     columns_shutil = shutil.get_terminal_size().columns
 
-    result = pyfiglet.figlet_format("WELCOME TO OLIVIA", font = "banner3-D" )
+    result = pyfiglet.figlet_format("WELCOME TO OLIVIA", font="banner3-D")
 
     print(result.center(columns_shutil))
 
@@ -797,41 +792,121 @@ if __name__ == "__main__":
                     city, k, x['temp_max'], x['temp_min']))
 
         # if the query contains 'tell me about (something)', then return the information of that person/organisation from the wikipedia using the information from the wikipedia library
-        elif 'tell me about' in query:
+        elif 'tell me about' in query or 'who is' in query:
 
-            reg_ex = re.search('tell me about (.*)', query)
-
-            try:
-
-                if reg_ex:
-
-                    topic = reg_ex.group(1)
-
-                    ny = wikipedia.page(topic)
-
-                    sp(ny.content[:500].encode('utf-8'))
-
-            except Exception as e:
-
-                speak(e)
-
-        # if the query contains 'who is (something)', then return the information of that person/organisation from the wikipedia using the information from the wikipedia library
-        elif 'who is' in query:
-
-            reg_ex = re.search('who is (.*)', query)
+            # remove the stop words from the query
+            query = query.replace("tell me about", "")
+            query = query.replace("who is", "")
+            query = query.replace("what is", "")
+            query = query.strip()
 
             try:
 
-                if reg_ex:
+                # speak('Searching Wikipedia...')
+                sp("Searching Wikipedia...")
 
-                    topic = reg_ex.group(1)
+                # assign the query to a variable named as topic
+                topic = query
 
-                    ny = wikipedia.summary(topic, sentences=2)
+                # search for the topic on wikipedia
+                results = wikipedia.summary(topic, sentences=2)
 
-                    sp(ny)
-            except Exception as e:
+                # search for the query in wikipedia
+                results = wikipedia.summary(query, sentences=2)
 
-                speak(e)
+                # speak the Accoridng to wikipedia
+                speak("According to Wikipedia")
+
+                # print the result
+                print(results)
+
+                # speak the result
+                speak(results)
+
+            except:
+
+                # if the wikipedia does not have the query, then search for the query in the internet
+                print("I can not find any information about " + query)
+                sp("Searching on the internet")
+                query = query.replace(" ", "+")
+                url = "https://www.google.com/search?q=" + query
+                webbrowser.get().open(url)
+
+        # if the query contains 'what is' then return the information of that person/organisation from the wikipedia using the information from the wikipedia library
+        elif 'what is' in query:
+
+            # remove the stop words from the query
+            query = query.replace("what is", "")
+            query = query.replace("about", "")
+            query = query.strip()
+
+            if 'news' in query:
+
+                # remove the stop words from the query
+                query = query.replace("news", "")
+
+                # assign the query to a variable named as topic
+                topic = query
+
+                # search for the topic on google news
+                url = "https://news.google.com/search?q=" + topic
+
+                # open the url in the default browser
+                webbrowser.get().open(url)
+
+            else:
+
+                try:
+
+                    # speak('Searching Wikipedia...')
+                    sp("Searching Wikipedia...")
+
+                    # assign the query to a variable named as topic
+                    topic = query
+
+                    # search for the topic on wikipedia
+
+                    results = wikipedia.summary(topic, sentences=2)
+
+                    # speak the Accoridng to wikipedia
+
+                    speak("According to Wikipedia")
+
+                    # print the result
+
+                    print(results)
+
+                    # speak the result
+
+                    speak(results)
+
+                except:
+
+                    # if the wikipedia does not have the query, then search for the query in the internet
+                    print("I can not find any information about " + query)
+                    sp("Searching on the internet")
+                    query = query.replace(" ", "+")
+                    url = "https://www.google.com/search?q=" + query
+                    webbrowser.get().open(url)
+
+        # if the query contains how to (something) then search something on google and open it
+
+        elif 'how to' in query:
+
+            # remove the stop words from the query
+            query = query.replace("how to", "")
+            query = query.strip()
+
+            # search for the query in google
+            url = "https://www.google.com/search?q=" + query
+            webbrowser.get().open(url)
+
+            # speak the result
+            speak("Here is what i found")
+
+        elif 'news' in query and 'latest' in query:
+
+            NewsFromBBC()
 
         elif 'game' in query and 'start' in query:
             if 'tic' in query or 'tac' in query or 'toe' in query:
@@ -1598,13 +1673,11 @@ if __name__ == "__main__":
 
                     pyautogui.hotkey('ctrl', 'w')
 
+                    sp("I have closed the video")
+
                     break
 
                 # close other tabs by pressing control + shift + t
-
-        elif 'news' in query and 'latest' in query:
-
-            NewsFromBBC()
 
         elif 'press' in query:
             reg_ex = re.search('press (.*)', query)
@@ -1731,14 +1804,6 @@ if __name__ == "__main__":
             remember = open('src/notes.txt', 'r')
             speak("You said me to remember that " + remember.read())
             remember.close()
-
-        elif "where is" in query:
-            query = query.replace("where is", "")
-            location = query
-            sp("User asked to Locate")
-            sp(location)
-            webbrowser.open(
-                "https://www.google.com / maps / place/" + location + "")
 
         elif 'roll' in query and 'dice' in query:
 
@@ -2209,7 +2274,7 @@ if __name__ == "__main__":
 
             # for yahoo search engine
             # search on the yahoo if yahoo is in the resultant query after the execution of the above lines.
-            # for example, if the user says "search for python on yahoo" 
+            # for example, if the user says "search for python on yahoo"
             # then the code will search for the query "python" on the yahoo website.
             # the url for yahoo search is: https://search.yahoo.com/search?p=python
             elif 'yahoo' in query:
@@ -2228,9 +2293,8 @@ if __name__ == "__main__":
 
             # for wikitionary search engine
             # search on the wikitionary if wikitionary is in the resultant query after the execution of the above lines.
-            # for example, if the user says 'search for the meaning of life on wikitionary' then the query will be 'meaning of life'    
+            # for example, if the user says 'search for the meaning of life on wikitionary' then the query will be 'meaning of life'
             # and url will be https://en.wiktionary.org/wiki/meaning_of_life
-
 
             elif 'wiktionary' in query:
                 query = query.replace("wiktionary", "")
@@ -2496,8 +2560,6 @@ if __name__ == "__main__":
                 query = query.replace("hbo", "")
                 webbrowser.open(
                     f"https://www.hbo.com/search?q={query}")
-
-
 
             # for hotstar search engine
             # search on the hotstar if
@@ -5567,36 +5629,78 @@ if __name__ == "__main__":
 
         elif 'close' in query:
 
-            if 'page' in query:
+            # telling the user that we are closing the program
+            speak("closing the program")
+
+            # removing the stop words from the text
+            query = query.replace("close", "")
+
+            # stripping the text of any spaces
+            query = query.strip()
+
+            if query == "page":
+
+                # pressing the control + w to close the program
                 pyautogui.hotkey('ctrl', 'w')
-               # sp('Closed')
 
-            elif 'app' in query or 'application' in query or 'program' in query or 'process' in query or 'window' in query or 'all tabs' in query:
+            elif query == "window":
+
+                # pressing the alt + f4 to close the window
                 pyautogui.hotkey('alt', 'f4')
-                # sp('Closed')
 
-            elif 'tab' in query:
+                # speaking that the window is closed
+                speak("the window is closed")
+
+            elif query == "program":
+
+                # pressing the alt + f4 to close the program
+                pyautogui.hotkey('alt', 'f4')
+
+                # speaking that the program is closed
+                speak("the program is closed")
+
+            elif query == "tab":
+
+                # pressing the control + w to close the tab
                 pyautogui.hotkey('ctrl', 'w')
-                # sp('Closed')
 
-            elif 'window' in query:
+                # speaking that the tab is closed
+
+                speak("the tab is closed")
+
+            elif 'app' in query or 'application' in query:
+
+                # pressing the alt + f4 to close the program
+
                 pyautogui.hotkey('alt', 'f4')
+
+                # speaking that the application is closed
+                speak("the application is closed")
 
             elif 'chrome' in query:
+
                 sp('closing chrome')
                 os.system('TASKKILL /F /IM chrome.exe')
 
+                # speaking that the chrome browser is closed
+
+                speak("the chrome browser is closed")
+
             elif 'spotify' in query:
+
                 sp('closing spotify')
                 os.system('TASKKILL /F /IM Spotify.exe')
 
-            elif 'youtube' in query:
-                sp('closing youtube ')
-                os.system('TASKKILL /F /IM chrome.exe')
+                # speaking that the spotify  is closed
+                speak("the spotify is closed")
 
             elif 'qbittorrent' in query or 'bittorrent' in query or 'torrent' in query:
+
                 sp('closing qbittorrent')
                 os.system('TASKKILL /F /IM qbittorrent.exe')
+
+                # speaking that the qbittorrent  is closed
+                speak("the qbittorrent is closed")
 
             elif 'vs code' in query:
                 sp('closing vs code')
@@ -5692,7 +5796,7 @@ if __name__ == "__main__":
 
         elif "what is your job" in query:
 
-            speak("I am a Virtual assistant")
+            speak("I have no job, Helping you is my hobby")
 
         elif "what is your favorite food" in query:
 
@@ -5764,10 +5868,6 @@ if __name__ == "__main__":
 
             speak("I was created by Chirag singhal")
 
-        elif "who made you" in query:
-
-            speak("I was made by Chirag singhal")
-
         elif "what is your country of origin" in query:
 
             speak("I was made in India")
@@ -5778,7 +5878,11 @@ if __name__ == "__main__":
 
         elif "what is your purpose" in query:
 
-            speak("I am a Virtual assistant")
+            speak("I am here to make your life easier")
+
+        elif "is programming hard" in query:
+
+            speak("You will have to discover this secretly")
 
         elif query == "hello" or query == "hi" or query == "hey" or query == "hii":
 
