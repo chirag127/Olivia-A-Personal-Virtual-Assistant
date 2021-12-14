@@ -1,38 +1,38 @@
-import platform
-from googletrans import Translator
-from pyowm import OWM
-from tkinter import *
-import pyperclip
 import ctypes
 import datetime
 import json
 import math
-import numpy as np
 import os
-import psutil
-import pyautogui
-import pyttsx3
-import pywhatkit
+import platform
 import random
 import re
-import requests
 import shutil
-import smtplib                     # The smtplib is used for sending emails
-import speech_recognition as sr
+import smtplib  # The smtplib is used for sending emails
 import subprocess
-import sys                         # The sys library is used to exit the program
-import tkinter as tk               # The tkinter is used for gui
-import webbrowser
-import wikipedia                   # The get article from wikipedia
-import winshell                    # The use winshell for opening the specified file
-from jokes import neutral_joke
-from time import sleep
+import sys  # The sys library is used to exit the program
 import time
+import tkinter as tk  # The tkinter is used for gui
+import webbrowser
+from time import sleep
+from tkinter import *
+
+import numpy as np
+import psutil
+import pyautogui
+import pyfiglet
+import pyperclip
+import pyttsx3
+import pywhatkit
+import requests
+import speech_recognition as sr
+import wikipedia  # The get article from wikipedia
+import winshell  # The use winshell for opening the specified file
+from googletrans import Translator
+from pyowm import OWM
+
 import playwl
 from functions import *
-import shutil
-import pyfiglet
-
+from jokes import neutral_joke
 
 headers = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3'}
@@ -779,7 +779,6 @@ if __name__ == "__main__":
 
             sp("The current date is")
             sp(now.strftime("%d-%m-%Y"))
-            
 
         if 'fullform of abcdef' in query:
             sp("Any body can dance")
@@ -824,11 +823,8 @@ if __name__ == "__main__":
             advice = data['slip']['advice']
 
             # speaking and printing the advice
-            # 
+            #
             sp(advice)
-
-
-
 
         elif 'random' in query and 'dog' in query and 'fact' in query:
 
@@ -842,7 +838,7 @@ if __name__ == "__main__":
             url = "https://dog-api.kinduff.com/api/facts"
 
             # sample response
-            #{"facts":["The Norwegian Lundehund is the only dog with six toes on each foot."],"success":true}
+            # {"facts":["The Norwegian Lundehund is the only dog with six toes on each foot."],"success":true}
 
             # get the response from the api
             response = requests.get(url)
@@ -856,7 +852,6 @@ if __name__ == "__main__":
             # speaking and printing the fact.
             sp(fact)
 
-
         elif 'random' in query and 'useless' in query and 'fact' in query:
 
             # remove the stop words from the query
@@ -869,7 +864,7 @@ if __name__ == "__main__":
             url = "https://uselessfacts.jsph.pl/random.json?language=en"
 
             # sample response
-            #{"facts":["The Norwegian Lundehund is the only dog with six toes on each foot."],"success":true}
+            # {"facts":["The Norwegian Lundehund is the only dog with six toes on each foot."],"success":true}
 
             # get the response from the api
             response = requests.get(url)
@@ -887,7 +882,6 @@ if __name__ == "__main__":
             # print here is what i found on the console.
 
             print("here what i found")
-            
 
         elif 'game' in query and 'start' in query:
 
@@ -965,11 +959,9 @@ if __name__ == "__main__":
 
             speak("RAM is at " + str(psutil.virtual_memory()[2]) + "%")
 
-
         # telling the disk usage when the says a command that contains both ram and usage to the console.
 
             print("RAM is at " + str(psutil.virtual_memory()[2]) + "%")
-
 
         # telling the disk usage when the says a command that contains both disk and usage.
 
@@ -1153,7 +1145,6 @@ if __name__ == "__main__":
         # type the text in the current window if 'type' is in query
 
         elif 'typing' in query and 'start' in query:
-
 
             speak("Starting typing")
 
@@ -2221,22 +2212,15 @@ if __name__ == "__main__":
 
         elif 'search' in query:
 
-            # Ask the user for the search query
-
-            speak("What do you want to search for?")
+            sp("What do you want to search for?")
 
             query_to_be_searched = takeCommand().lower()
 
             # Ask the user on which site you want to search for the query
 
-            speak("On which site do you want to search?")
+            sp("On which site do you want to search?")
 
             site_to_search = takeCommand().lower()
-
-            # indicates the start of a search query
-
-            sp('Searching ...')
-
 
             # search on the google if google is in the resultant query after the execution of the above lines.
 
@@ -2246,437 +2230,739 @@ if __name__ == "__main__":
 
                 if 'images' in site_to_search:
 
-                    # open the query_to_be_searched on the google images
-                    webbrowser.open(f"https://www.google.com/search?q={query_to_be_searched}&source=olivia&tbm=isch")
+                    # Telling the user that the search is being executed on google images
 
-                
+                    sp("Searching on Google Images...")
+
+
+                    # open the query_to_be_searched on the google images
+                    webbrowser.open(
+                        f"https://www.google.com/search?q={query_to_be_searched}&source=olivia&tbm=isch")
+
                 # search on the google if the site_to_search  contains map
                 elif 'maps' in site_to_search:
 
-                    # open the query_to_be_searched on the google maps
+                    # Telling the user that the search is being executed on google maps
 
-                    webbrowser.open(f"https://www.google.com/maps/search/{query_to_be_searched}")
+                    sp("Searching on Google Maps...")
+
+
+
+                    # open the query_to_be_searched on the google maps
+                    
+
+                    webbrowser.open(
+                        f"https://www.google.com/maps/search/{query_to_be_searched}")
 
                 # search on google news if the site_to_search contains news
 
                 elif 'news' in site_to_search:
 
+                    # Telling the user that the search is being executed on google news
+
+                    sp("Searching on Google News...")
+
+
+
                     # open the query_to_be_searched on the google news
 
-                    webbrowser.open(f"https://www.google.com/search?q={query_to_be_searched}&tbm=nws")
-                
-                elif 'books' in site_to_search: 
-                    pass
-
-
-
-            # search on the youtube if youtube is in the resultant query after the execution of the above lines.
-            if 'youtube' in query:
-                query = query.replace("youtube", "")
-                webbrowser.open(
-                    f"https://www.youtube.com/results?search_query={query}")
-
-            # writing code for all search engines in the below lines
-
-            # for google search engine
-            # search on the google if google is in the resultant query after the execution of the above lines.
-            elif 'google' in query:
-
-                query = query.replace("google", "")
-
-                if 'images' in query:
-                    query = query.replace("images", "")
                     webbrowser.open(
-                        f"https://www.google.com/search?tbm=isch&q={query}")
+                        f"https://www.google.com/search?q={query_to_be_searched}&tbm=nws")
 
-                elif 'maps' in query:
-                    query = query.replace("maps", "")
+                elif 'books' in site_to_search:
+
+                    # Telling the user that the search is being executed on google books
+
+                    sp("Searching on Google Books...")
+
+
+
+                    # open the query_to_be_searched on the google books
+
                     webbrowser.open(
-                        f"https://www.google.com/maps/search/{query}")
+                        f"https://www.google.com/search?q={query_to_be_searched}&tbm=bks")
 
-                elif 'news' in query:
-                    query = query.replace("news", "")
+
+                # search on google if the site_to_search contains videos
+
+                elif 'videos' in site_to_search:
+
+
+                    # Telling the user that the search is being executed on google videos
+
+                    sp("Searching on Google Videos...")
+
+
+
+                    # open the query_to_be_searched on the google videos
+
                     webbrowser.open(
-                        f"https://www.google.com/search?q={query}&tbm=nws")
+                        f"https://www.google.com/search?q={query_to_be_searched}&tbm=vid")
 
-                elif 'videos' in query:
-                    query = query.replace("videos", "")
+                # search on google if the site_to_search contains shopping
+
+                elif 'shopping' in site_to_search:
+
+                    # open the query_to_be_searched on the google shopping
+
                     webbrowser.open(
-                        f"https://www.google.com/search?tbm=vid&q={query}")
+                        f"https://www.google.com/search?q={query_to_be_searched}&tbm=shop")
 
-                elif 'books' in query:
-                    query = query.replace("books", "")
+                # search on google if the site_to_search contains flight
+
+                elif 'flight' in site_to_search:
+
+                    # open the query_to_be_searched on the google flight
+
                     webbrowser.open(
-                        f"https://www.google.com/search?tbm=bks&q={query}")
+                        f"https://www.google.com/search?q={query_to_be_searched}&tbm=fl")
 
-                elif 'translate' in query:
-                    query = query.replace("translate", "")
-                    webbrowser.open(
-                        f"https://translate.google.com/#auto/en/{query}")
+                # search on google if the site_to_search contains finance
 
-                elif 'news' in query:
-                    query = query.replace("news", "")
-                    webbrowser.open(
-                        f"https://www.google.com/search?q={query}&tbm=nws")
+                elif 'finance' in site_to_search:
 
-                else:
-                    webbrowser.open(
-                        f"https://www.google.com/search?q={query}")
+                    # open the query_to_be_searched on the google finance
 
-            # for duckduckgo search engine
-            # search on the duckduckgo if duckduckgo is in the resultant query after the execution of the above lines.
-            elif 'duckduckgo' in query:
-                query = query.replace("duckduckgo", "")
+                    webbrowser.open(f"https://www.google.com/search?q={query_to_be_searched}&tbm=fin")
+
+
+            # search on Youtube if the site_to_search contains youtube
+            elif 'youtube' in site_to_search:
+
+                # Telling the user that the search is being executed on youtube
+
+                sp("Searching on Youtube...")
+
+
+
+                # open the query_to_be_searched on the youtube
+
                 webbrowser.open(
-                    f"https://duckduckgo.com/?q={query}")
+                    f"https://www.youtube.com/results?search_query={query_to_be_searched}")
 
-            # for bing search engine
-            # search on the bing if bing is in the resultant query after the execution of the above lines.
-            # for example, if the user says "search for python on bing"
-            # then the query will be "python"
-            # the url will be https://www.bing.com/search?q=python
-            elif 'bing' in query:
-                query = query.replace("bing", "")
+            # search on Amazon if the site_to_search contains amazon
+
+            elif 'amazon' in site_to_search:
+
+                # Telling the user that the search is being executed on amazon
+
+                sp("Searching on Amazon...")
+
+
+                # open the query_to_be_searched on the amazon
+
                 webbrowser.open(
-                    f"https://www.bing.com/search?q={query}")
+                    f"https://www.amazon.in/s?k={query_to_be_searched}")
 
-            # for yahoo search engine
-            # search on the yahoo if yahoo is in the resultant query after the execution of the above lines.
-            # for example, if the user says "search for python on yahoo"
-            # then the code will search for the query "python" on the yahoo website.
-            # the url for yahoo search is: https://search.yahoo.com/search?p=python
-            elif 'yahoo' in query:
-                query = query.replace("yahoo", "")
+            # search on Facebook if the site_to_search contains facebook
+
+            elif 'facebook' in site_to_search:
+
+                # Telling the user that the search is being executed on facebook
+
+                sp("Searching on Facebook...")
+
+
+                # open the query_to_be_searched on the facebook
+
                 webbrowser.open(
-                    f"https://search.yahoo.com/search?p={query}")
+                    f"https://www.facebook.com/search/top/?q={query_to_be_searched}")
 
-            # search all the educational websites in the below lines
+            # search on Google.co.in if the site_to_search contains google.co.in
 
-            # for wikipedia search engine
-            # search on the wikipedia if wikipedia is in the resultant query after the execution of the above lines.
-            elif 'wikipedia' in query:
-                query = query.replace("wikipedia", "")
+            elif 'google.co.in' in site_to_search:  
+
+                # Telling the user that the search is being executed on google.co.in
+
+                sp("Searching on Google.co.in...")
+
+
+                # open the query_to_be_searched on the google.co.in
+
                 webbrowser.open(
-                    f"https://www.wikipedia.org/search-redirect.php?search={query}")
+                    f"https://www.google.co.in/search?q={query_to_be_searched}")
 
-            # for wikitionary search engine
-            # search on the wikitionary if wikitionary is in the resultant query after the execution of the above lines.
-            # for example, if the user says 'search for the meaning of life on wikitionary' then the query will be 'meaning of life'
-            # and url will be https://en.wiktionary.org/wiki/meaning_of_life
+            # search on Flipkart if the site_to_search contains flipkart
 
-            elif 'wiktionary' in query:
-                query = query.replace("wiktionary", "")
+            elif 'flipkart' in site_to_search:  
+
+                # Telling the user that the search is being executed on flipkart
+
+                sp("Searching on Flipkart...")
+
+                # open the query_to_be_searched on the flipkart
+
                 webbrowser.open(
-                    f"https://en.wiktionary.org/wiki/{query}")
+                    f"https://www.flipkart.com/search?q={query_to_be_searched}")
 
-            # for wikiquote search engine
-            # search on the wikiquote if wikiquote is in the resultant query after the execution of the above lines.
-            elif 'wikiquote' in query:
-                query = query.replace("wikiquote", "")
+            # search on Wikipedia if the site_to_search contains wikipedia
+
+            elif 'wikipedia' in site_to_search:
+
+                # Telling the user that the search is being executed on wikipedia
+
+                sp("Searching on Wikipedia...")
+
+
+
+                # open the query_to_be_searched on the wikipedia
+
                 webbrowser.open(
-                    f"https://en.wikiquote.org/wiki/{query}")
+                    f"https://en.wikipedia.org/w/index.php?search={query_to_be_searched}")
 
-            # for wikisource search engine
-            # search on the wikisource if wikisource is in the resultant query after the execution of the above lines.
-            elif 'wikisource' in query:
-                query = query.replace("wikisource", "")
+            # search on Canva if the site_to_search contains canva
+
+            elif 'canva' in site_to_search: 
+
+                # Telling the user that the search is being executed on canva
+
+                sp("Searching on Canva...")
+
+
+
+                # open the query_to_be_searched on the canva
+
                 webbrowser.open(
-                    f"https://en.wikisource.org/wiki/{query}")
+                    f"https://www.canva.com/search/templates?q={query_to_be_searched}")
 
-            # for wikibooks search engine
-            # search on the wikibooks if wikibooks is in the resultant query after the execution of the above lines.
-            elif 'wikibooks' in query:
-                query = query.replace("wikibooks", "")
+            # search on Instagram if the site_to_search contains instagram
+
+            elif 'instagram' in site_to_search: 
+
+                # Telling the user that the search is being executed on instagram
+
+                sp("Searching on Instagram...")
+
+
+
+                # open the query_to_be_searched on the instagram
+
                 webbrowser.open(
-                    f"https://en.wikibooks.org/wiki/{query}")
+                    f"https://www.instagram.com/explore/tags/{query_to_be_searched}")
 
-            # for wikinews search engine
-            # search on the wikinews if wikinews is in the resultant query after the execution of the above lines.
-            elif 'wikinews' in query:
+            # search on Microsoft if the site_to_search contains microsoft
 
-                query = query.replace("wikinews", "")
+            elif 'microsoft' in site_to_search: 
+
+                # Telling the user that the search is being executed on microsoft
+
+                sp("Searching on Microsoft...")
+
+
+                # open the query_to_be_searched on the microsoft
+
                 webbrowser.open(
-                    f"https://en.wikinews.org/wiki/{query}")
+                    f"https://www.microsoft.com/en-in/search/result.aspx?q={query_to_be_searched}")
 
-            # for wikidata search engine
-            # search on the wikidata if wikidata is in the resultant query after the execution of the above lines.
-            elif 'wikidata' in query:
+            # search on Amazon.com if the site_to_search contains amazon.com
 
-                query = query.replace("wikidata", "")
+            elif 'amazon.com' in site_to_search:    
+
+                # Telling the user that the search is being executed on amazon.com
+
+                sp("Searching on Amazon.com...")
+
+
+                # open the query_to_be_searched on the amazon
+
                 webbrowser.open(
-                    f"https://www.wikidata.org/wiki/{query}")
+                    f"https://www.amazon.com/s?k={query_to_be_searched}")
 
-            # for wikiversity search engine
-            # search on the wikiversity if wikiversity is in the resultant query after the execution of the above lines.
-            elif 'wikiversity' in query:
+            # search on Yahoo if the site_to_search contains yahoo
 
-                query = query.replace("wikiversity", "")
+            elif 'yahoo' in site_to_search: 
+
+                # Telling the user that the search is being executed on yahoo
+
+                sp("Searching on Yahoo...")
+
+
+                # open the query_to_be_searched on the yahoo
+
                 webbrowser.open(
-                    f"https://en.wikiversity.org/wiki/{query}")
+                    f"https://in.search.yahoo.com/search?p={query_to_be_searched}")
 
-            # for wikispecies search engine
-            # search on the wikispecies if wikispecies is in the resultant query after the execution of the above lines.
-            elif 'wikispecies' in query:
-                query = query.replace("wikispecies", "")
+            # search on whatsapp if the site_to_search contains whatsapp
+
+            elif 'whatsapp' in site_to_search:  
+
+                # Telling the user that the search is being executed on whatsapp
+
+                sp("Searching on Whatsapp...")
+
+
+                # open the query_to_be_searched on the whatsapp
+
                 webbrowser.open(
-                    f"https://species.wikimedia.org/wiki/{query}")
+                    f"https://web.whatsapp.com/send?text={query_to_be_searched}")
 
-            # for wikimedia search engine
-            # search on the wikimedia if wikimedia is in the resultant query after the execution of the above lines.
-            elif 'wikimedia' in query:
-                query = query.replace("wikimedia", "")
+            # search on Indiatimes if the site_to_search contains indiatimes
+
+            elif 'indiatimes' in site_to_search:    
+
+                # Telling the user that the search is being executed on indiatimes
+
+                sp("Searching on Indiatimes...")
+
+
+                # open the query_to_be_searched on the indiatimes
+
                 webbrowser.open(
-                    f"https://commons.wikimedia.org/wiki/{query}")
+                    f"https://timesofindia.indiatimes.com/topic/{query_to_be_searched}")
 
-            # for wikivoyage search engine
-            # search on the wikivoyage if wikivoyage is in the resultant query after the execution of the above lines.
-            elif 'wikivoyage' in query:
-                query = query.replace("wikivoyage", "")
+            # search on zoom if the site_to_search contains zoom
+
+            elif 'zoom' in site_to_search:  
+
+                # Telling the user that the search is being executed on zoom
+
+                sp("Searching on Zoom...")
+
+
+                # open the query_to_be_searched on the zoom
+
                 webbrowser.open(
-                    f"https://en.wikivoyage.org/wiki/{query}")
+                    f"https://zoom.us/search?q={query_to_be_searched}")
 
-            # for stackoverflow search engine
-            # search on the stackoverflow if stackoverflow is in the resultant query after the execution of the above lines.
-            elif 'stackoverflow' in query:
-                query = query.replace("stackoverflow", "")
+            # search on hdfcbank if the site_to_search contains hdfcbank
+
+            elif 'hdfcbank' in site_to_search:  
+
+                # Telling the user that the search is being executed on hdfcbank
+
+                sp("Searching on HDFC Bank...")
+
+
+                # open the query_to_be_searched on the hdfcbank
+
                 webbrowser.open(
-                    f"https://stackoverflow.com/search?q={query}")
+                    f"https://www.hdfcbank.com/personal/loan/personal-loan?q={query_to_be_searched}")
 
-            # for quora search engine
-            # search on the quora if quora is in the resultant query after the execution of the above lines.
-            elif 'quora' in query:
-                query = query.replace("quora", "")
+            # search on zerodha if the site_to_search contains zerodha
+
+            elif 'zerodha' in site_to_search:   
+
+                # Telling the user that the search is being executed on zerodha
+
+                sp("Searching on Zerodha...")
+
+
+
+                # open the query_to_be_searched on the zerodha
+
                 webbrowser.open(
-                    f"https://www.quora.com/search?q={query}")
+                    f"https://zerodha.com/search?q={query_to_be_searched}")
 
-            # for coursera search engine
-            # search on the coursera if coursera is in the resultant query after the execution of the above lines.
-            elif 'coursera' in query:
-                query = query.replace("coursera", "")
+            # search on LinkedIn if the site_to_search contains linkedin
+
+            elif 'linkedin' in site_to_search:  
+
+                # Telling the user that the search is being executed on linkedin
+
+                sp("Searching on LinkedIn...")
+
+
+
+
+
+                # open the query_to_be_searched on the linkedin
+
                 webbrowser.open(
-                    f"https://www.coursera.org/search?query={query}")
+                    f"https://www.linkedin.com/search/results/index/?keywords={query_to_be_searched}")
 
-            # for edx search engine
-            # search on the edx if edx is in the resultant query after the execution of the above lines.
-            elif 'edx' in query:
-                query = query.replace("edx", "")
+            # search on hotstar if the site_to_search contains hotstar
+
+            elif 'hotstar' in site_to_search:   
+
+                # Telling the user that the search is being executed on hotstar
+
+                sp("Searching on Hotstar...")
+
+
+
+
+                # open the query_to_be_searched on the hotstar
+
                 webbrowser.open(
-                    f"https://www.edx.org/search?query={query}")
+                    f"https://www.hotstar.com/search?q={query_to_be_searched}")
 
-            # for udemy search engine
-            # search on the udemy if udemy is in the resultant query after the execution of the above lines.
-            elif 'udemy' in query:
-                query = query.replace("udemy", "")
+            # office","netflix","live","icicibank","twitter","stackoverflow","primevideo"
+
+            # search on office if the site_to_search contains office
+
+            elif 'office' in site_to_search:    
+
+                # Telling the user that the search is being executed on office
+
+                sp("Searching on Office...")
+
+
+                # open the query_to_be_searched on the office
+
                 webbrowser.open(
-                    f"https://www.udemy.com/search/?q={query}")
+                    f"https://office.com/search?q={query_to_be_searched}")
 
-            # for udacity search engine
-            # search on the udacity if udacity is in the resultant query after the execution of the above lines.
-            elif 'udacity' in query:
-                query = query.replace("udacity", "")
+            # search on netflix if the site_to_search contains netflix
+
+            elif 'netflix' in site_to_search:   
+
+                # Telling the user that the search is being executed on netflix
+
+                sp("Searching on Netflix...")
+
+
+                # open the query_to_be_searched on the netflix
+
                 webbrowser.open(
-                    f"https://www.udacity.com/course/search?query={query}")
+                    f"https://www.netflix.com/search?q={query_to_be_searched}")
 
-            # For the eccomerce websites in the below lines
-            # for amazon search engine
-            # search on the amazon if amazon is in the resultant query after the execution of the above lines.
-            elif 'amazon' in query:
-                query = query.replace("amazon", "")
+            # search on live if the site_to_search contains live
+
+            elif 'live' in site_to_search:  
+
+                # Telling the user that the search is being executed on live    
+
+                sp("Searching on Live...")
+
+
+
+
+
+                # open the query_to_be_searched on the live
+
                 webbrowser.open(
-                    f"https://www.amazon.in/s?k={query}")
+                    f"https://www.live.com/search?q={query_to_be_searched}")
 
-            # for flipkart search engine
-            # search on the flipkart if flipkart is in the resultant query after the execution of the above lines.
-            elif 'flipkart' in query:
-                query = query.replace("flipkart", "")
+            # search on icicibank if the site_to_search contains icicibank
+
+            elif 'icicibank' in site_to_search:     
+
+                # Telling the user that the search is being executed on icicibank
+
+                sp("Searching on ICICI Bank...")
+
+
+
+                # open the query_to_be_searched on the icicibank
+
                 webbrowser.open(
-                    f"https://www.flipkart.com/search?q={query}")
+                    f"https://www.icicibank.com/search?q={query_to_be_searched}")
 
-            # for snapdeal search engine
-            # search on the snapdeal if snapdeal is in the resultant query after the execution of the above lines.
-            elif 'snapdeal' in query:
-                query = query.replace("snapdeal", "")
+            # search on twitter if the site_to_search contains twitter
+
+            elif 'twitter' in site_to_search:   
+
+                # Telling the user that the search is being executed on twitter
+
+                sp("Searching on Twitter...")
+
+
+                # open the query_to_be_searched on the twitter
+
                 webbrowser.open(
-                    f"https://www.snapdeal.com/search?keyword={query}")
+                    f"https://twitter.com/search?q={query_to_be_searched}")
 
-            # for shopclues search engine
-            # search on the shopclues if shopclues is in the resultant query after the execution of the above lines.
-            elif 'shopclues' in query:
-                query = query.replace("shopclues", "")
+            # search on stack overflow if the site_to_search contains stack overflow
+
+            elif 'stack' in site_to_search and 'overflow' in site_to_search:    
+
+                # Telling the user that the search is being executed on stack overflow
+
+                sp("Searching on Stack Overflow...")
+
+
+                # open the query_to_be_searched on the stackoverflow
+
                 webbrowser.open(
-                    f"https://www.shopclues.com/search?q={query}")
+                    f"https://stackoverflow.com/search?q={query_to_be_searched}")
 
-            # for myntra search engine
-            # search on the myntra if myntra is in the resultant query after the execution of the above lines.
-            elif 'myntra' in query:
-                query = query.replace("myntra", "")
+            # search on primevideo if the site_to_search contains primevideo
+
+
+            elif 'prime' in site_to_search and 'video' in site_to_search:   
+
+                # Telling the user that the search is being executed on primevideo
+
+                sp("Searching on Prime Video...")
+
+
+                # open the query_to_be_searched on the primevideo
+
                 webbrowser.open(
-                    f"https://www.myntra.com/search?q={query}")
+                    f"https://www.primevideo.com/search?q={query_to_be_searched}")
 
-            # for jabong search engine
-            # search on the jabong if jabong is in the resultant query after the execution of the above lines.
-            elif 'jabong' in query:
-                query = query.replace("jabong", "")
+
+            elif 'reddit' in site_to_search:    
+
+                # Telling the user that the search is being executed on reddit
+
+                sp("Searching on Reddit...")
+
+
+
+
+                # open the query_to_be_searched on the reddit
+
                 webbrowser.open(
-                    f"https://www.jabong.com/search?q={query}")
+                    f"https://www.reddit.com/search?q={query_to_be_searched}")
 
-            # for paytm search engine
-            # search on the paytm if paytm is in the resultant query after the execution of the above lines.
-            elif 'paytm' in query:
-                query = query.replace("paytm", "")
+                # example: search on onlinesbi
+                # outurl = "https://www.onlinesbi.com/search?q=python "
+
+            elif 'onlinesbi' in site_to_search: 
+
+                # Telling the user that the search is being executed on onlinesbi
+
+                sp("Searching on Online SBI...")
+
+
+
+                # open the query_to_be_searched on the onlinesbi
+
                 webbrowser.open(
-                    f"https://paytm.com/shop/search?q={query}")
+                    f"https://www.onlinesbi.com/search?q={query_to_be_searched}")
 
-            # for ebay search engine
-            # search on the ebay if ebay is in the resultant query after the execution of the above lines.
-            elif 'ebay' in query:
-                query = query.replace("ebay", "")
+            # search on godaddy if the site_to_search contains godaddy
+
+            elif 'godaddy' in site_to_search:   
+
+                # Telling the user that the search is being executed on godaddy
+
+                sp("Searching on GoDaddy...")
+
+
+                # open the query_to_be_searched on the godaddy
+
                 webbrowser.open(
-                    f"https://www.ebay.com/sch/i.html?_nkw={query}")
+                    f"https://in.godaddy.com/domainsearch/find?checkAvail=1&domainToCheck={query_to_be_searched}")
 
-            # For social media websites in the below lines
-            # for facebook search engine
-            # search on the facebook if facebook is in the resultant query after the execution of the above lines.
-            elif 'facebook' in query:
-                query = query.replace("facebook", "")
+            # search on myshopify if the site_to_search contains myshopify
+
+            elif 'myshopify' in site_to_search: 
+
+                # Telling the user that the search is being executed on myshopify
+
+                sp("Searching on My Shopify...")
+
+
+                # open the query_to_be_searched on the myshopify
+
                 webbrowser.open(
-                    f"https://www.facebook.com/search/top/?q={query}")
+                    f"https://www.myshopify.com/search?q={query_to_be_searched}")
 
-            # for instagram search engine
-            # search on the instagram if instagram is in the resultant query after the execution of the above lines.
-            elif 'instagram' in query:
-                query = query.replace("instagram", "")
+            # search on moneycontrol if the site_to_search contains moneycontrol
+
+            elif 'moneycontrol' in site_to_search:  
+
+                # Telling the user that the search is being executed on moneycontrol
+
+                sp("Searching on Moneycontrol...")
+
+
+                # open the query_to_be_searched on the moneycontrol
+
                 webbrowser.open(
-                    f"https://www.instagram.com/explore/tags/{query}")
+                    f"https://www.moneycontrol.com/stocks/cptmarket/compsearchnew.php?search_data=&cid=&mbsearch_str=&topsearch_type=1&search_str={query_to_be_searched}")
 
-            # for twitter search engine
-            # search on the twitter if twitter is in the resultant query after the execution of the above lines.
-            elif 'twitter' in query:
-                query = query.replace("twitter", "")
+            # search on grammarly if the site_to_search contains grammarly
+
+            elif 'grammarly' in site_to_search:
+
+                # Telling the user that the search is being executed on grammarly
+
+                sp("Searching on Grammarly...")
+
+
+                # open the query_to_be_searched on the grammarly
+
+                webbrowser.open(f"{query_to_be_searched} site:grammarly.com")
+
+            # search on microsoftonline if the site_to_search contains microsoftonline
+
+            elif 'microsoftonline' in site_to_search:   
+
+                # Telling the user that the search is being executed on microsoftonline
+
+                sp("Searching on Microsoft Online...")
+
+
+                # open the query_to_be_searched on the microsoftonline
+
                 webbrowser.open(
-                    f"https://twitter.com/search?q={query}")
+                    f"https://www.microsoftonline.com/search?q={query_to_be_searched}")
 
-            # for linkedin search engine
-            # search on the linkedin if linkedin is in the resultant query after the execution of the above lines.
-            elif 'linkedin' in query:
-                query = query.replace("linkedin", "")
+            # search on adobe if the site_to_search contains adobe
+
+            elif 'adobe' in site_to_search: 
+
+                # Telling the user that the search is being executed on adobe
+
+                sp("Searching on Adobe...")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                # open the query_to_be_searched on the adobe
+
                 webbrowser.open(
-                    f"https://www.linkedin.com/search/results/index/?keywords={query}")
+                    f"https://www.adobe.com/in/search?q={query_to_be_searched}")
 
-            # for snapchat search engine
-            # search on the snapchat if snapchat is in the resultant query after the execution of the above lines.
-            elif 'snapchat' in query:
-                query = query.replace("snapchat", "")
+            # search on irctc if the site_to_search contains irctc
+
+            elif 'irctc' in site_to_search:
+
+                # open the query_to_be_searched on the irctc
+
                 webbrowser.open(
-                    f"https://www.snapchat.com/search/{query}")
+                    f"https://www.irctc.co.in/eticketing/loginHome.jsf?lang=eng")
 
-            # for video streaming websites in the below lines
-            # for youtube search engine
-            # search on the youtube if youtube is in the resultant query after the execution of the above lines.
-            elif 'youtube' in query:
-                query = query.replace("youtube", "")
+            # search on freepik if the site_to_search contains freepik
+
+            elif 'freepik' in site_to_search:
+
+                # open the query_to_be_searched on the freepik
+
                 webbrowser.open(
-                    f"https://www.youtube.com/results?search_query={query}")
+                    f"https://www.freepik.com/search?q={query_to_be_searched}")
 
-            # for vimeo search engine
-            # search on the vimeo if vimeo is in the resultant query after the execution of the above lines.
-            elif 'vimeo' in query:
-                query = query.replace("vimeo", "")
+            # search on indiamart if the site_to_search contains indiamart
+
+            elif 'indiamart' in site_to_search:
+
+                # open the query_to_be_searched on the indiamart
+
                 webbrowser.open(
-                    f"https://vimeo.com/search?q={query}")
+                    f"https://www.indiamart.com/search?q={query_to_be_searched}")
 
-            # for dailymotion search engine
-            # search on the dailymotion if dailymotion is in the resultant query after the execution of the above lines.
-            elif 'dailymotion' in query:
-                query = query.replace("dailymotion", "")
+            # search on manoramaonline if the site_to_search contains manoramaonline
+
+            elif 'manoramaonline' in site_to_search:
+
+                # open the query_to_be_searched on the manoramaonline
+
                 webbrowser.open(
-                    f"https://www.dailymotion.com/search/{query}")
+                    f"https://www.manoramaonline.com/search?q={query_to_be_searched}")
 
-            # for twitch search engine
-            # search on the twitch if twitch is in the resultant query after the execution of the above lines.
-            elif 'twitch' in query:
-                query = query.replace("twitch", "")
+            # search on naukri if the site_to_search contains naukri
+
+            elif 'naukri' in site_to_search:
+
+                # open the query_to_be_searched on the naukri
+
                 webbrowser.open(
-                    f"https://www.twitch.tv/search?q={query}")
+                    f"https://www.naukri.com/naukri-jobs-india-jobs-in-{query_to_be_searched}")
 
-            # for netflix search engine
-            # search on the netflix if netflix is in the resultant query after the execution of the above lines.
-            elif 'netflix' in query:
-                query = query.replace("netflix", "")
+            # search on wordpress if the site_to_search contains wordpress
+
+            elif 'wordpress' in site_to_search:
+
+                # open the query_to_be_searched on the wordpress
+
                 webbrowser.open(
-                    f"https://www.netflix.com/search?q={query}")
+                    f"https://wordpress.com/search?q={query_to_be_searched}")
 
-            # for hulu search engine
-            # search on the hulu if hulu is in the resultant query after the execution of the above lines.
-            elif 'hulu' in query:
-                query = query.replace("hulu", "")
+            # search on bing if the site_to_search contains bing
+
+            elif 'bing' in site_to_search:
+
+                # open the query_to_be_searched on the bing
+
                 webbrowser.open(
-                    f"https://www.hulu.com/search?q={query}")
+                    f"https://www.bing.com/search?q={query_to_be_searched}")
 
-            # for disney search engine
-            # search on the disney if disney is in the resultant query after the execution of the above lines.
-            elif 'disney' in query:
-                query = query.replace("disney", "")
+            # search on cricbuzz if the site_to_search contains cricbuzz
+
+            elif 'cricbuzz' in site_to_search:
+
+                # open the query_to_be_searched on the cricbuzz
+
                 webbrowser.open(
-                    f"https://disney.go.com/search?q={query}")
+                    f"https://www.cricbuzz.com/search?q={query_to_be_searched}")
 
-            # for hbo search engine
-            # search on the hbo if hbo is in the resultant query after the execution of the above lines.
-            # example https://www.hbo.com/search?q=hbo
+            # search on tradingview if the site_to_search contains tradingview
 
-            elif 'hbo' in query:
-                query = query.replace("hbo", "")
+            elif 'tradingview' in site_to_search:
+
+                # open the query_to_be_searched on the tradingview
+
                 webbrowser.open(
-                    f"https://www.hbo.com/search?q={query}")
+                    f"https://www.tradingview.com/search?q={query_to_be_searched}")
 
-            # for hotstar search engine
-            # search on the hotstar if
-            # hotstar is in the resultant query after the execution of the above lines.
-            elif 'hotstar' in query:
-                query = query.replace("hotstar", "")
-                webbrowser.open(
-                    f"https://www.hotstar.com/search?q={query}")
+            # search on ndtv if the site_to_search contains ndtv
 
-            # for music search engine or music player websites or music streaming websites or for songs streaming websites
-            # for spotify search engine
-            # search on the spotify if spotify is in the resultant query after the execution of the above lines.
-            elif 'spotify' in query:
-                query = query.replace("spotify", "")
-                webbrowser.open(
-                    f"https://open.spotify.com/search/{query}")
+            elif 'ndtv' in site_to_search:
 
-            # for apple music search engine
-            # search on the apple music if apple music is in the resultant query after the execution of the above lines.
-            elif 'apple music' in query:
-                query = query.replace("apple music", "")
-                webbrowser.open(
-                    f"https://music.apple.com/search?term={query}")
+                # open the query_to_be_searched on the ndtv
 
-            # for soundcloud search engine
-            # search on the soundcloud if soundcloud is in the resultant query after the execution of the above lines.
-            elif 'soundcloud' in query:
-                query = query.replace("soundcloud", "")
                 webbrowser.open(
-                    f"https://soundcloud.com/search?q={query}")
+                    f"https://www.ndtv.com/search?q={query_to_be_searched}")
 
-            # for tidal search engine
-            # search on the tidal if tidal is in the resultant query after the execution of the above lines.
-            elif 'tidal' in query:
-                query = query.replace("tidal", "")
-                webbrowser.open(
-                    f"https://tidal.com/search?q={query}")
+            # search on zoho if the site_to_search contains zoho
 
-            # for youtube music search engine
-            # search on the youtube music if youtube music is in the resultant query after the execution of the above lines.
-            elif 'youtube music' in query:
-                query = query.replace("youtube music", "")
-                webbrowser.open(
-                    f"https://music.youtube.com/search?q={query}")
+            elif 'zoho' in site_to_search:
 
-            else:
-                query = query.replace("google", "")
+                # open the query_to_be_searched on the zoho
+
                 webbrowser.open(
-                    f"https://www.google.com/search?q={query}&sourceid=olivia")
+                    f"https://www.zoho.com/search?q={query_to_be_searched}")
+
+            # search on tumblr if the site_to_search contains tumblr
+
+            elif 'tumblr' in site_to_search:
+
+                # open the query_to_be_searched on the tumblr
+
+                webbrowser.open(
+                    f"https://www.tumblr.com/search/{query_to_be_searched}")
+
+            # search on indeed if the site_to_search contains indeed
+
+            elif 'indeed' in site_to_search:
+
+                # open the query_to_be_searched on the indeed
+
+                webbrowser.open(
+                    f"https://www.indeed.com/jobs?q={query_to_be_searched}")
+
+            # search on amazonaws if the site_to_search contains amazonaws
+
+            elif 'amazonaws' in site_to_search:
+
+                # open the query_to_be_searched on the amazonaws
+
+                webbrowser.open(
+                    f"https://aws.amazon.com/search/?q={query_to_be_searched}")
+
+            # search on smallpdf if the site_to_search contains smallpdf
+
+            elif 'smallpdf' in site_to_search:
+
+                # open the query_to_be_searched on the smallpdf
+
+                webbrowser.open(
+                    f"https://smallpdf.com/search?q={query_to_be_searched}")
+
+            # search on myntra if the site_to_search contains myntra
+
+            elif 'myntra' in site_to_search:
+
+                # open the query_to_be_searched on the myntra
+
+                webbrowser.open(
+                    f"https://www.myntra.com/search?q={query_to_be_searched}")
 
         elif 'open' in query:
             query = query.replace("open", "")
