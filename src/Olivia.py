@@ -760,19 +760,26 @@ if __name__ == "__main__":
 
             # lock the computer if the query contains 'lock'
             elif 'lock' in query:
+
                 speak("Hold On ! Your system is on its way to lock")
+
                 os.system('rundll32.exe user32.dll,LockWorkStation')
+
                 running = False
+
                 sys.exit()
-            elif "what" in query and " operating system" in query:
+
+            elif "what is my operating system" in query:
+
                 speak("Your operating system is windows")
 
         # give the current date and time if 'date' is in query
         if 'date' in query and "current" in query:
             now = datetime.datetime.now()
 
-            speak("The current date is")
-            speak(now.strftime("%d-%m-%Y"))
+            sp("The current date is")
+            sp(now.strftime("%d-%m-%Y"))
+            
 
         if 'fullform of abcdef' in query:
             sp("Any body can dance")
@@ -790,135 +797,6 @@ if __name__ == "__main__":
         #         x = w.get_temperature(unit='celsius')
         #         speak('Current weather in %s is %s. The maximum temperature is %0.2f and the minimum temperature is %0.2f degree celcius' % (
         #             city, k, x['temp_max'], x['temp_min']))
-
-        # if the query contains 'tell me about (something)', then return the information of that person/organisation from the wikipedia using the information from the wikipedia library
-        elif 'tell me about' in query or 'who is' in query:
-
-            # remove the stop words from the query
-            query = query.replace("tell me about", "")
-            query = query.replace("who is", "")
-            query = query.replace("what is", "")
-            query = query.strip()
-
-            try:
-
-                # speak('Searching Wikipedia...')
-                sp("Searching Wikipedia...")
-
-                # assign the query to a variable named as topic
-                topic = query
-
-                # search for the topic on wikipedia
-                results = wikipedia.summary(topic, sentences=2)
-
-                # search for the query in wikipedia
-                results = wikipedia.summary(query, sentences=2)
-
-                # speak the Accoridng to wikipedia
-                speak("According to Wikipedia")
-
-                # print the result
-                print(results)
-
-                # speak the result
-                speak(results)
-
-            except:
-
-                # if the wikipedia does not have the query, then search for the query in the internet
-                print("I can not find any information about " + query)
-                sp("Searching on the internet")
-                query = query.replace(" ", "+")
-                url = "https://www.google.com/search?q=" + query
-                webbrowser.get().open(url)
-
-        # if the query contains 'what is' then return the information of that person/organisation from the wikipedia using the information from the wikipedia library
-        elif 'what is' in query:
-
-            # remove the stop words from the query
-            query = query.replace("what is", "")
-            query = query.replace("about", "")
-            query = query.strip()
-
-            if 'news' in query:
-
-                # remove the stop words from the query
-                query = query.replace("news", "")
-
-                # assign the query to a variable named as topic
-                topic = query
-
-                # search for the topic on google news
-                url = "https://news.google.com/search?q=" + topic
-
-                # open the url in the default browser
-                webbrowser.get().open(url)
-
-            else:
-
-                try:
-
-                    # speak('Searching Wikipedia...')
-                    sp("Searching Wikipedia...")
-
-                    # assign the query to a variable named as topic
-                    topic = query
-
-                    # search for the topic on wikipedia
-
-                    results = wikipedia.summary(topic, sentences=2)
-
-                    # speak the Accoridng to wikipedia
-
-                    speak("According to Wikipedia")
-
-                    # print the result
-
-                    print(results)
-
-                    # speak the result
-
-                    speak(results)
-
-                except:
-
-                    # if the wikipedia does not have the query, then search for the query in the internet
-                    print("I can not find any information about " + query)
-                    sp("Searching on the internet")
-                    query = query.replace(" ", "+")
-                    url = "https://www.google.com/search?q=" + query
-                    webbrowser.get().open(url)
-
-        # if the query contains how to (something) then search something on google and open it
-
-        elif 'how to' in query:
-
-            # remove the stop words from the query
-            query = query.replace("how to", "")
-            query = query.strip()
-
-            # search for the query in google
-            url = "https://www.google.com/search?q=" + query
-            webbrowser.get().open(url)
-
-            # speak the result
-            speak("Here is what i found")
-
-        elif 'weather in' in query:
-
-            # remove the stop words from the query
-            query = query.strip()
-
-            # search for the query in google
-            url = "https://www.google.com/search?q=" + query
-            webbrowser.get().open(url)
-
-            # speak the result
-            speak("Here is what i found")
-
-        elif 'news' in query and 'latest' in query:
-
-            NewsFromBBC()
 
         elif 'random' in query and 'advice' in query:
 
@@ -945,13 +823,12 @@ if __name__ == "__main__":
 
             advice = data['slip']['advice']
 
-            # print the advice
+            # speaking and printing the advice
+            # 
+            sp(advice)
 
-            print(advice)
 
-            # speak the advice
 
-            speak(advice)
 
         elif 'random' in query and 'dog' in query and 'fact' in query:
 
@@ -976,15 +853,9 @@ if __name__ == "__main__":
             # get the fact from the json data
             fact = data['facts'][0]
 
-            # print the fact
+            # speaking and printing the fact.
+            sp(fact)
 
-            print(fact)
-
-            # speak the fact
-
-            speak(fact)
-
-            print("Here is what i found")
 
         elif 'random' in query and 'useless' in query and 'fact' in query:
 
@@ -1009,15 +880,14 @@ if __name__ == "__main__":
             # get the fact from the json data
             fact = data['text']
 
-            # print the fact
+            # speaking and printing the fact.
 
-            print(fact)
+            sp(fact)
 
-            # speak the fact
+            # print here is what i found on the console.
 
-            speak(fact)
-
-            print("Here is what i found")
+            print("here what i found")
+            
 
         elif 'game' in query and 'start' in query:
 
@@ -1085,27 +955,52 @@ if __name__ == "__main__":
 
         # telling the cpu usage when the says a command that contains both cpu and usage.
         elif 'usage' in query and 'cpu' in query:
+
             speak("CPU is at " + str(psutil.cpu_percent()) + "%")
+
+            print("CPU is at " + str(psutil.cpu_percent()) + "%")
 
         # telling the ram usage when the says a command that contains both ram and usage.
         elif 'usage' in query and 'ram' in query:
+
             speak("RAM is at " + str(psutil.virtual_memory()[2]) + "%")
 
+
+        # telling the disk usage when the says a command that contains both ram and usage to the console.
+
+            print("RAM is at " + str(psutil.virtual_memory()[2]) + "%")
+
+
         # telling the disk usage when the says a command that contains both disk and usage.
+
         elif 'usage' in query and 'disk' in query:
+
             speak("Disk is at " + str(psutil.disk_usage('/')[3]) + "%")
 
+            # telling the battery usage when the says a command that contains both battery and usage.
+
+            print("Disk is at " + str(psutil.disk_usage('/')[3]) + "%")
+
         # telling the battery usage when the says a command that contains both battery and usage.
+
         elif 'usage' in query and 'battery' in query:
+
             speak("Battery is at " + str(psutil.sensors_battery().percent) + "%")
 
+            # printing the battery usage in the console
+
+            print("Battery is at " + str(psutil.sensors_battery().percent) + "%")
+
         # telling the battery status when the says a command that contains both battery and status.
+
         elif 'status' in query and 'battery' in query:
+
             if psutil.sensors_battery().power_plugged == True:
 
                 speak("Battery is charging")
 
             if psutil.sensors_battery().power_plugged == False:
+
                 speak("Battery is discharging")
 
         elif 'open word' in query:
@@ -1256,7 +1151,9 @@ if __name__ == "__main__":
                 speak('ok sir')
 
         # type the text in the current window if 'type' is in query
+
         elif 'typing' in query and 'start' in query:
+
 
             speak("Starting typing")
 
@@ -1381,10 +1278,15 @@ if __name__ == "__main__":
                 playwl.main()
 
             else:
+
                 song_name = query.replace("play ", "")
+
                 speak("Playing " + song_name)
+
                 print(song_name)
+
                 pywhatkit.playonyt(song_name)
+
                 sleep(5)
 
             while True:
@@ -1394,6 +1296,7 @@ if __name__ == "__main__":
                 # pause the video if 'pause' is in query
 
                 # trim the query
+
                 query.strip()
 
                 if query == 'bye' or query == 'goodbye' or query == 'bye bye':
@@ -1898,23 +1801,33 @@ if __name__ == "__main__":
                 speak("Recycle Bin Recycled")
 
         elif 'lock window' in query or 'lock screen' in query or 'lock the screen' in query:
+
             speak("locking the device")
+
             ctypes.windll.user32.LockWorkStation()
 
         elif 'remember that' in query:
+
             speak("What should i remember?")
+
             data = takeCommand()
 
             speak("You said me to remember that " + data)
+
             remember = open('src/notes.txt', 'w')
+
             remember.write(data)
+
             remember.close()
 
             speak("I have remembered that")
 
         elif 'do you know anything' in query:
+
             remember = open('src/notes.txt', 'r')
+
             speak("You said me to remember that " + remember.read())
+
             remember.close()
 
         elif 'roll' in query and 'dice' in query:
@@ -2307,12 +2220,55 @@ if __name__ == "__main__":
                     sp('I am not sure what application you want to launch')
 
         elif 'search' in query:
+
+            # Ask the user for the search query
+
+            speak("What do you want to search for?")
+
+            query_to_be_searched = takeCommand().lower()
+
+            # Ask the user on which site you want to search for the query
+
+            speak("On which site do you want to search?")
+
+            site_to_search = takeCommand().lower()
+
             # indicates the start of a search query
+
             sp('Searching ...')
-            # use the function to get the result of the query
-            query = query.replace("search ", "")
-            # replace the query with the result of the query
-            query = query.replace(" on ", "")
+
+
+            # search on the google if google is in the resultant query after the execution of the above lines.
+
+            if 'google' in site_to_search:
+
+                # search on the google images if the site_to_search contains images
+
+                if 'images' in site_to_search:
+
+                    # open the query_to_be_searched on the google images
+                    webbrowser.open(f"https://www.google.com/search?q={query_to_be_searched}&source=olivia&tbm=isch")
+
+                
+                # search on the google if the site_to_search  contains map
+                elif 'maps' in site_to_search:
+
+                    # open the query_to_be_searched on the google maps
+
+                    webbrowser.open(f"https://www.google.com/maps/search/{query_to_be_searched}")
+
+                # search on google news if the site_to_search contains news
+
+                elif 'news' in site_to_search:
+
+                    # open the query_to_be_searched on the google news
+
+                    webbrowser.open(f"https://www.google.com/search?q={query_to_be_searched}&tbm=nws")
+                
+                elif 'books' in site_to_search: 
+                    pass
+
+
 
             # search on the youtube if youtube is in the resultant query after the execution of the above lines.
             if 'youtube' in query:
@@ -2938,6 +2894,18 @@ if __name__ == "__main__":
                 'zu': 'zulu',
             }
 
+            # speak to which language you want to translate
+            sp('To which language you want to translate?')
+
+            # get the query
+
+            query = takeCommand().lower()
+
+            # speak what you want to translate
+            sp("What do you want to translate?")
+
+            translate_this = takeCommand().lower()
+
             # translate to the afrikaans
 
             if 'afrikaans' in query:
@@ -2951,7 +2919,8 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the afrikaans and storing the result in a variable named result
-                result = translator.translate(query, dest='af')
+                result = translator.translate(translate_this, dest='af')
+
                 # printing the result
 
                 print(f"The Translated Text is: {result.text}")
@@ -2978,7 +2947,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the albanian and storing the result in a variable named result
-                result = translator.translate(query, dest='sq')
+                result = translator.translate(translate_this, dest='sq')
                 # printing the result
 
                 print(f"The Translated Text is: {result.text}")
@@ -3005,7 +2974,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the amharic and storing the result in a variable named result
-                result = translator.translate(query, dest='am')
+                result = translator.translate(translate_this, dest='am')
                 # printing the result
 
                 print(f"The Translated Text is: {result.text}")
@@ -3032,7 +3001,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the arabic and storing the result in a variable named result
-                result = translator.translate(query, dest='ar')
+                result = translator.translate(translate_this, dest='ar')
                 # printing the result
 
                 print(f"The Translated Text is: {result.text}")
@@ -3059,7 +3028,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the armenian and storing the result in a variable named result
-                result = translator.translate(query, dest='hy')
+                result = translator.translate(translate_this, dest='hy')
                 # printing the result
 
                 print(f"The Translated Text is: {result.text}")
@@ -3087,7 +3056,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the azerbaijani and storing the result in a variable named result
-                result = translator.translate(query, dest='az')
+                result = translator.translate(translate_this, dest='az')
                 # printing the result
 
                 print(f"The Translated Text is: {result.text}")
@@ -3114,7 +3083,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the basque and storing the result in a variable named result
-                result = translator.translate(query, dest='eu')
+                result = translator.translate(translate_this, dest='eu')
                 # printing the result
 
                 print(f"The Translated Text is: {result.text}")
@@ -3141,7 +3110,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the belarusian and storing the result in a variable named result
-                result = translator.translate(query, dest='be')
+                result = translator.translate(translate_this, dest='be')
                 # printing the result
 
                 print(f"The Translated Text is: {result.text}")
@@ -3168,7 +3137,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the bengali and storing the result in a variable named result
-                result = translator.translate(query, dest='bn')
+                result = translator.translate(translate_this, dest='bn')
                 # printing the result
 
                 print(f"The Translated Text is: {result.text}")
@@ -3195,7 +3164,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the bosnian and storing the result in a variable named result
-                result = translator.translate(query, dest='bs')
+                result = translator.translate(translate_this, dest='bs')
                 # printing the result
 
                 print(f"The Translated Text is: {result.text}")
@@ -3221,7 +3190,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the bulgarian and storing the result in a variable named result
-                result = translator.translate(query, dest='bg')
+                result = translator.translate(translate_this, dest='bg')
                 # printing the result
 
                 print(f"The Translated Text is: {result.text}")
@@ -3247,7 +3216,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the catalan and storing the result in a variable named result
-                result = translator.translate(query, dest='ca')
+                result = translator.translate(translate_this, dest='ca')
                 # printing the result
 
                 print(f"The Translated Text is: {result.text}")
@@ -3273,7 +3242,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the cebuano and storing the result in a variable named result
-                result = translator.translate(query, dest='ceb')
+                result = translator.translate(translate_this, dest='ceb')
                 # printing the result
 
                 print(f"The Translated Text is: {result.text}")
@@ -3299,7 +3268,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the chichewa and storing the result in a variable named result
-                result = translator.translate(query, dest='ny')
+                result = translator.translate(translate_this, dest='ny')
                 # printing the result
 
                 print(f"The Translated Text is: {result.text}")
@@ -3325,7 +3294,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the chinese and storing the result in a variable named result
-                result = translator.translate(query, dest='zh-CN')
+                result = translator.translate(translate_this, dest='zh-CN')
                 # printing the result
 
                 print(f"The Translated Text is: {result.text}")
@@ -3351,7 +3320,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the corican and storing the result in a variable named result
-                result = translator.translate(query, dest='co')
+                result = translator.translate(translate_this, dest='co')
                 # printing the result
 
                 print(f"The Translated Text is: {result.text}")
@@ -3377,7 +3346,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the croatian and storing the result in a variable named result
-                result = translator.translate(query, dest='hr')
+                result = translator.translate(translate_this, dest='hr')
                 # printing the result
 
                 print(f"The Translated Text is: {result.text}")
@@ -3403,7 +3372,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the czech and storing the result in a variable named result
-                result = translator.translate(query, dest='cs')
+                result = translator.translate(translate_this, dest='cs')
                 # printing the result
 
                 print(f"The Translated Text is: {result.text}")
@@ -3429,7 +3398,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the danish and storing the result in a variable named result
-                result = translator.translate(query, dest='da')
+                result = translator.translate(translate_this, dest='da')
                 # printing the result
 
                 print(f"The Translated Text is: {result.text}")
@@ -3455,7 +3424,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the dutch and storing the result in a variable named result
-                result = translator.translate(query, dest='nl')
+                result = translator.translate(translate_this, dest='nl')
                 # printing the result
 
                 print(f"The Translated Text is: {result.text}")
@@ -3481,7 +3450,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the english and storing the result in a variable named result
-                result = translator.translate(query, dest='en')
+                result = translator.translate(translate_this, dest='en')
                 # printing the result
 
                 print(f"The Translated Text is: {result.text}")
@@ -3507,7 +3476,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the esperanto and storing the result in a variable named result
-                result = translator.translate(query, dest='eo')
+                result = translator.translate(translate_this, dest='eo')
                 # printing the result
 
                 print(f"The Translated Text is: {result.text}")
@@ -3533,7 +3502,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the estonian and storing the result in a variable named result
-                result = translator.translate(query, dest='et')
+                result = translator.translate(translate_this, dest='et')
                 # printing the result
 
                 print(f"The Translated Text is: {result.text}")
@@ -3559,7 +3528,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the filipino and storing the result in a variable named result
-                result = translator.translate(query, dest='tl')
+                result = translator.translate(translate_this, dest='tl')
                 # printing the result
 
                 print(f"The Translated Text is: {result.text}")
@@ -3585,7 +3554,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the finnish and storing the result in a variable named result
-                result = translator.translate(query, dest='fi')
+                result = translator.translate(translate_this, dest='fi')
                 # printing the result
 
                 print(f"The Translated Text is: {result.text}")
@@ -3611,7 +3580,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the french and storing the result in a variable named result
-                result = translator.translate(query, dest='fr')
+                result = translator.translate(translate_this, dest='fr')
                 # printing the result
 
                 print(f"The Translated Text is: {result.text}")
@@ -3637,7 +3606,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the frisian and storing the result in a variable named result
-                result = translator.translate(query, dest='fy')
+                result = translator.translate(translate_this, dest='fy')
                 # printing the result
 
                 print(f"The Translated Text is: {result.text}")
@@ -3663,7 +3632,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the galician and storing the result in a variable named result
-                result = translator.translate(query, dest='gl')
+                result = translator.translate(translate_this, dest='gl')
                 # printing the result
 
                 print(f"The Translated Text is: {result.text}")
@@ -3690,7 +3659,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the georgian and storing the result in a variable named result
-                result = translator.translate(query, dest='ka')
+                result = translator.translate(translate_this, dest='ka')
                 # printing the result
 
                 print(f"The Translated Text is: {result.text}")
@@ -3716,7 +3685,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the german and storing the result in a variable named result
-                result = translator.translate(query, dest='de')
+                result = translator.translate(translate_this, dest='de')
                 # printing the result
 
                 print(f"The Translated Text is: {result.text}")
@@ -3742,7 +3711,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the greek and storing the result in a variable named result
-                result = translator.translate(query, dest='el')
+                result = translator.translate(translate_this, dest='el')
                 # printing the result
 
                 print(f"The Translated Text is: {result.text}")
@@ -3768,7 +3737,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the gujarati and storing the result in a variable named result
-                result = translator.translate(query, dest='gu')
+                result = translator.translate(translate_this, dest='gu')
                 # printing the result
 
                 print(f"The Translated Text is: {result.text}")
@@ -3794,7 +3763,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the haitian creole and storing the result in a variable named result
-                result = translator.translate(query, dest='ht')
+                result = translator.translate(translate_this, dest='ht')
                 # printing the result
 
                 print(f"The Translated Text is: {result.text}")
@@ -3821,7 +3790,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the hausa and storing the result in a variable named result
-                result = translator.translate(query, dest='ha')
+                result = translator.translate(translate_this, dest='ha')
                 # printing the result
 
                 print(f"The Translated Text is: {result.text}")
@@ -3847,7 +3816,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the hawaiian and storing the result in a variable named result
-                result = translator.translate(query, dest='haw')
+                result = translator.translate(translate_this, dest='haw')
                 # printing the result
 
                 print(f"The Translated Text is: {result.text}")
@@ -3873,7 +3842,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the hebrew and storing the result in a variable named result
-                result = translator.translate(query, dest='he')
+                result = translator.translate(translate_this, dest='he')
                 # printing the result
 
                 print(f"The Translated Text is: {result.text}")
@@ -3899,7 +3868,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the hindi and storing the result in a variable named result
-                result = translator.translate(query, dest='hi')
+                result = translator.translate(translate_this, dest='hi')
                 # printing the result
 
                 print(f"The Translated Text is: {result.text}")
@@ -3925,7 +3894,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the hmong and storing the result in a variable named result
-                result = translator.translate(query, dest='hmn')
+                result = translator.translate(translate_this, dest='hmn')
                 # printing the result
 
                 print(f"The Translated Text is: {result.text}")
@@ -3951,7 +3920,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the hungarian and storing the result in a variable named result
-                result = translator.translate(query, dest='hu')
+                result = translator.translate(translate_this, dest='hu')
                 # printing the result
 
                 print(f"The Translated Text is: {result.text}")
@@ -3977,7 +3946,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the icelandic and storing the result in a variable named result
-                result = translator.translate(query, dest='is')
+                result = translator.translate(translate_this, dest='is')
                 # printing the result
 
                 print(f"The Translated Text is: {result.text}")
@@ -4003,7 +3972,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the igbo and storing the result in a variable named result
-                result = translator.translate(query, dest='ig')
+                result = translator.translate(translate_this, dest='ig')
                 # printing the result
 
                 print(f"The Translated Text is: {result.text}")
@@ -4029,7 +3998,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the indonesian and storing the result in a variable named result
-                result = translator.translate(query, dest='id')
+                result = translator.translate(translate_this, dest='id')
                 # printing the result
 
                 print(f"The Translated Text is: {result.text}")
@@ -4055,7 +4024,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the irish and storing the result in a variable named result
-                result = translator.translate(query, dest='ga')
+                result = translator.translate(translate_this, dest='ga')
                 # printing the result
 
                 print(f"The Translated Text is: {result.text}")
@@ -4081,7 +4050,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the italian and storing the result in a variable named result
-                result = translator.translate(query, dest='it')
+                result = translator.translate(translate_this, dest='it')
                 # printing the result
 
                 print(f"The Translated Text is: {result.text}")
@@ -4108,7 +4077,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the japanese and storing the result in a variable named result
-                result = translator.translate(query, dest='ja')
+                result = translator.translate(translate_this, dest='ja')
                 # printing the result
 
                 print(f"The Translated Text is: {result.text}")
@@ -4134,7 +4103,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the javanese and storing the result in a variable named result
-                result = translator.translate(query, dest='jw')
+                result = translator.translate(translate_this, dest='jw')
                 # printing the result
 
                 print(f"The Translated Text is: {result.text}")
@@ -4160,7 +4129,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the kannada and storing the result in a variable named result
-                result = translator.translate(query, dest='kn')
+                result = translator.translate(translate_this, dest='kn')
                 # printing the result
 
                 print(f"The Translated Text is: {result.text}")
@@ -4186,7 +4155,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the kazakh and storing the result in a variable named result
-                result = translator.translate(query, dest='kk')
+                result = translator.translate(translate_this, dest='kk')
                 # printing the result
 
                 print(f"The Translated Text is: {result.text}")
@@ -4213,7 +4182,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the khmer and storing the result in a variable named result
-                result = translator.translate(query, dest='km')
+                result = translator.translate(translate_this, dest='km')
                 # printing the result
 
                 print(f"The Translated Text is: {result.text}")
@@ -4239,7 +4208,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the korean and storing the result in a variable named result
-                result = translator.translate(query, dest='ko')
+                result = translator.translate(translate_this, dest='ko')
                 # printing the result
 
                 print(f"The Translated Text is: {result.text}")
@@ -4265,7 +4234,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the kurdish and storing the result in a variable named result
-                result = translator.translate(query, dest='ku')
+                result = translator.translate(translate_this, dest='ku')
                 # printing the result
 
                 print(f"The Translated Text is: {result.text}")
@@ -4291,7 +4260,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the kurmanji and storing the result in a variable named result
-                result = translator.translate(query, dest='ku')
+                result = translator.translate(translate_this, dest='ku')
                 # printing the result
 
                 print(f"The Translated Text is: {result.text}")
@@ -4318,7 +4287,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the kyrgyz and storing the result in a variable named result
-                result = translator.translate(query, dest='ky')
+                result = translator.translate(translate_this, dest='ky')
                 # printing the result
 
                 print(f"The Translated Text is: {result.text}")
@@ -4344,7 +4313,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the lao and storing the result in a variable named result
-                result = translator.translate(query, dest='lo')
+                result = translator.translate(translate_this, dest='lo')
                 # printing the result
 
                 print(f"The Translated Text is: {result.text}")
@@ -4370,7 +4339,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the latin and storing the result in a variable named result
-                result = translator.translate(query, dest='la')
+                result = translator.translate(translate_this, dest='la')
                 # printing the result
 
                 print(f"The Translated Text is: {result.text}")
@@ -4397,7 +4366,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the latvian and storing the result in a variable named result
-                result = translator.translate(query, dest='lv')
+                result = translator.translate(translate_this, dest='lv')
                 # printing the result
 
                 print(f"The Translated Text is: {result.text}")
@@ -4423,7 +4392,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the lithuanian and storing the result in a variable named result
-                result = translator.translate(query, dest='lt')
+                result = translator.translate(translate_this, dest='lt')
                 # printing the result
 
                 print(f"The Translated Text is: {result.text}")
@@ -4476,7 +4445,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the macedonian and storing the result in a variable named result
-                result = translator.translate(query, dest='mk')
+                result = translator.translate(translate_this, dest='mk')
                 # printing the result
 
                 print(f"The Translated Text is: {result.text}")
@@ -4502,7 +4471,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the malagasy and storing the result in a variable named result
-                result = translator.translate(query, dest='mg')
+                result = translator.translate(translate_this, dest='mg')
                 # printing the result
 
                 print(f"The Translated Text is: {result.text}")
@@ -4528,7 +4497,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the malay and storing the result in a variable named result
-                result = translator.translate(query, dest='ms')
+                result = translator.translate(translate_this, dest='ms')
                 # printing the result
 
                 print(f"The Translated Text is: {result.text}")
@@ -4554,7 +4523,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the malayalam and storing the result in a variable named result
-                result = translator.translate(query, dest='ml')
+                result = translator.translate(translate_this, dest='ml')
                 # printing the result
 
                 print(f"The Translated Text is: {result.text}")
@@ -4580,7 +4549,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the maltese and storing the result in a variable named result
-                result = translator.translate(query, dest='mt')
+                result = translator.translate(translate_this, dest='mt')
                 # printing the result
 
                 print(f"The Translated Text is: {result.text}")
@@ -4606,7 +4575,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the maori and storing the result in a variable named result
-                result = translator.translate(query, dest='mi')
+                result = translator.translate(translate_this, dest='mi')
                 # printing the result
 
                 print(f"The Translated Text is: {result.text}")
@@ -4632,7 +4601,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the marathi and storing the result in a variable named result
-                result = translator.translate(query, dest='mr')
+                result = translator.translate(translate_this, dest='mr')
                 # printing the result
 
                 print(f"The Translated Text is: {result.text}")
@@ -4658,7 +4627,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the mongolian and storing the result in a variable named result
-                result = translator.translate(query, dest='mn')
+                result = translator.translate(translate_this, dest='mn')
                 # printing the result
 
                 print(f"The Translated Text is: {result.text}")
@@ -4684,7 +4653,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the myanmar and storing the result in a variable named result
-                result = translator.translate(query, dest='my')
+                result = translator.translate(translate_this, dest='my')
                 # printing the result
 
                 print(f"The Translated Text is: {result.text}")
@@ -4710,7 +4679,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the burmese and storing the result in a variable named result
-                result = translator.translate(query, dest='my')
+                result = translator.translate(translate_this, dest='my')
                 # printing the result
 
                 print(f"The Translated Text is: {result.text}")
@@ -4736,7 +4705,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the nepali and storing the result in a variable named result
-                result = translator.translate(query, dest='ne')
+                result = translator.translate(translate_this, dest='ne')
                 # printing the result
 
                 print(f"The Translated Text is: {result.text}")
@@ -4762,7 +4731,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the norwegian and storing the result in a variable named result
-                result = translator.translate(query, dest='no')
+                result = translator.translate(translate_this, dest='no')
                 # printing the result
 
                 print(f"The Translated Text is: {result.text}")
@@ -4788,7 +4757,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the odia and storing the result in a variable named result
-                result = translator.translate(query, dest='or')
+                result = translator.translate(translate_this, dest='or')
                 # printing the result
 
                 print(f"The Translated Text is: {result.text}")
@@ -4814,7 +4783,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the pashto and storing the result in a variable named result
-                result = translator.translate(query, dest='ps')
+                result = translator.translate(translate_this, dest='ps')
                 # printing the result
 
                 print(f"The Translated Text is: {result.text}")
@@ -4840,7 +4809,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the persian and storing the result in a variable named result
-                result = translator.translate(query, dest='fa')
+                result = translator.translate(translate_this, dest='fa')
                 # printing the result
 
                 print(f"The Translated Text is: {result.text}")
@@ -4866,7 +4835,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the polish and storing the result in a variable named result
-                result = translator.translate(query, dest='pl')
+                result = translator.translate(translate_this, dest='pl')
                 # printing the result
 
                 print(f"The Translated Text is: {result.text}")
@@ -4892,7 +4861,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the portuguese and storing the result in a variable named result
-                result = translator.translate(query, dest='pt')
+                result = translator.translate(translate_this, dest='pt')
                 # printing the result
 
                 print(f"The Translated Text is: {result.text}")
@@ -4918,7 +4887,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the punjabi and storing the result in a variable named result
-                result = translator.translate(query, dest='pa')
+                result = translator.translate(translate_this, dest='pa')
                 # printing the result
 
                 print(f"The Translated Text is: {result.text}")
@@ -4944,7 +4913,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the romanian and storing the result in a variable named result
-                result = translator.translate(query, dest='ro')
+                result = translator.translate(translate_this, dest='ro')
                 # printing the result
 
                 print(f"The Translated Text is: {result.text}")
@@ -4970,7 +4939,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the russian and storing the result in a variable named result
-                result = translator.translate(query, dest='ru')
+                result = translator.translate(translate_this, dest='ru')
                 # printing the result
 
                 print(f"The Translated Text is: {result.text}")
@@ -4996,7 +4965,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the samoan and storing the result in a variable named result
-                result = translator.translate(query, dest='sm')
+                result = translator.translate(translate_this, dest='sm')
                 # printing the result
 
                 print(f"The Translated Text is: {result.text}")
@@ -5022,7 +4991,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the scots gaelic and storing the result in a variable named result
-                result = translator.translate(query, dest='gd')
+                result = translator.translate(translate_this, dest='gd')
                 # printing the result
 
                 print(f"The Translated Text is: {result.text}")
@@ -5048,7 +5017,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the serbian and storing the result in a variable named result
-                result = translator.translate(query, dest='sr')
+                result = translator.translate(translate_this, dest='sr')
                 # printing the result
 
                 print(f"The Translated Text is: {result.text}")
@@ -5074,7 +5043,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the sesotho and storing the result in a variable named result
-                result = translator.translate(query, dest='st')
+                result = translator.translate(translate_this, dest='st')
                 # printing the result
 
                 print(f"The Translated Text is: {result.text}")
@@ -5100,7 +5069,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the shona and storing the result in a variable named result
-                result = translator.translate(query, dest='sn')
+                result = translator.translate(translate_this, dest='sn')
                 # printing the result
 
                 print(f"The Translated Text is: {result.text}")
@@ -5126,7 +5095,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the sindhi and storing the result in a variable named result
-                result = translator.translate(query, dest='sd')
+                result = translator.translate(translate_this, dest='sd')
                 # printing the result
 
                 print(f"The Translated Text is: {result.text}")
@@ -5152,7 +5121,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the sinhala and storing the result in a variable named result
-                result = translator.translate(query, dest='si')
+                result = translator.translate(translate_this, dest='si')
                 # printing the result
 
                 print(f"The Translated Text is: {result.text}")
@@ -5178,7 +5147,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the slovak and storing the result in a variable named result
-                result = translator.translate(query, dest='sk')
+                result = translator.translate(translate_this, dest='sk')
                 # printing the result
 
                 print(f"The Translated Text is: {result.text}")
@@ -5204,7 +5173,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the slovenian and storing the result in a variable named result
-                result = translator.translate(query, dest='sl')
+                result = translator.translate(translate_this, dest='sl')
                 # printing the result
 
                 print(f"The Translated Text is: {result.text}")
@@ -5230,7 +5199,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the somali and storing the result in a variable named result
-                result = translator.translate(query, dest='so')
+                result = translator.translate(translate_this, dest='so')
                 # printing the result
 
                 print(f"The Translated Text is: {result.text}")
@@ -5257,7 +5226,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the spanish and storing the result in a variable named result
-                result = translator.translate(query, dest='es')
+                result = translator.translate(translate_this, dest='es')
                 # printing the result
 
                 print(f"The Translated Text is: {result.text}")
@@ -5283,7 +5252,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the sundanese and storing the result in a variable named result
-                result = translator.translate(query, dest='su')
+                result = translator.translate(translate_this, dest='su')
                 # printing the result
 
                 print(f"The Translated Text is: {result.text}")
@@ -5309,7 +5278,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the swahili and storing the result in a variable named result
-                result = translator.translate(query, dest='sw')
+                result = translator.translate(translate_this, dest='sw')
                 # printing the result
 
                 print(f"The Translated Text is: {result.text}")
@@ -5335,7 +5304,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the swedish and storing the result in a variable named result
-                result = translator.translate(query, dest='sv')
+                result = translator.translate(translate_this, dest='sv')
                 # printing the result
 
                 print(f"The Translated Text is: {result.text}")
@@ -5361,7 +5330,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the tajik and storing the result in a variable named result
-                result = translator.translate(query, dest='tg')
+                result = translator.translate(translate_this, dest='tg')
                 # printing the result
 
                 print(f"The Translated Text is: {result.text}")
@@ -5387,7 +5356,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the tamil and storing the result in a variable named result
-                result = translator.translate(query, dest='ta')
+                result = translator.translate(translate_this, dest='ta')
                 # printing the result
 
                 print(f"The Translated Text is: {result.text}")
@@ -5413,7 +5382,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the telugu and storing the result in a variable named result
-                result = translator.translate(query, dest='te')
+                result = translator.translate(translate_this, dest='te')
                 # printing the result
 
                 print(f"The Translated Text is: {result.text}")
@@ -5439,7 +5408,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the thai and storing the result in a variable named result
-                result = translator.translate(query, dest='th')
+                result = translator.translate(translate_this, dest='th')
                 # printing the result
 
                 print(f"The Translated Text is: {result.text}")
@@ -5465,7 +5434,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the turkish and storing the result in a variable named result
-                result = translator.translate(query, dest='tr')
+                result = translator.translate(translate_this, dest='tr')
                 # printing the result
 
                 print(f"The Translated Text is: {result.text}")
@@ -5491,7 +5460,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the ukrainian and storing the result in a variable named result
-                result = translator.translate(query, dest='uk')
+                result = translator.translate(translate_this, dest='uk')
                 # printing the result
 
                 print(f"The Translated Text is: {result.text}")
@@ -5517,7 +5486,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the urdu and storing the result in a variable named result
-                result = translator.translate(query, dest='ur')
+                result = translator.translate(translate_this, dest='ur')
                 # printing the result
 
                 print(f"The Translated Text is: {result.text}")
@@ -5543,7 +5512,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the uyghur and storing the result in a variable named result
-                result = translator.translate(query, dest='ug')
+                result = translator.translate(translate_this, dest='ug')
                 # printing the result
 
                 print(f"The Translated Text is: {result.text}")
@@ -5569,7 +5538,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the uzbek and storing the result in a variable named result
-                result = translator.translate(query, dest='uz')
+                result = translator.translate(translate_this, dest='uz')
                 # printing the result
 
                 print(f"The Translated Text is: {result.text}")
@@ -5595,7 +5564,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the vietnamese and storing the result in a variable named result
-                result = translator.translate(query, dest='vi')
+                result = translator.translate(translate_this, dest='vi')
                 # printing the result
 
                 print(f"The Translated Text is: {result.text}")
@@ -5621,7 +5590,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the welsh and storing the result in a variable named result
-                result = translator.translate(query, dest='cy')
+                result = translator.translate(translate_this, dest='cy')
                 # printing the result
 
                 print(f"The Translated Text is: {result.text}")
@@ -5647,7 +5616,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the xhosa and storing the result in a variable named result
-                result = translator.translate(query, dest='xh')
+                result = translator.translate(translate_this, dest='xh')
                 # printing the result
 
                 print(f"The Translated Text is: {result.text}")
@@ -5673,7 +5642,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the yiddish and storing the result in a variable named result
-                result = translator.translate(query, dest='yi')
+                result = translator.translate(translate_this, dest='yi')
                 # printing the result
 
                 print(f"The Translated Text is: {result.text}")
@@ -5699,7 +5668,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the yoruba and storing the result in a variable named result
-                result = translator.translate(query, dest='yo')
+                result = translator.translate(translate_this, dest='yo')
                 # printing the result
 
                 print(f"The Translated Text is: {result.text}")
@@ -5725,7 +5694,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the zulu and storing the result in a variable named result
-                result = translator.translate(query, dest='zu')
+                result = translator.translate(translate_this, dest='zu')
                 # printing the result
 
                 print(f"The Translated Text is: {result.text}")
@@ -6065,6 +6034,128 @@ if __name__ == "__main__":
 
             wishMe()
 
+        # if the query contains 'tell me about (something)', then return the information of that person/organisation from the wikipedia using the information from the wikipedia library
+        elif 'tell me about' in query or 'who is' in query:
+
+            # remove the stop words from the query
+            query = query.replace("tell me about", "")
+            query = query.replace("who is", "")
+            query = query.replace("what is", "")
+            query = query.strip()
+
+            try:
+
+                # assign the query to a variable named as topic
+                topic = query
+
+                # search for the topic on wikipedia
+                results = wikipedia.summary(topic, sentences=2)
+
+                # speak the Accoridng to wikipedia
+                speak("According to Wikipedia")
+
+                # print the result
+                print(results)
+
+                # speak the result
+                speak(results)
+
+            except:
+
+                # if the wikipedia does not have the query, then search for the query in the internet
+                print("I can not find any information about " + query)
+                sp("Searching on the internet")
+                query = query.replace(" ", "+")
+                url = "https://www.google.com/search?q=" + query
+                webbrowser.get().open(url)
+
+        # if the query contains 'what is' then return the information of that person/organisation from the wikipedia using the information from the wikipedia library
+        elif 'what is' in query:
+
+            # remove the stop words from the query
+            query = query.replace("what is", "")
+            query = query.replace("about", "")
+            query = query.strip()
+
+            if 'news' in query:
+
+                # remove the stop words from the query
+                query = query.replace("news", "")
+
+                # assign the query to a variable named as topic
+                topic = query
+
+                # search for the topic on google news
+                url = "https://news.google.com/search?q=" + topic
+
+                # open the url in the default browser
+                webbrowser.get().open(url)
+
+            else:
+
+                try:
+
+                    # speak('Searching Wikipedia...')
+                    sp("Searching Wikipedia...")
+
+                    # assign the query to a variable named as topic
+                    topic = query
+
+                    # search for the topic on wikipedia
+
+                    results = wikipedia.summary(topic, sentences=2)
+
+                    # speak the Accoridng to wikipedia
+
+                    speak("According to Wikipedia")
+
+                    # print the result
+
+                    print(results)
+
+                    # speak the result
+
+                    speak(results)
+
+                except:
+
+                    # if the wikipedia does not have the query, then search for the query in the internet
+                    print("I can not find any information about " + query)
+                    sp("Searching on the internet")
+                    query = query.replace(" ", "+")
+                    url = "https://www.google.com/search?q=" + query
+                    webbrowser.get().open(url)
+
+        # if the query contains how to (something) then search something on google and open it
+
+        elif 'how to' in query:
+
+            # remove the stop words from the query
+            query = query.replace("how to", "")
+            query = query.strip()
+
+            # search for the query in google
+            url = "https://www.google.com/search?q=" + query
+            webbrowser.get().open(url)
+
+            # speak the result
+            speak("Here is what i found")
+
+        elif 'weather in' in query:
+
+            # remove the stop words from the query
+            query = query.strip()
+
+            # search for the query in google
+            url = "https://www.google.com/search?q=" + query
+            webbrowser.get().open(url)
+
+            # speak the result
+            speak("Here is what i found")
+
+        elif 'news' in query and 'latest' in query:
+
+            NewsFromBBC()
         # else:
         #     if query != 'none':
         #         webbrowser.open(
