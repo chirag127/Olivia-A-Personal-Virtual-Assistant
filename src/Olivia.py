@@ -3,7 +3,6 @@ import datetime
 import json
 import math
 import os
-import platform
 import random
 import re
 import shutil
@@ -680,7 +679,7 @@ def send_whatapp(to, content):
 
 
 def text2speech():
-    
+
     text = pyperclip.paste()
 
     print(text)
