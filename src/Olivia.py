@@ -65,9 +65,30 @@ engine.setProperty("voice", voices[1].id)
 
 def speak(audio):
 
+    # if "google.colab" in sys.modules:
+
+    #     from gtts import gTTS  # Import Google Text to Speech
+    #     from IPython.display import (
+    #         Audio,
+    #     )  # Import Audio method from IPython's Display Class
+
+    #     tts = gTTS("hello chirag")  # Provide the string to convert to speech
+    #     tts.save("1.wav")  # save the string converted to speech as a .wav file
+    #     sound_file = "1.wav"
+    #     Audio(sound_file, autoplay=True)
+
+    #     # Autoplay = True will play the sound automatically
+    #     # If you would not like to play the sound automatically, simply pass Autoplay = False.
+
+    # else:
     engine.say(audio)
 
     engine.runAndWait()
+
+
+def open_url(url):
+
+    webbrowser.open(url)
 
 
 # defining the function to take command from the user
@@ -673,7 +694,7 @@ def query_day():
 
 
 def send_whatapp(to, content):
-    webbrowser.open("https://web.whatsapp.com/send?phone=" + to + "&text=" + content)
+    open_url("https://web.whatsapp.com/send?phone=" + to + "&text=" + content)
     sleep(30)
     pyautogui.press("enter")
 
@@ -2065,7 +2086,7 @@ if __name__ == "__main__":
 
             sp(location)
 
-            webbrowser.open("https://www.google.com / maps / place/" + location + "")
+            open_url("https://www.google.com / maps / place/" + location + "")
 
         # tell the stock price of the company using yahoo finance api and speak the result to the user using google speech api and print the result to the console
         #         elif "stock" in query and "price" in query:
@@ -2389,7 +2410,7 @@ if __name__ == "__main__":
                     sp("Searching on Google Images...")
 
                     # open the query_to_be_searched on the google images
-                    webbrowser.open(
+                    open_url(
                         f"https://www.google.com/search?q={query_to_be_searched}&source=olivia&tbm=isch"
                     )
 
@@ -2402,7 +2423,7 @@ if __name__ == "__main__":
 
                     # open the query_to_be_searched on the google maps
 
-                    webbrowser.open(
+                    open_url(
                         f"https://www.google.com/maps/search/{query_to_be_searched}"
                     )
 
@@ -2416,7 +2437,7 @@ if __name__ == "__main__":
 
                     # open the query_to_be_searched on the google news
 
-                    webbrowser.open(
+                    open_url(
                         f"https://www.google.com/search?q={query_to_be_searched}&tbm=nws"
                     )
 
@@ -2428,7 +2449,7 @@ if __name__ == "__main__":
 
                     # open the query_to_be_searched on the google books
 
-                    webbrowser.open(
+                    open_url(
                         f"https://www.google.com/search?q={query_to_be_searched}&tbm=bks"
                     )
 
@@ -2442,7 +2463,7 @@ if __name__ == "__main__":
 
                     # open the query_to_be_searched on the google videos
 
-                    webbrowser.open(
+                    open_url(
                         f"https://www.google.com/search?q={query_to_be_searched}&tbm=vid"
                     )
 
@@ -2452,7 +2473,7 @@ if __name__ == "__main__":
 
                     # open the query_to_be_searched on the google shopping
 
-                    webbrowser.open(
+                    open_url(
                         f"https://www.google.com/search?q={query_to_be_searched}&tbm=shop"
                     )
 
@@ -2462,7 +2483,7 @@ if __name__ == "__main__":
 
                     # open the query_to_be_searched on the google flight
 
-                    webbrowser.open(
+                    open_url(
                         f"https://www.google.com/search?q={query_to_be_searched}&tbm=fl"
                     )
 
@@ -2472,7 +2493,7 @@ if __name__ == "__main__":
 
                     # open the query_to_be_searched on the google finance
 
-                    webbrowser.open(
+                    open_url(
                         f"https://www.google.com/search?q={query_to_be_searched}&tbm=fin"
                     )
 
@@ -2485,7 +2506,7 @@ if __name__ == "__main__":
 
                 # open the query_to_be_searched on the youtube
 
-                webbrowser.open(
+                open_url(
                     f"https://www.youtube.com/results?search_query={query_to_be_searched}"
                 )
 
@@ -2499,7 +2520,7 @@ if __name__ == "__main__":
 
                 # open the query_to_be_searched on the amazon
 
-                webbrowser.open(f"https://www.amazon.in/s?k={query_to_be_searched}")
+                open_url(f"https://www.amazon.in/s?k={query_to_be_searched}")
 
             # search on Facebook if the site_to_search contains facebook
 
@@ -2511,7 +2532,7 @@ if __name__ == "__main__":
 
                 # open the query_to_be_searched on the facebook
 
-                webbrowser.open(
+                open_url(
                     f"https://www.facebook.com/search/top/?q={query_to_be_searched}"
                 )
 
@@ -2525,9 +2546,7 @@ if __name__ == "__main__":
 
                 # open the query_to_be_searched on the google.co.in
 
-                webbrowser.open(
-                    f"https://www.google.co.in/search?q={query_to_be_searched}"
-                )
+                open_url(f"https://www.google.co.in/search?q={query_to_be_searched}")
 
             # search on Flipkart if the site_to_search contains flipkart
 
@@ -2539,9 +2558,7 @@ if __name__ == "__main__":
 
                 # open the query_to_be_searched on the flipkart
 
-                webbrowser.open(
-                    f"https://www.flipkart.com/search?q={query_to_be_searched}"
-                )
+                open_url(f"https://www.flipkart.com/search?q={query_to_be_searched}")
 
             # search on Wikipedia if the site_to_search contains wikipedia
 
@@ -2553,7 +2570,7 @@ if __name__ == "__main__":
 
                 # open the query_to_be_searched on the wikipedia
 
-                webbrowser.open(
+                open_url(
                     f"https://en.wikipedia.org/w/index.php?search={query_to_be_searched}"
                 )
 
@@ -2567,7 +2584,7 @@ if __name__ == "__main__":
 
                 # open the query_to_be_searched on the canva
 
-                webbrowser.open(
+                open_url(
                     f"https://www.canva.com/search/templates?q={query_to_be_searched}"
                 )
 
@@ -2581,7 +2598,7 @@ if __name__ == "__main__":
 
                 # open the query_to_be_searched on the instagram
 
-                webbrowser.open(
+                open_url(
                     f"https://www.instagram.com/explore/tags/{query_to_be_searched}"
                 )
 
@@ -2595,7 +2612,7 @@ if __name__ == "__main__":
 
                 # open the query_to_be_searched on the microsoft
 
-                webbrowser.open(
+                open_url(
                     f"https://www.microsoft.com/en-in/search/result.aspx?q={query_to_be_searched}"
                 )
 
@@ -2609,7 +2626,7 @@ if __name__ == "__main__":
 
                 # open the query_to_be_searched on the amazon
 
-                webbrowser.open(f"https://www.amazon.com/s?k={query_to_be_searched}")
+                open_url(f"https://www.amazon.com/s?k={query_to_be_searched}")
 
             # search on Yahoo if the site_to_search contains yahoo
 
@@ -2621,9 +2638,7 @@ if __name__ == "__main__":
 
                 # open the query_to_be_searched on the yahoo
 
-                webbrowser.open(
-                    f"https://in.search.yahoo.com/search?p={query_to_be_searched}"
-                )
+                open_url(f"https://in.search.yahoo.com/search?p={query_to_be_searched}")
 
             # search on whatsapp if the site_to_search contains whatsapp
 
@@ -2635,9 +2650,7 @@ if __name__ == "__main__":
 
                 # open the query_to_be_searched on the whatsapp
 
-                webbrowser.open(
-                    f"https://web.whatsapp.com/send?text={query_to_be_searched}"
-                )
+                open_url(f"https://web.whatsapp.com/send?text={query_to_be_searched}")
 
             # search on Indiatimes if the site_to_search contains indiatimes
 
@@ -2649,7 +2662,7 @@ if __name__ == "__main__":
 
                 # open the query_to_be_searched on the indiatimes
 
-                webbrowser.open(
+                open_url(
                     f"https://timesofindia.indiatimes.com/topic/{query_to_be_searched}"
                 )
 
@@ -2663,7 +2676,7 @@ if __name__ == "__main__":
 
                 # open the query_to_be_searched on the zoom
 
-                webbrowser.open(f"https://zoom.us/search?q={query_to_be_searched}")
+                open_url(f"https://zoom.us/search?q={query_to_be_searched}")
 
             # search on hdfcbank if the site_to_search contains hdfcbank
 
@@ -2675,7 +2688,7 @@ if __name__ == "__main__":
 
                 # open the query_to_be_searched on the hdfcbank
 
-                webbrowser.open(
+                open_url(
                     f"https://www.hdfcbank.com/personal/loan/personal-loan?q={query_to_be_searched}"
                 )
 
@@ -2689,7 +2702,7 @@ if __name__ == "__main__":
 
                 # open the query_to_be_searched on the zerodha
 
-                webbrowser.open(f"https://zerodha.com/search?q={query_to_be_searched}")
+                open_url(f"https://zerodha.com/search?q={query_to_be_searched}")
 
             # search on LinkedIn if the site_to_search contains linkedin
 
@@ -2701,7 +2714,7 @@ if __name__ == "__main__":
 
                 # open the query_to_be_searched on the linkedin
 
-                webbrowser.open(
+                open_url(
                     f"https://www.linkedin.com/search/results/index/?keywords={query_to_be_searched}"
                 )
 
@@ -2715,9 +2728,7 @@ if __name__ == "__main__":
 
                 # open the query_to_be_searched on the hotstar
 
-                webbrowser.open(
-                    f"https://www.hotstar.com/search?q={query_to_be_searched}"
-                )
+                open_url(f"https://www.hotstar.com/search?q={query_to_be_searched}")
 
             # office","netflix","live","icicibank","twitter","stackoverflow","primevideo"
 
@@ -2731,7 +2742,7 @@ if __name__ == "__main__":
 
                 # open the query_to_be_searched on the office
 
-                webbrowser.open(f"https://office.com/search?q={query_to_be_searched}")
+                open_url(f"https://office.com/search?q={query_to_be_searched}")
 
             # search on netflix if the site_to_search contains netflix
 
@@ -2743,9 +2754,7 @@ if __name__ == "__main__":
 
                 # open the query_to_be_searched on the netflix
 
-                webbrowser.open(
-                    f"https://www.netflix.com/search?q={query_to_be_searched}"
-                )
+                open_url(f"https://www.netflix.com/search?q={query_to_be_searched}")
 
             # search on live if the site_to_search contains live
 
@@ -2757,7 +2766,7 @@ if __name__ == "__main__":
 
                 # open the query_to_be_searched on the live
 
-                webbrowser.open(f"https://www.live.com/search?q={query_to_be_searched}")
+                open_url(f"https://www.live.com/search?q={query_to_be_searched}")
 
             # search on icicibank if the site_to_search contains icicibank
 
@@ -2769,9 +2778,7 @@ if __name__ == "__main__":
 
                 # open the query_to_be_searched on the icicibank
 
-                webbrowser.open(
-                    f"https://www.icicibank.com/search?q={query_to_be_searched}"
-                )
+                open_url(f"https://www.icicibank.com/search?q={query_to_be_searched}")
 
             # search on twitter if the site_to_search contains twitter
 
@@ -2783,7 +2790,7 @@ if __name__ == "__main__":
 
                 # open the query_to_be_searched on the twitter
 
-                webbrowser.open(f"https://twitter.com/search?q={query_to_be_searched}")
+                open_url(f"https://twitter.com/search?q={query_to_be_searched}")
 
             # search on stack overflow if the site_to_search contains stack overflow
 
@@ -2795,9 +2802,7 @@ if __name__ == "__main__":
 
                 # open the query_to_be_searched on the stackoverflow
 
-                webbrowser.open(
-                    f"https://stackoverflow.com/search?q={query_to_be_searched}"
-                )
+                open_url(f"https://stackoverflow.com/search?q={query_to_be_searched}")
 
             # search on primevideo if the site_to_search contains primevideo
 
@@ -2809,9 +2814,7 @@ if __name__ == "__main__":
 
                 # open the query_to_be_searched on the primevideo
 
-                webbrowser.open(
-                    f"https://www.primevideo.com/search?q={query_to_be_searched}"
-                )
+                open_url(f"https://www.primevideo.com/search?q={query_to_be_searched}")
 
             elif "reddit" in site_to_search:
 
@@ -2821,9 +2824,7 @@ if __name__ == "__main__":
 
                 # open the query_to_be_searched on the reddit
 
-                webbrowser.open(
-                    f"https://www.reddit.com/search?q={query_to_be_searched}"
-                )
+                open_url(f"https://www.reddit.com/search?q={query_to_be_searched}")
 
                 # example: search on onlinesbi
                 # outurl = "https://www.onlinesbi.com/search?q=python "
@@ -2836,9 +2837,7 @@ if __name__ == "__main__":
 
                 # open the query_to_be_searched on the onlinesbi
 
-                webbrowser.open(
-                    f"https://www.onlinesbi.com/search?q={query_to_be_searched}"
-                )
+                open_url(f"https://www.onlinesbi.com/search?q={query_to_be_searched}")
 
             # search on godaddy if the site_to_search contains godaddy
 
@@ -2850,7 +2849,7 @@ if __name__ == "__main__":
 
                 # open the query_to_be_searched on the godaddy
 
-                webbrowser.open(
+                open_url(
                     f"https://in.godaddy.com/domainsearch/find?checkAvail=1&domainToCheck={query_to_be_searched}"
                 )
 
@@ -2864,9 +2863,7 @@ if __name__ == "__main__":
 
                 # open the query_to_be_searched on the myshopify
 
-                webbrowser.open(
-                    f"https://www.myshopify.com/search?q={query_to_be_searched}"
-                )
+                open_url(f"https://www.myshopify.com/search?q={query_to_be_searched}")
 
             # search on moneycontrol if the site_to_search contains moneycontrol
 
@@ -2878,7 +2875,7 @@ if __name__ == "__main__":
 
                 # open the query_to_be_searched on the moneycontrol
 
-                webbrowser.open(
+                open_url(
                     f"https://www.moneycontrol.com/stocks/cptmarket/compsearchnew.php?search_data=&cid=&mbsearch_str=&topsearch_type=1&search_str={query_to_be_searched}"
                 )
 
@@ -2892,7 +2889,7 @@ if __name__ == "__main__":
 
                 # open the query_to_be_searched on the grammarly
 
-                webbrowser.open(f"{query_to_be_searched} site:grammarly.com")
+                open_url(f"{query_to_be_searched} site:grammarly.com")
 
             # search on microsoftonline if the site_to_search contains microsoftonline
 
@@ -2904,7 +2901,7 @@ if __name__ == "__main__":
 
                 # open the query_to_be_searched on the microsoftonline
 
-                webbrowser.open(
+                open_url(
                     f"https://www.microsoftonline.com/search?q={query_to_be_searched}"
                 )
 
@@ -2918,9 +2915,7 @@ if __name__ == "__main__":
 
                 # open the query_to_be_searched on the adobe
 
-                webbrowser.open(
-                    f"https://www.adobe.com/in/search?q={query_to_be_searched}"
-                )
+                open_url(f"https://www.adobe.com/in/search?q={query_to_be_searched}")
 
             # search on irctc if the site_to_search contains irctc
 
@@ -2928,9 +2923,7 @@ if __name__ == "__main__":
 
                 # open the query_to_be_searched on the irctc
 
-                webbrowser.open(
-                    f"https://www.irctc.co.in/eticketing/loginHome.jsf?lang=eng"
-                )
+                open_url(f"https://www.irctc.co.in/eticketing/loginHome.jsf?lang=eng")
 
             # search on freepik if the site_to_search contains freepik
 
@@ -2938,9 +2931,7 @@ if __name__ == "__main__":
 
                 # open the query_to_be_searched on the freepik
 
-                webbrowser.open(
-                    f"https://www.freepik.com/search?q={query_to_be_searched}"
-                )
+                open_url(f"https://www.freepik.com/search?q={query_to_be_searched}")
 
             # search on indiamart if the site_to_search contains indiamart
 
@@ -2948,9 +2939,7 @@ if __name__ == "__main__":
 
                 # open the query_to_be_searched on the indiamart
 
-                webbrowser.open(
-                    f"https://www.indiamart.com/search?q={query_to_be_searched}"
-                )
+                open_url(f"https://www.indiamart.com/search?q={query_to_be_searched}")
 
             # search on manoramaonline if the site_to_search contains manoramaonline
 
@@ -2958,7 +2947,7 @@ if __name__ == "__main__":
 
                 # open the query_to_be_searched on the manoramaonline
 
-                webbrowser.open(
+                open_url(
                     f"https://www.manoramaonline.com/search?q={query_to_be_searched}"
                 )
 
@@ -2968,7 +2957,7 @@ if __name__ == "__main__":
 
                 # open the query_to_be_searched on the naukri
 
-                webbrowser.open(
+                open_url(
                     f"https://www.naukri.com/naukri-jobs-india-jobs-in-{query_to_be_searched}"
                 )
 
@@ -2978,9 +2967,7 @@ if __name__ == "__main__":
 
                 # open the query_to_be_searched on the wordpress
 
-                webbrowser.open(
-                    f"https://wordpress.com/search?q={query_to_be_searched}"
-                )
+                open_url(f"https://wordpress.com/search?q={query_to_be_searched}")
 
             # search on bing if the site_to_search contains bing
 
@@ -2988,7 +2975,7 @@ if __name__ == "__main__":
 
                 # open the query_to_be_searched on the bing
 
-                webbrowser.open(f"https://www.bing.com/search?q={query_to_be_searched}")
+                open_url(f"https://www.bing.com/search?q={query_to_be_searched}")
 
             # search on cricbuzz if the site_to_search contains cricbuzz
 
@@ -2996,9 +2983,7 @@ if __name__ == "__main__":
 
                 # open the query_to_be_searched on the cricbuzz
 
-                webbrowser.open(
-                    f"https://www.cricbuzz.com/search?q={query_to_be_searched}"
-                )
+                open_url(f"https://www.cricbuzz.com/search?q={query_to_be_searched}")
 
             # search on tradingview if the site_to_search contains tradingview
 
@@ -3006,9 +2991,7 @@ if __name__ == "__main__":
 
                 # open the query_to_be_searched on the tradingview
 
-                webbrowser.open(
-                    f"https://www.tradingview.com/search?q={query_to_be_searched}"
-                )
+                open_url(f"https://www.tradingview.com/search?q={query_to_be_searched}")
 
             # search on ndtv if the site_to_search contains ndtv
 
@@ -3016,7 +2999,7 @@ if __name__ == "__main__":
 
                 # open the query_to_be_searched on the ndtv
 
-                webbrowser.open(f"https://www.ndtv.com/search?q={query_to_be_searched}")
+                open_url(f"https://www.ndtv.com/search?q={query_to_be_searched}")
 
             # search on zoho if the site_to_search contains zoho
 
@@ -3024,7 +3007,7 @@ if __name__ == "__main__":
 
                 # open the query_to_be_searched on the zoho
 
-                webbrowser.open(f"https://www.zoho.com/search?q={query_to_be_searched}")
+                open_url(f"https://www.zoho.com/search?q={query_to_be_searched}")
 
             # search on tumblr if the site_to_search contains tumblr
 
@@ -3032,7 +3015,7 @@ if __name__ == "__main__":
 
                 # open the query_to_be_searched on the tumblr
 
-                webbrowser.open(f"https://www.tumblr.com/search/{query_to_be_searched}")
+                open_url(f"https://www.tumblr.com/search/{query_to_be_searched}")
 
             # search on indeed if the site_to_search contains indeed
 
@@ -3040,7 +3023,7 @@ if __name__ == "__main__":
 
                 # open the query_to_be_searched on the indeed
 
-                webbrowser.open(f"https://www.indeed.com/jobs?q={query_to_be_searched}")
+                open_url(f"https://www.indeed.com/jobs?q={query_to_be_searched}")
 
             # search on amazonaws if the site_to_search contains amazonaws
 
@@ -3048,9 +3031,7 @@ if __name__ == "__main__":
 
                 # open the query_to_be_searched on the amazonaws
 
-                webbrowser.open(
-                    f"https://aws.amazon.com/search/?q={query_to_be_searched}"
-                )
+                open_url(f"https://aws.amazon.com/search/?q={query_to_be_searched}")
 
             # search on smallpdf if the site_to_search contains smallpdf
 
@@ -3058,7 +3039,7 @@ if __name__ == "__main__":
 
                 # open the query_to_be_searched on the smallpdf
 
-                webbrowser.open(f"https://smallpdf.com/search?q={query_to_be_searched}")
+                open_url(f"https://smallpdf.com/search?q={query_to_be_searched}")
 
             # search on myntra if the site_to_search contains myntra
 
@@ -3066,91 +3047,89 @@ if __name__ == "__main__":
 
                 # open the query_to_be_searched on the myntra
 
-                webbrowser.open(
-                    f"https://www.myntra.com/search?q={query_to_be_searched}"
-                )
+                open_url(f"https://www.myntra.com/search?q={query_to_be_searched}")
 
         elif "open" in query:
             query = query.replace("open", "")
 
             if "firefox" in query:
                 sp("Firefox is opening")
-                webbrowser.open("https://www.mozilla.org/en-US/firefox/new/")
+                open_url("https://www.mozilla.org/en-US/firefox/new/")
 
             elif "facebook" in query:
                 speak("Facebook is opening")
-                webbrowser.open("https://www.facebook.com/")
+                open_url("https://www.facebook.com/")
 
             elif "whatsapp" in query:
                 speak("Whatsapp is opening")
-                webbrowser.open("https://web.whatsapp.com/")
+                open_url("https://web.whatsapp.com/")
 
             elif "instagram" in query:
                 speak("Instagram is opening")
-                webbrowser.open("https://www.instagram.com/")
+                open_url("https://www.instagram.com/")
 
             elif "twitter" in query:
                 speak("Twitter is opening")
-                webbrowser.open("https://twitter.com/")
+                open_url("https://twitter.com/")
 
             elif "linkedin" in query:
                 speak("Linkedin is opening")
-                webbrowser.open("https://www.linkedin.com/")
+                open_url("https://www.linkedin.com/")
 
             elif "pinterest" in query:
                 speak("Pinterest is opening")
-                webbrowser.open("https://www.pinterest.com/")
+                open_url("https://www.pinterest.com/")
 
             elif "quora" in query:
                 speak("Quora is opening")
-                webbrowser.open("https://www.quora.com/")
+                open_url("https://www.quora.com/")
 
             elif "amazon" in query:
                 speak("Amazon is opening")
-                webbrowser.open("https://www.amazon.in/")
+                open_url("https://www.amazon.in/")
 
             elif "ebay" in query:
                 speak("Ebay is opening")
-                webbrowser.open("https://www.ebay.com/")
+                open_url("https://www.ebay.com/")
 
             elif "netflix" in query:
                 speak("Netflix is opening")
-                webbrowser.open("https://www.netflix.com/")
+                open_url("https://www.netflix.com/")
 
             elif "spotify" in query:
                 speak("Spotify is opening")
-                webbrowser.open("https://open.spotify.com/")
+                open_url("https://open.spotify.com/")
 
             elif "snapchat" in query:
                 speak("Snapchat is opening")
-                webbrowser.open("https://www.snapchat.com/")
+                open_url("https://www.snapchat.com/")
 
             elif "stack overflow" in query:
-                webbrowser.open("https://www.stackoverflow.com/")
+                open_url("https://www.stackoverflow.com/")
 
             elif "flipkart" in query:
-                webbrowser.open("https://www.flipkart.com/")
+                open_url("https://www.flipkart.com/")
 
             elif "hackerearth" in query:
-                webbrowser.open("https://www.hackerearth.com/")
+                open_url("https://www.hackerearth.com/")
 
             elif "bing" in query:
-                webbrowser.open("https://www.bing.com/")
+                open_url("https://www.bing.com/")
 
             elif "duckduckgo" in query:
-                webbrowser.open("https://duckduckgo.com/")
+                open_url("https://duckduckgo.com/")
 
             elif "github" in query:
-                webbrowser.open("https://www.github.com/")
+                open_url("https://www.github.com/")
 
             elif "stack overflow" in query:
-                webbrowser.open("https://www.stackoverflow.com/")
+                open_url("https://www.stackoverflow.com/")
 
             elif "wikipedia" in query:
-                webbrowser.open("https://www.wikipedia.org/")
+                open_url("https://www.wikipedia.org/")
 
             elif "quora" in query:
-                webbrowser.open("https://www.quora.com/")
+                open_url("https://www.quora.com/")
 
             elif "reddit" in query:
                 if "reddit" in query:
@@ -3159,14 +3138,14 @@ if __name__ == "__main__":
                     if reg_ex:
                         subreddit = reg_ex.group(1)
                         url = url + "r/" + subreddit
-                    webbrowser.open(url)
+                    open_url(url)
                     sp("The Reddit content has been opened for you Sir.")
 
                 else:
-                    webbrowser.open("https://www.reddit.com/")
+                    open_url("https://www.reddit.com/")
 
             else:
-                webbrowser.open(f"https://duckduckgo.com/?q=%21+{query}&ia=olivia")
+                open_url(f"https://duckduckgo.com/?q=%21+{query}&ia=olivia")
 
         # create a translate feature in the virutal assistant
 
@@ -6444,7 +6423,7 @@ if __name__ == "__main__":
             NewsFromBBC()
         # else:
         #     if query != 'none':
-        #         webbrowser.open(
+        #         open_url(
         #             f"https://www.google.com/search?q={query}&sourceid=olivia")
 
         #     #     sp("Sorry, I could not do that")
@@ -6496,7 +6475,7 @@ if __name__ == "__main__":
         #             # telling the user that we are searching the query in google
         #             speak('searching for ' + query + ' in google')
         #             # opening the query in google
-        #             webbrowser.open('www.google.com/search?gx&q=' + query)
+        #             open_url('www.google.com/search?gx&q=' + query)
         #         # if the user says wikipedia then we will search the query in wikipedia
         #         elif 'Wikipedia' in answer4:
         #             # asking the user to narrate or open the webpage
