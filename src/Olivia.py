@@ -2497,6 +2497,16 @@ if __name__ == "__main__":
                         f"https://www.google.com/search?q={query_to_be_searched}&tbm=fin"
                     )
 
+                # else search on google if the site_to_search
+                else:
+                        
+                        # open the query_to_be_searched on the google
+    
+                        open_url(
+                            f"https://www.google.com/search?q={query_to_be_searched}"
+                        )
+
+
             # search on Youtube if the site_to_search contains youtube
             elif "youtube" in site_to_search:
 
@@ -6281,6 +6291,11 @@ if __name__ == "__main__":
         elif "what is special about oliva" in query:
 
             speak("I try to be as helpful as possible")
+
+
+        elif "what is your most disliked movie" in query:
+
+            speak("My favorite movie is the dead poet Society")
 
         elif "what" in query and "do" in query and "can" in query:
 
