@@ -6297,6 +6297,14 @@ if __name__ == "__main__":
 
             speak("My favorite movie is the dead poet Society")
 
+        elif "Should iisc remove the ceiling fans in the hostels" in query:
+                
+                speak("NO, It's a very bad idea to remove the ceiling fans in the hostels to protect the students from su*c*d*ing")
+
+        elif "Should iisc remove the ceiling fans in the hostels" in query:
+
+                
+
         elif "what" in query and "do" in query and "can" in query:
 
             ans = """I can do lots of things, for example you can ask me time, date,
