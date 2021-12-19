@@ -689,7 +689,7 @@ def query_day():
 
     try:
         speak("Today is " + Mapping[weekday])
-    except:
+    except BaseException:
         pass
 
 
@@ -1074,7 +1074,7 @@ if __name__ == "__main__":
 
         elif "status" in query and "battery" in query:
 
-            if psutil.sensors_battery().power_plugged == True:
+            if psutil.sensors_battery().power_plugged:
 
                 speak("Battery is charging")
 
@@ -1984,7 +1984,7 @@ if __name__ == "__main__":
 
             # telling the user that the program is repeating the last command
 
-            speak("repeating the last command")
+            speak('repeating the last command')
 
             # repeating the last command
 
@@ -2382,7 +2382,7 @@ if __name__ == "__main__":
                             stdout=subprocess.PIPE,
                         )
                         sp("I have launched the desired application")
-                except:
+                except BaseException:
                     sp("I am not sure what application you want to launch")
 
         elif "search" in query:
@@ -2499,13 +2499,12 @@ if __name__ == "__main__":
 
                 # else search on google if the site_to_search
                 else:
-                        
-                        # open the query_to_be_searched on the google
-    
-                        open_url(
-                            f"https://www.google.com/search?q={query_to_be_searched}"
-                        )
 
+                    # open the query_to_be_searched on the google
+
+                    open_url(
+                        f"https://www.google.com/search?q={query_to_be_searched}"
+                    )
 
             # search on Youtube if the site_to_search contains youtube
             elif "youtube" in site_to_search:
@@ -6292,23 +6291,20 @@ if __name__ == "__main__":
 
             speak("I try to be as helpful as possible")
 
-
         elif "what is your most disliked movie" in query:
 
             speak("My favorite movie is the dead poet Society")
 
         elif "Should iisc remove the ceiling fans in the hostels" in query:
-                
-                speak("NO, It's a very bad idea to remove the ceiling fans in the hostels to protect the students from su*c*d*ing")
+
+            speak("NO, It's a very bad idea to remove the ceiling fans in the hostels to protect the students from su*c*d*ing")
 
         elif "Should iisc remove the ceiling fans in the hostels" in query:
-
-                
 
         elif "what" in query and "do" in query and "can" in query:
 
             ans = """I can do lots of things, for example you can ask me time, date,
-            I can open websites, play music, play videos, play games 
+            I can open websites, play music, play videos, play games
             I can tell you about anything you want to know, I can search on google for you,
             I can tell you about the weather, I can tell you about the news of the day,
             I can tell you the meaning of a word, I can open apps on your computer,
@@ -6348,7 +6344,7 @@ if __name__ == "__main__":
                 # speak the result
                 speak(results)
 
-            except:
+            except BaseException:
 
                 # if the wikipedia does not have the query, then search for the query in the internet
                 print("I can not find any information about " + query)
@@ -6405,7 +6401,7 @@ if __name__ == "__main__":
 
                     speak(results)
 
-                except:
+                except BaseException:
 
                     # if the wikipedia does not have the query, then search for the query in the internet
                     print("I can not find any information about " + query)
