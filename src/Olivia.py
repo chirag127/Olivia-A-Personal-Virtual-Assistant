@@ -1355,7 +1355,12 @@ if __name__ == "__main__":
             if "watch" in query and "later" in query:
 
                 playwl.main()
+            
+            elif "most watched video on youtube" in query or "most watched videos on youtube" in query or "most popular video on youtube" in query or "most popular videos on youtube" in query:
 
+                open_url("https://www.youtube.com/watch?v=x5Udg77RMeY")
+
+            
             else:
 
                 song_name = query.replace("play ", "")
@@ -6299,7 +6304,7 @@ if __name__ == "__main__":
 
             speak("NO, It's a very bad idea to remove the ceiling fans in the hostels to protect the students from su*c*d*ing")
 
-        elif "Should iisc remove the ceiling fans in the hostels" in query:
+
 
         elif "what" in query and "do" in query and "can" in query:
 
