@@ -1289,18 +1289,30 @@ if __name__ == "__main__":
             speak("Do you want to add the date and time in the note?")
 
             note_date = takeCommand()
+            while True:
 
-            if "yes" in note_date:
+                if "yes" in note_date:
 
-                file.write(str(datetime.datetime.now()) + " : " + note)
+                    file.write(str(datetime.datetime.now()) + " : " + note)
 
-                speak("Note has been written")
+                    speak("Note has been written")
 
-            elif "no" in note_date:
+                    break
 
-                file.write(note)
+                elif "no" in note_date:
 
-                speak("Note has been written")
+                    file.write(note)
+
+
+                    speak("Note has been written")
+
+
+                    break
+
+            
+                else: 
+
+                    sp("please try to speak yes or no again")
 
             file.close()
 
@@ -2080,6 +2092,12 @@ if __name__ == "__main__":
             speak("You said me to remember that " + remember.read())
 
             remember.close()
+
+        elif "weather" in query and "today" in query:
+            speak("What city's weather you want to check?")
+            city = takeCommand()
+            open_url("https://www.google.com/search?q=" + "weather today in " + city)
+
 
         elif "where is" in query:
 
