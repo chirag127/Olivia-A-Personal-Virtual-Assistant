@@ -1303,14 +1303,11 @@ if __name__ == "__main__":
 
                     file.write(note)
 
-
                     speak("Note has been written")
-
 
                     break
 
-            
-                else: 
+                else:
 
                     sp("please try to speak yes or no again")
 
@@ -1367,12 +1364,15 @@ if __name__ == "__main__":
             if "watch" in query and "later" in query:
 
                 playwl.main()
-            
+
             elif "most watched video on youtube" in query or "most watched videos on youtube" in query or "most popular video on youtube" in query or "most popular videos on youtube" in query:
 
                 open_url("https://www.youtube.com/watch?v=x5Udg77RMeY")
 
-            
+            elif "most watched youtube videos playlist" in query or "most popular youtube videos playlist" in query:
+
+                open_url("https://www.youtube.com/playlist?list=PLirAqAtl_h2r5g8xGajEwdXd3x1sZh8hC")
+
             else:
 
                 song_name = query.replace("play ", "")
@@ -2097,7 +2097,6 @@ if __name__ == "__main__":
             speak("What city's weather you want to check?")
             city = takeCommand()
             open_url("https://www.google.com/search?q=" + "weather today in " + city)
-
 
         elif "where is" in query:
 
@@ -3835,13 +3834,10 @@ if __name__ == "__main__":
 
                 print(f"The Translated Text is: {result.text}")
 
-                # printing the pronunciation of the result
-
-                print(f"The pronunciation of the result is {result.pronunciation}")
 
                 # speaking result pronunciation
 
-                speak(result.pronunciation)
+                speak(result.text)
 
             # translate to the esperanto
             elif "esperanto" in query:
@@ -6321,8 +6317,6 @@ if __name__ == "__main__":
         elif "Should iisc remove the ceiling fans in the hostels" in query:
 
             speak("NO, It's a very bad idea to remove the ceiling fans in the hostels to protect the students from su*c*d*ing")
-
-
 
         elif "what" in query and "do" in query and "can" in query:
 
