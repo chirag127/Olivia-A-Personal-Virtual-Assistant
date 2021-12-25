@@ -3308,9 +3308,12 @@ if __name__ == "__main__":
             # translate to the afrikaans
 
             if "afrikaans" in query:
+
                 # telling the user that we are translating the text to the afrikaans
+
                 speak("translating to afrikaans")
                 # getting the text from the user and replacing the "to afrikaans" with nothing so that we can translate the text
+
                 query = query.replace("to afrikaans", "")
 
                 # using the goslate library to translate the text
@@ -3319,7 +3322,6 @@ if __name__ == "__main__":
 
                 # translating the text to the afrikaans and storing the result in a variable named result
                 result = translator.translate(translate_this, dest="af")
-                
 
                 # printing the result
 
@@ -3344,9 +3346,12 @@ if __name__ == "__main__":
             # translate to the albanian
 
             elif "albanian" in query:
+
                 # telling the user that we are translating the text to the albanian
+
                 speak("translating to albanian")
                 # getting the text from the user and replacing the "to albanian" with nothing so that we can translate the text
+
                 query = query.replace("to albanian", "")
 
                 # using the goslate library to translate the text
@@ -3354,7 +3359,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the albanian and storing the result in a variable named result
-                
+
                 result = translator.translate(translate_this, dest="sq")
                 # printing the result
 
@@ -3379,9 +3384,12 @@ if __name__ == "__main__":
             # translate to the amharic
 
             elif "amharic" in query:
+
                 # telling the user that we are translating the text to the amharic
+
                 speak("translating to amharic")
                 # getting the text from the user and replacing the "to amharic" with nothing so that we can translate the text
+
                 query = query.replace("to amharic", "")
 
                 # using the goslate library to translate the text
@@ -3389,7 +3397,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the amharic and storing the result in a variable named result
-                
+
                 result = translator.translate(translate_this, dest="am")
                 # printing the result
 
@@ -3414,9 +3422,12 @@ if __name__ == "__main__":
             # translate to the arabic
 
             elif "arabic" in query:
+
                 # telling the user that we are translating the text to the arabic
+
                 speak("translating to arabic")
                 # getting the text from the user and replacing the "to arabic" with nothing so that we can translate the text
+
                 query = query.replace("to arabic", "")
 
                 # using the goslate library to translate the text
@@ -3424,7 +3435,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the arabic and storing the result in a variable named result
-                
+
                 result = translator.translate(translate_this, dest="ar")
                 # printing the result
 
@@ -3449,9 +3460,12 @@ if __name__ == "__main__":
             # translate to the armenian
 
             elif "armenian" in query:
+
                 # telling the user that we are translating the text to the armenian
+
                 speak("translating to armenian")
                 # getting the text from the user and replacing the "to armenian" with nothing so that we can translate the text
+
                 query = query.replace("to armenian", "")
 
                 # using the goslate library to translate the text
@@ -3459,7 +3473,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the armenian and storing the result in a variable named result
-                
+
                 result = translator.translate(translate_this, dest="hy")
                 # printing the result
 
@@ -3486,8 +3500,10 @@ if __name__ == "__main__":
             elif "azerbaijani" in query:
 
                 # telling the user that we are translating the text to the azerbaijani
+
                 speak("translating to azerbaijani")
                 # getting the text from the user and replacing the "to azerbaijani" with nothing so that we can translate the text
+
                 query = query.replace("to azerbaijani", "")
 
                 # using the goslate library to translate the text
@@ -3495,7 +3511,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the azerbaijani and storing the result in a variable named result
-                
+
                 result = translator.translate(translate_this, dest="az")
                 # printing the result
 
@@ -3520,9 +3536,13 @@ if __name__ == "__main__":
             # translate to the basque
 
             elif "basque" in query:
+
                 # telling the user that we are translating the text to the basque
+
                 speak("translating to basque")
+                
                 # getting the text from the user and replacing the "to basque" with nothing so that we can translate the text
+
                 query = query.replace("to basque", "")
 
                 # using the goslate library to translate the text
@@ -3530,7 +3550,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the basque and storing the result in a variable named result
-                
+
                 result = translator.translate(translate_this, dest="eu")
                 # printing the result
 
@@ -3555,9 +3575,12 @@ if __name__ == "__main__":
             # translate to the belarusian
 
             elif "belarusian" in query:
+
                 # telling the user that we are translating the text to the belarusian
+
                 speak("translating to belarusian")
                 # getting the text from the user and replacing the "to belarusian" with nothing so that we can translate the text
+
                 query = query.replace("to belarusian", "")
 
                 # using the goslate library to translate the text
@@ -3565,7 +3588,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the belarusian and storing the result in a variable named result
-                
+
                 result = translator.translate(translate_this, dest="be")
                 # printing the result
 
@@ -3590,9 +3613,12 @@ if __name__ == "__main__":
             # translate to the bengali
 
             elif "bengali" in query:
+
                 # telling the user that we are translating the text to the bengali
+
                 speak("translating to bengali")
                 # getting the text from the user and replacing the "to bengali" with nothing so that we can translate the text
+
                 query = query.replace("to bengali", "")
 
                 # using the goslate library to translate the text
@@ -3600,7 +3626,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the bengali and storing the result in a variable named result
-                
+
                 result = translator.translate(translate_this, dest="bn")
                 # printing the result
 
@@ -3625,9 +3651,12 @@ if __name__ == "__main__":
             # translate to the bosnian
 
             elif "bosnian" in query:
+
                 # telling the user that we are translating the text to the bosnian
+
                 speak("translating to bosnian")
                 # getting the text from the user and replacing the "to bosnian" with nothing so that we can translate the text
+
                 query = query.replace("to bosnian", "")
 
                 # using the goslate library to translate the text
@@ -3635,7 +3664,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the bosnian and storing the result in a variable named result
-                
+
                 result = translator.translate(translate_this, dest="bs")
                 # printing the result
 
@@ -3659,9 +3688,12 @@ if __name__ == "__main__":
 
             # translate to the bulgarian
             elif "bulgarian" in query:
+
                 # telling the user that we are translating the text to the bulgarian
+
                 speak("translating to bulgarian")
                 # getting the text from the user and replacing the "to bulgarian" with nothing so that we can translate the text
+
                 query = query.replace("to bulgarian", "")
 
                 # using the goslate library to translate the text
@@ -3669,7 +3701,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the bulgarian and storing the result in a variable named result
-                
+
                 result = translator.translate(translate_this, dest="bg")
                 # printing the result
 
@@ -3693,9 +3725,12 @@ if __name__ == "__main__":
 
             # translate to the catalan
             elif "catalan" in query:
+
                 # telling the user that we are translating the text to the catalan
+
                 speak("translating to catalan")
                 # getting the text from the user and replacing the "to catalan" with nothing so that we can translate the text
+
                 query = query.replace("to catalan", "")
 
                 # using the goslate library to translate the text
@@ -3703,7 +3738,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the catalan and storing the result in a variable named result
-                
+
                 result = translator.translate(translate_this, dest="ca")
                 # printing the result
 
@@ -3727,9 +3762,12 @@ if __name__ == "__main__":
 
             # translate to the cebuano
             elif "cebuano" in query:
+
                 # telling the user that we are translating the text to the cebuano
+
                 speak("translating to cebuano")
                 # getting the text from the user and replacing the "to cebuano" with nothing so that we can translate the text
+
                 query = query.replace("to cebuano", "")
 
                 # using the goslate library to translate the text
@@ -3737,7 +3775,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the cebuano and storing the result in a variable named result
-                
+
                 result = translator.translate(translate_this, dest="ceb")
                 # printing the result
 
@@ -3761,9 +3799,12 @@ if __name__ == "__main__":
 
             # translate to the chichewa
             elif "chichewa" in query:
+
                 # telling the user that we are translating the text to the chichewa
+
                 speak("translating to chichewa")
                 # getting the text from the user and replacing the "to chichewa" with nothing so that we can translate the text
+
                 query = query.replace("to chichewa", "")
 
                 # using the goslate library to translate the text
@@ -3771,7 +3812,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the chichewa and storing the result in a variable named result
-                
+
                 result = translator.translate(translate_this, dest="ny")
                 # printing the result
 
@@ -3795,9 +3836,12 @@ if __name__ == "__main__":
 
             # translate to the chinese
             elif "chinese" in query:
+
                 # telling the user that we are translating the text to the chinese
+
                 speak("translating to chinese")
                 # getting the text from the user and replacing the "to chinese" with nothing so that we can translate the text
+
                 query = query.replace("to chinese", "")
 
                 # using the goslate library to translate the text
@@ -3805,7 +3849,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the chinese and storing the result in a variable named result
-                
+
                 result = translator.translate(translate_this, dest="zh-CN")
                 # printing the result
 
@@ -3829,9 +3873,12 @@ if __name__ == "__main__":
 
             # translate to the corican
             elif "corican" in query:
+
                 # telling the user that we are translating the text to the corican
+
                 speak("translating to corican")
                 # getting the text from the user and replacing the "to corican" with nothing so that we can translate the text
+
                 query = query.replace("to corican", "")
 
                 # using the goslate library to translate the text
@@ -3839,7 +3886,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the corican and storing the result in a variable named result
-                
+
                 result = translator.translate(translate_this, dest="co")
                 # printing the result
 
@@ -3863,9 +3910,12 @@ if __name__ == "__main__":
 
             # translate to the croatian
             elif "croatian" in query:
+
                 # telling the user that we are translating the text to the croatian
+
                 speak("translating to croatian")
                 # getting the text from the user and replacing the "to croatian" with nothing so that we can translate the text
+
                 query = query.replace("to croatian", "")
 
                 # using the goslate library to translate the text
@@ -3873,7 +3923,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the croatian and storing the result in a variable named result
-                
+
                 result = translator.translate(translate_this, dest="hr")
                 # printing the result
 
@@ -3897,9 +3947,12 @@ if __name__ == "__main__":
 
             # translate to the czech
             elif "czech" in query:
+
                 # telling the user that we are translating the text to the czech
+
                 speak("translating to czech")
                 # getting the text from the user and replacing the "to czech" with nothing so that we can translate the text
+
                 query = query.replace("to czech", "")
 
                 # using the goslate library to translate the text
@@ -3907,7 +3960,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the czech and storing the result in a variable named result
-                
+
                 result = translator.translate(translate_this, dest="cs")
                 # printing the result
 
@@ -3931,9 +3984,12 @@ if __name__ == "__main__":
 
             # translate to the danish
             elif "danish" in query:
+
                 # telling the user that we are translating the text to the danish
+
                 speak("translating to danish")
                 # getting the text from the user and replacing the "to danish" with nothing so that we can translate the text
+
                 query = query.replace("to danish", "")
 
                 # using the goslate library to translate the text
@@ -3941,7 +3997,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the danish and storing the result in a variable named result
-                
+
                 result = translator.translate(translate_this, dest="da")
                 # printing the result
 
@@ -3965,9 +4021,12 @@ if __name__ == "__main__":
 
             # translate to the dutch
             elif "dutch" in query:
+
                 # telling the user that we are translating the text to the dutch
+
                 speak("translating to dutch")
                 # getting the text from the user and replacing the "to dutch" with nothing so that we can translate the text
+
                 query = query.replace("to dutch", "")
 
                 # using the goslate library to translate the text
@@ -3975,7 +4034,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the dutch and storing the result in a variable named result
-                
+
                 result = translator.translate(translate_this, dest="nl")
                 # printing the result
 
@@ -3999,9 +4058,12 @@ if __name__ == "__main__":
 
             # translate to the english
             elif "english" in query:
+
                 # telling the user that we are translating the text to the english
+
                 speak("translating to english")
                 # getting the text from the user and replacing the "to english" with nothing so that we can translate the text
+
                 query = query.replace("to english", "")
 
                 # using the goslate library to translate the text
@@ -4011,7 +4073,6 @@ if __name__ == "__main__":
                 # translating the text to the english and storing the result in a variable named result
 
                 result = translator.translate(translate_this, dest="en")
-                
 
                 # printing the result
 
@@ -4035,9 +4096,12 @@ if __name__ == "__main__":
 
             # translate to the esperanto
             elif "esperanto" in query:
+
                 # telling the user that we are translating the text to the esperanto
+
                 speak("translating to esperanto")
                 # getting the text from the user and replacing the "to esperanto" with nothing so that we can translate the text
+
                 query = query.replace("to esperanto", "")
 
                 # using the goslate library to translate the text
@@ -4045,7 +4109,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the esperanto and storing the result in a variable named result
-                
+
                 result = translator.translate(translate_this, dest="eo")
                 # printing the result
 
@@ -4069,9 +4133,12 @@ if __name__ == "__main__":
 
             # translate to the estonian
             elif "estonian" in query:
+
                 # telling the user that we are translating the text to the estonian
+
                 speak("translating to estonian")
                 # getting the text from the user and replacing the "to estonian" with nothing so that we can translate the text
+
                 query = query.replace("to estonian", "")
 
                 # using the goslate library to translate the text
@@ -4079,7 +4146,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the estonian and storing the result in a variable named result
-                
+
                 result = translator.translate(translate_this, dest="et")
                 # printing the result
 
@@ -4103,9 +4170,12 @@ if __name__ == "__main__":
 
             # translate to the filipino
             elif "filipino" in query:
+
                 # telling the user that we are translating the text to the filipino
+
                 speak("translating to filipino")
                 # getting the text from the user and replacing the "to filipino" with nothing so that we can translate the text
+
                 query = query.replace("to filipino", "")
 
                 # using the goslate library to translate the text
@@ -4113,7 +4183,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the filipino and storing the result in a variable named result
-                
+
                 result = translator.translate(translate_this, dest="tl")
                 # printing the result
 
@@ -4137,9 +4207,12 @@ if __name__ == "__main__":
 
             # translate to the finnish
             elif "finnish" in query:
+
                 # telling the user that we are translating the text to the finnish
+
                 speak("translating to finnish")
                 # getting the text from the user and replacing the "to finnish" with nothing so that we can translate the text
+
                 query = query.replace("to finnish", "")
 
                 # using the goslate library to translate the text
@@ -4147,7 +4220,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the finnish and storing the result in a variable named result
-                
+
                 result = translator.translate(translate_this, dest="fi")
                 # printing the result
 
@@ -4171,9 +4244,12 @@ if __name__ == "__main__":
 
             # translate to the french
             elif "french" in query:
+
                 # telling the user that we are translating the text to the french
+
                 speak("translating to french")
                 # getting the text from the user and replacing the "to french" with nothing so that we can translate the text
+
                 query = query.replace("to french", "")
 
                 # using the goslate library to translate the text
@@ -4181,7 +4257,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the french and storing the result in a variable named result
-                
+
                 result = translator.translate(translate_this, dest="fr")
                 # printing the result
 
@@ -4205,9 +4281,12 @@ if __name__ == "__main__":
 
             # translate to the frisian
             elif "frisian" in query:
+
                 # telling the user that we are translating the text to the frisian
+
                 speak("translating to frisian")
                 # getting the text from the user and replacing the "to frisian" with nothing so that we can translate the text
+
                 query = query.replace("to frisian", "")
 
                 # using the goslate library to translate the text
@@ -4215,7 +4294,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the frisian and storing the result in a variable named result
-                
+
                 result = translator.translate(translate_this, dest="fy")
                 # printing the result
 
@@ -4239,9 +4318,12 @@ if __name__ == "__main__":
 
             # translate to the galician
             elif "galician" in query:
+
                 # telling the user that we are translating the text to the galician
+
                 speak("translating to galician")
                 # getting the text from the user and replacing the "to galician" with nothing so that we can translate the text
+
                 query = query.replace("to galician", "")
 
                 # using the goslate library to translate the text
@@ -4249,7 +4331,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the galician and storing the result in a variable named result
-                
+
                 result = translator.translate(translate_this, dest="gl")
                 # printing the result
 
@@ -4275,8 +4357,10 @@ if __name__ == "__main__":
             elif "georgian" in query:
 
                 # telling the user that we are translating the text to the georgian
+
                 speak("translating to georgian")
                 # getting the text from the user and replacing the "to georgian" with nothing so that we can translate the text
+
                 query = query.replace("to georgian", "")
 
                 # using the goslate library to translate the text
@@ -4284,7 +4368,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the georgian and storing the result in a variable named result
-                
+
                 result = translator.translate(translate_this, dest="ka")
                 # printing the result
 
@@ -4308,9 +4392,12 @@ if __name__ == "__main__":
 
             # translate to the german
             elif "german" in query:
+
                 # telling the user that we are translating the text to the german
+
                 speak("translating to german")
                 # getting the text from the user and replacing the "to german" with nothing so that we can translate the text
+
                 query = query.replace("to german", "")
 
                 # using the goslate library to translate the text
@@ -4318,7 +4405,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the german and storing the result in a variable named result
-                
+
                 result = translator.translate(translate_this, dest="de")
                 # printing the result
 
@@ -4342,9 +4429,12 @@ if __name__ == "__main__":
 
             # translate to the greek
             elif "greek" in query:
+
                 # telling the user that we are translating the text to the greek
+
                 speak("translating to greek")
                 # getting the text from the user and replacing the "to greek" with nothing so that we can translate the text
+
                 query = query.replace("to greek", "")
 
                 # using the goslate library to translate the text
@@ -4352,7 +4442,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the greek and storing the result in a variable named result
-                
+
                 result = translator.translate(translate_this, dest="el")
                 # printing the result
 
@@ -4376,9 +4466,12 @@ if __name__ == "__main__":
 
             # translate to the gujarati
             elif "gujarati" in query:
+
                 # telling the user that we are translating the text to the gujarati
+
                 speak("translating to gujarati")
                 # getting the text from the user and replacing the "to gujarati" with nothing so that we can translate the text
+
                 query = query.replace("to gujarati", "")
 
                 # using the goslate library to translate the text
@@ -4386,7 +4479,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the gujarati and storing the result in a variable named result
-                
+
                 result = translator.translate(translate_this, dest="gu")
                 # printing the result
 
@@ -4410,9 +4503,12 @@ if __name__ == "__main__":
 
             # translate to the haitian creole
             elif "haitian creole" in query:
+
                 # telling the user that we are translating the text to the haitian creole
+
                 speak("translating to haitian creole")
                 # getting the text from the user and replacing the "to haitian creole" with nothing so that we can translate the text
+
                 query = query.replace("to haitian creole", "")
 
                 # using the goslate library to translate the text
@@ -4420,7 +4516,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the haitian creole and storing the result in a variable named result
-                
+
                 result = translator.translate(translate_this, dest="ht")
                 # printing the result
 
@@ -4446,8 +4542,10 @@ if __name__ == "__main__":
             elif "hausa" in query:
 
                 # telling the user that we are translating the text to the hausa
+
                 speak("translating to hausa")
                 # getting the text from the user and replacing the "to hausa" with nothing so that we can translate the text
+
                 query = query.replace("to hausa", "")
 
                 # using the goslate library to translate the text
@@ -4455,7 +4553,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the hausa and storing the result in a variable named result
-                
+
                 result = translator.translate(translate_this, dest="ha")
                 # printing the result
 
@@ -4479,9 +4577,12 @@ if __name__ == "__main__":
 
             # translate to the hawaiian
             elif "hawaiian" in query:
+
                 # telling the user that we are translating the text to the hawaiian
+
                 speak("translating to hawaiian")
                 # getting the text from the user and replacing the "to hawaiian" with nothing so that we can translate the text
+
                 query = query.replace("to hawaiian", "")
 
                 # using the goslate library to translate the text
@@ -4489,7 +4590,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the hawaiian and storing the result in a variable named result
-                
+
                 result = translator.translate(translate_this, dest="haw")
                 # printing the result
 
@@ -4513,9 +4614,12 @@ if __name__ == "__main__":
 
             # translate to the hebrew
             elif "hebrew" in query:
+
                 # telling the user that we are translating the text to the hebrew
+
                 speak("translating to hebrew")
                 # getting the text from the user and replacing the "to hebrew" with nothing so that we can translate the text
+
                 query = query.replace("to hebrew", "")
 
                 # using the goslate library to translate the text
@@ -4523,7 +4627,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the hebrew and storing the result in a variable named result
-                
+
                 result = translator.translate(translate_this, dest="he")
                 # printing the result
 
@@ -4547,9 +4651,12 @@ if __name__ == "__main__":
 
             # translate to the hindi
             elif "hindi" in query:
+
                 # telling the user that we are translating the text to the hindi
+
                 speak("translating to hindi")
                 # getting the text from the user and replacing the "to hindi" with nothing so that we can translate the text
+
                 query = query.replace("to hindi", "")
 
                 # using the goslate library to translate the text
@@ -4557,7 +4664,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the hindi and storing the result in a variable named result
-                
+
                 result = translator.translate(translate_this, dest="hi")
                 # printing the result
 
@@ -4581,9 +4688,12 @@ if __name__ == "__main__":
 
             # translate to the hmong
             elif "hmong" in query:
+
                 # telling the user that we are translating the text to the hmong
+
                 speak("translating to hmong")
                 # getting the text from the user and replacing the "to hmong" with nothing so that we can translate the text
+
                 query = query.replace("to hmong", "")
 
                 # using the goslate library to translate the text
@@ -4591,7 +4701,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the hmong and storing the result in a variable named result
-                
+
                 result = translator.translate(translate_this, dest="hmn")
                 # printing the result
 
@@ -4615,9 +4725,12 @@ if __name__ == "__main__":
 
             # translate to the hungarian
             elif "hungarian" in query:
+
                 # telling the user that we are translating the text to the hungarian
+
                 speak("translating to hungarian")
                 # getting the text from the user and replacing the "to hungarian" with nothing so that we can translate the text
+
                 query = query.replace("to hungarian", "")
 
                 # using the goslate library to translate the text
@@ -4625,7 +4738,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the hungarian and storing the result in a variable named result
-                
+
                 result = translator.translate(translate_this, dest="hu")
                 # printing the result
 
@@ -4649,9 +4762,12 @@ if __name__ == "__main__":
 
             # translate to the icelandic
             elif "icelandic" in query:
+
                 # telling the user that we are translating the text to the icelandic
+
                 speak("translating to icelandic")
                 # getting the text from the user and replacing the "to icelandic" with nothing so that we can translate the text
+
                 query = query.replace("to icelandic", "")
 
                 # using the goslate library to translate the text
@@ -4659,7 +4775,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the icelandic and storing the result in a variable named result
-                
+
                 result = translator.translate(translate_this, dest="is")
                 # printing the result
 
@@ -4683,9 +4799,12 @@ if __name__ == "__main__":
 
             # translate to the igbo
             elif "igbo" in query:
+
                 # telling the user that we are translating the text to the igbo
+
                 speak("translating to igbo")
                 # getting the text from the user and replacing the "to igbo" with nothing so that we can translate the text
+
                 query = query.replace("to igbo", "")
 
                 # using the goslate library to translate the text
@@ -4693,7 +4812,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the igbo and storing the result in a variable named result
-                
+
                 result = translator.translate(translate_this, dest="ig")
                 # printing the result
 
@@ -4717,9 +4836,12 @@ if __name__ == "__main__":
 
             # translate to the indonesian
             elif "indonesian" in query:
+
                 # telling the user that we are translating the text to the indonesian
+
                 speak("translating to indonesian")
                 # getting the text from the user and replacing the "to indonesian" with nothing so that we can translate the text
+
                 query = query.replace("to indonesian", "")
 
                 # using the goslate library to translate the text
@@ -4727,7 +4849,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the indonesian and storing the result in a variable named result
-                
+
                 result = translator.translate(translate_this, dest="id")
                 # printing the result
 
@@ -4751,9 +4873,12 @@ if __name__ == "__main__":
 
             # translate to the irish
             elif "irish" in query:
+
                 # telling the user that we are translating the text to the irish
+
                 speak("translating to irish")
                 # getting the text from the user and replacing the "to irish" with nothing so that we can translate the text
+
                 query = query.replace("to irish", "")
 
                 # using the goslate library to translate the text
@@ -4761,7 +4886,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the irish and storing the result in a variable named result
-                
+
                 result = translator.translate(translate_this, dest="ga")
                 # printing the result
 
@@ -4785,9 +4910,12 @@ if __name__ == "__main__":
 
             # translate to the italian
             elif "italian" in query:
+
                 # telling the user that we are translating the text to the italian
+
                 speak("translating to italian")
                 # getting the text from the user and replacing the "to italian" with nothing so that we can translate the text
+
                 query = query.replace("to italian", "")
 
                 # using the goslate library to translate the text
@@ -4795,7 +4923,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the italian and storing the result in a variable named result
-                
+
                 result = translator.translate(translate_this, dest="it")
                 # printing the result
 
@@ -4821,8 +4949,10 @@ if __name__ == "__main__":
             elif "japanese" in query:
 
                 # telling the user that we are translating the text to the japanese
+
                 speak("translating to japanese")
                 # getting the text from the user and replacing the "to japanese" with nothing so that we can translate the text
+
                 query = query.replace("to japanese", "")
 
                 # using the goslate library to translate the text
@@ -4830,7 +4960,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the japanese and storing the result in a variable named result
-                
+
                 result = translator.translate(translate_this, dest="ja")
                 # printing the result
 
@@ -4854,9 +4984,12 @@ if __name__ == "__main__":
 
             # translate to the javanese
             elif "javanese" in query:
+
                 # telling the user that we are translating the text to the javanese
+
                 speak("translating to javanese")
                 # getting the text from the user and replacing the "to javanese" with nothing so that we can translate the text
+
                 query = query.replace("to javanese", "")
 
                 # using the goslate library to translate the text
@@ -4864,7 +4997,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the javanese and storing the result in a variable named result
-                
+
                 result = translator.translate(translate_this, dest="jw")
                 # printing the result
 
@@ -4888,9 +5021,12 @@ if __name__ == "__main__":
 
             # translate to the kannada
             elif "kannada" in query:
+
                 # telling the user that we are translating the text to the kannada
+
                 speak("translating to kannada")
                 # getting the text from the user and replacing the "to kannada" with nothing so that we can translate the text
+
                 query = query.replace("to kannada", "")
 
                 # using the goslate library to translate the text
@@ -4898,7 +5034,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the kannada and storing the result in a variable named result
-                
+
                 result = translator.translate(translate_this, dest="kn")
                 # printing the result
 
@@ -4922,9 +5058,12 @@ if __name__ == "__main__":
 
             # translate to the kazakh
             elif "kazakh" in query:
+
                 # telling the user that we are translating the text to the kazakh
+
                 speak("translating to kazakh")
                 # getting the text from the user and replacing the "to kazakh" with nothing so that we can translate the text
+
                 query = query.replace("to kazakh", "")
 
                 # using the goslate library to translate the text
@@ -4932,7 +5071,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the kazakh and storing the result in a variable named result
-                
+
                 result = translator.translate(translate_this, dest="kk")
                 # printing the result
 
@@ -4958,8 +5097,10 @@ if __name__ == "__main__":
             elif "khmer" in query:
 
                 # telling the user that we are translating the text to the khmer
+
                 speak("translating to khmer")
                 # getting the text from the user and replacing the "to khmer" with nothing so that we can translate the text
+
                 query = query.replace("to khmer", "")
 
                 # using the goslate library to translate the text
@@ -4967,7 +5108,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the khmer and storing the result in a variable named result
-                
+
                 result = translator.translate(translate_this, dest="km")
                 # printing the result
 
@@ -4991,9 +5132,12 @@ if __name__ == "__main__":
 
             # translate to the korean
             elif "korean" in query:
+
                 # telling the user that we are translating the text to the korean
+
                 speak("translating to korean")
                 # getting the text from the user and replacing the "to korean" with nothing so that we can translate the text
+
                 query = query.replace("to korean", "")
 
                 # using the goslate library to translate the text
@@ -5001,7 +5145,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the korean and storing the result in a variable named result
-                
+
                 result = translator.translate(translate_this, dest="ko")
                 # printing the result
 
@@ -5025,9 +5169,12 @@ if __name__ == "__main__":
 
             # translate to the kurdish
             elif "kurdish" in query:
+
                 # telling the user that we are translating the text to the kurdish
+
                 speak("translating to kurdish")
                 # getting the text from the user and replacing the "to kurdish" with nothing so that we can translate the text
+
                 query = query.replace("to kurdish", "")
 
                 # using the goslate library to translate the text
@@ -5035,7 +5182,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the kurdish and storing the result in a variable named result
-                
+
                 result = translator.translate(translate_this, dest="ku")
                 # printing the result
 
@@ -5059,9 +5206,12 @@ if __name__ == "__main__":
 
             # translate to the kurmanji
             elif "kurmanji" in query:
+
                 # telling the user that we are translating the text to the kurmanji
+
                 speak("translating to kurmanji")
                 # getting the text from the user and replacing the "to kurmanji" with nothing so that we can translate the text
+
                 query = query.replace("to kurmanji", "")
 
                 # using the goslate library to translate the text
@@ -5069,7 +5219,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the kurmanji and storing the result in a variable named result
-                
+
                 result = translator.translate(translate_this, dest="ku")
                 # printing the result
 
@@ -5095,8 +5245,10 @@ if __name__ == "__main__":
             elif "kyrgyz" in query:
 
                 # telling the user that we are translating the text to the kyrgyz
+
                 speak("translating to kyrgyz")
                 # getting the text from the user and replacing the "to kyrgyz" with nothing so that we can translate the text
+
                 query = query.replace("to kyrgyz", "")
 
                 # using the goslate library to translate the text
@@ -5104,7 +5256,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the kyrgyz and storing the result in a variable named result
-                
+
                 result = translator.translate(translate_this, dest="ky")
                 # printing the result
 
@@ -5128,9 +5280,12 @@ if __name__ == "__main__":
 
             # translate to the lao
             elif "lao" in query:
+
                 # telling the user that we are translating the text to the lao
+
                 speak("translating to lao")
                 # getting the text from the user and replacing the "to lao" with nothing so that we can translate the text
+
                 query = query.replace("to lao", "")
 
                 # using the goslate library to translate the text
@@ -5138,7 +5293,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the lao and storing the result in a variable named result
-                
+
                 result = translator.translate(translate_this, dest="lo")
                 # printing the result
 
@@ -5162,9 +5317,12 @@ if __name__ == "__main__":
 
             # translate to the latin
             elif "latin" in query:
+
                 # telling the user that we are translating the text to the latin
+
                 speak("translating to latin")
                 # getting the text from the user and replacing the "to latin" with nothing so that we can translate the text
+
                 query = query.replace("to latin", "")
 
                 # using the goslate library to translate the text
@@ -5172,7 +5330,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the latin and storing the result in a variable named result
-                
+
                 result = translator.translate(translate_this, dest="la")
                 # printing the result
 
@@ -5198,8 +5356,10 @@ if __name__ == "__main__":
             elif "latvian" in query:
 
                 # telling the user that we are translating the text to the latvian
+
                 speak("translating to latvian")
                 # getting the text from the user and replacing the "to latvian" with nothing so that we can translate the text
+
                 query = query.replace("to latvian", "")
 
                 # using the goslate library to translate the text
@@ -5207,7 +5367,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the latvian and storing the result in a variable named result
-                
+
                 result = translator.translate(translate_this, dest="lv")
                 # printing the result
 
@@ -5231,9 +5391,12 @@ if __name__ == "__main__":
 
             # translate to the lithuanian
             elif "lithuanian" in query:
+
                 # telling the user that we are translating the text to the lithuanian
+
                 speak("translating to lithuanian")
                 # getting the text from the user and replacing the "to lithuanian" with nothing so that we can translate the text
+
                 query = query.replace("to lithuanian", "")
 
                 # using the goslate library to translate the text
@@ -5241,7 +5404,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the lithuanian and storing the result in a variable named result
-                
+
                 result = translator.translate(translate_this, dest="lt")
                 # printing the result
 
@@ -5265,9 +5428,12 @@ if __name__ == "__main__":
 
             # translate to the luxembourgish
             elif "luxembourgish" in query:
+
                 # telling the user that we are translating the text to the luxembourgish
+
                 speak("translating to luxembourgish")
                 # getting the text from the user and replacing the "to luxembourgish" with nothing so that we can translate the text
+
                 query = query.replace("to luxembourgish", "")
 
                 # using the goslate library to translate the text
@@ -5275,7 +5441,6 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the luxembourgish and storing the result in a variable named result
-
 
                 result = translator.translate(query, dest="lb")
                 # printing the result
@@ -5300,9 +5465,12 @@ if __name__ == "__main__":
 
             # translate to the macedonian
             elif "macedonian" in query:
+
                 # telling the user that we are translating the text to the macedonian
+
                 speak("translating to macedonian")
                 # getting the text from the user and replacing the "to macedonian" with nothing so that we can translate the text
+
                 query = query.replace("to macedonian", "")
 
                 # using the goslate library to translate the text
@@ -5310,7 +5478,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the macedonian and storing the result in a variable named result
-                
+
                 result = translator.translate(translate_this, dest="mk")
                 # printing the result
 
@@ -5334,9 +5502,12 @@ if __name__ == "__main__":
 
             # translate to the malagasy
             elif "malagasy" in query:
+
                 # telling the user that we are translating the text to the malagasy
+
                 speak("translating to malagasy")
                 # getting the text from the user and replacing the "to malagasy" with nothing so that we can translate the text
+
                 query = query.replace("to malagasy", "")
 
                 # using the goslate library to translate the text
@@ -5344,7 +5515,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the malagasy and storing the result in a variable named result
-                
+
                 result = translator.translate(translate_this, dest="mg")
                 # printing the result
 
@@ -5368,9 +5539,12 @@ if __name__ == "__main__":
 
             # translate to the malay
             elif "malay" in query:
+
                 # telling the user that we are translating the text to the malay
+
                 speak("translating to malay")
                 # getting the text from the user and replacing the "to malay" with nothing so that we can translate the text
+
                 query = query.replace("to malay", "")
 
                 # using the goslate library to translate the text
@@ -5378,7 +5552,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the malay and storing the result in a variable named result
-                
+
                 result = translator.translate(translate_this, dest="ms")
                 # printing the result
 
@@ -5402,9 +5576,12 @@ if __name__ == "__main__":
 
             # translate to the malayalam
             elif "malayalam" in query:
+
                 # telling the user that we are translating the text to the malayalam
+
                 speak("translating to malayalam")
                 # getting the text from the user and replacing the "to malayalam" with nothing so that we can translate the text
+
                 query = query.replace("to malayalam", "")
 
                 # using the goslate library to translate the text
@@ -5412,7 +5589,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the malayalam and storing the result in a variable named result
-                
+
                 result = translator.translate(translate_this, dest="ml")
                 # printing the result
 
@@ -5436,9 +5613,12 @@ if __name__ == "__main__":
 
             # translate to the maltese
             elif "maltese" in query:
+
                 # telling the user that we are translating the text to the maltese
+
                 speak("translating to maltese")
                 # getting the text from the user and replacing the "to maltese" with nothing so that we can translate the text
+
                 query = query.replace("to maltese", "")
 
                 # using the goslate library to translate the text
@@ -5446,7 +5626,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the maltese and storing the result in a variable named result
-                
+
                 result = translator.translate(translate_this, dest="mt")
                 # printing the result
 
@@ -5470,9 +5650,12 @@ if __name__ == "__main__":
 
             # translate to the maori
             elif "maori" in query:
+
                 # telling the user that we are translating the text to the maori
+
                 speak("translating to maori")
                 # getting the text from the user and replacing the "to maori" with nothing so that we can translate the text
+
                 query = query.replace("to maori", "")
 
                 # using the goslate library to translate the text
@@ -5480,7 +5663,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the maori and storing the result in a variable named result
-                
+
                 result = translator.translate(translate_this, dest="mi")
                 # printing the result
 
@@ -5504,9 +5687,12 @@ if __name__ == "__main__":
 
             # translate to the marathi
             elif "marathi" in query:
+
                 # telling the user that we are translating the text to the marathi
+
                 speak("translating to marathi")
                 # getting the text from the user and replacing the "to marathi" with nothing so that we can translate the text
+
                 query = query.replace("to marathi", "")
 
                 # using the goslate library to translate the text
@@ -5514,7 +5700,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the marathi and storing the result in a variable named result
-                
+
                 result = translator.translate(translate_this, dest="mr")
                 # printing the result
 
@@ -5538,9 +5724,12 @@ if __name__ == "__main__":
 
             # translate to the mongolian
             elif "mongolian" in query:
+
                 # telling the user that we are translating the text to the mongolian
+
                 speak("translating to mongolian")
                 # getting the text from the user and replacing the "to mongolian" with nothing so that we can translate the text
+
                 query = query.replace("to mongolian", "")
 
                 # using the goslate library to translate the text
@@ -5548,7 +5737,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the mongolian and storing the result in a variable named result
-                
+
                 result = translator.translate(translate_this, dest="mn")
                 # printing the result
 
@@ -5572,9 +5761,12 @@ if __name__ == "__main__":
 
             # translate to the myanmar
             elif "myanmar" in query:
+
                 # telling the user that we are translating the text to the myanmar
+
                 speak("translating to myanmar")
                 # getting the text from the user and replacing the "to myanmar" with nothing so that we can translate the text
+
                 query = query.replace("to myanmar", "")
 
                 # using the goslate library to translate the text
@@ -5582,7 +5774,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the myanmar and storing the result in a variable named result
-                
+
                 result = translator.translate(translate_this, dest="my")
                 # printing the result
 
@@ -5606,9 +5798,12 @@ if __name__ == "__main__":
 
             # translate to the burmese
             elif "burmese" in query:
+
                 # telling the user that we are translating the text to the burmese
+
                 speak("translating to burmese")
                 # getting the text from the user and replacing the "to burmese" with nothing so that we can translate the text
+
                 query = query.replace("to burmese", "")
 
                 # using the goslate library to translate the text
@@ -5616,7 +5811,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the burmese and storing the result in a variable named result
-                
+
                 result = translator.translate(translate_this, dest="my")
                 # printing the result
 
@@ -5640,9 +5835,12 @@ if __name__ == "__main__":
 
             # translate to the nepali
             elif "nepali" in query:
+
                 # telling the user that we are translating the text to the nepali
+
                 speak("translating to nepali")
                 # getting the text from the user and replacing the "to nepali" with nothing so that we can translate the text
+
                 query = query.replace("to nepali", "")
 
                 # using the goslate library to translate the text
@@ -5650,7 +5848,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the nepali and storing the result in a variable named result
-                
+
                 result = translator.translate(translate_this, dest="ne")
                 # printing the result
 
@@ -5674,9 +5872,12 @@ if __name__ == "__main__":
 
             # translate to the norwegian
             elif "norwegian" in query:
+
                 # telling the user that we are translating the text to the norwegian
+
                 speak("translating to norwegian")
                 # getting the text from the user and replacing the "to norwegian" with nothing so that we can translate the text
+
                 query = query.replace("to norwegian", "")
 
                 # using the goslate library to translate the text
@@ -5684,7 +5885,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the norwegian and storing the result in a variable named result
-                
+
                 result = translator.translate(translate_this, dest="no")
                 # printing the result
 
@@ -5708,9 +5909,12 @@ if __name__ == "__main__":
 
             # translate to the odia
             elif "odia" in query:
+
                 # telling the user that we are translating the text to the odia
+
                 speak("translating to odia")
                 # getting the text from the user and replacing the "to odia" with nothing so that we can translate the text
+
                 query = query.replace("to odia", "")
 
                 # using the goslate library to translate the text
@@ -5718,7 +5922,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the odia and storing the result in a variable named result
-                
+
                 result = translator.translate(translate_this, dest="or")
                 # printing the result
 
@@ -5742,9 +5946,12 @@ if __name__ == "__main__":
 
             # translate to the pashto
             elif "pashto" in query:
+
                 # telling the user that we are translating the text to the pashto
+
                 speak("translating to pashto")
                 # getting the text from the user and replacing the "to pashto" with nothing so that we can translate the text
+
                 query = query.replace("to pashto", "")
 
                 # using the goslate library to translate the text
@@ -5752,7 +5959,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the pashto and storing the result in a variable named result
-                
+
                 result = translator.translate(translate_this, dest="ps")
                 # printing the result
 
@@ -5776,9 +5983,12 @@ if __name__ == "__main__":
 
             # translate to the persian
             elif "persian" in query:
+
                 # telling the user that we are translating the text to the persian
+
                 speak("translating to persian")
                 # getting the text from the user and replacing the "to persian" with nothing so that we can translate the text
+
                 query = query.replace("to persian", "")
 
                 # using the goslate library to translate the text
@@ -5786,7 +5996,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the persian and storing the result in a variable named result
-                
+
                 result = translator.translate(translate_this, dest="fa")
                 # printing the result
 
@@ -5810,9 +6020,12 @@ if __name__ == "__main__":
 
             # translate to the polish
             elif "polish" in query:
+
                 # telling the user that we are translating the text to the polish
+
                 speak("translating to polish")
                 # getting the text from the user and replacing the "to polish" with nothing so that we can translate the text
+
                 query = query.replace("to polish", "")
 
                 # using the goslate library to translate the text
@@ -5820,7 +6033,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the polish and storing the result in a variable named result
-                
+
                 result = translator.translate(translate_this, dest="pl")
                 # printing the result
 
@@ -5844,9 +6057,12 @@ if __name__ == "__main__":
 
             # translate to the portuguese
             elif "portuguese" in query:
+
                 # telling the user that we are translating the text to the portuguese
+
                 speak("translating to portuguese")
                 # getting the text from the user and replacing the "to portuguese" with nothing so that we can translate the text
+
                 query = query.replace("to portuguese", "")
 
                 # using the goslate library to translate the text
@@ -5854,7 +6070,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the portuguese and storing the result in a variable named result
-                
+
                 result = translator.translate(translate_this, dest="pt")
                 # printing the result
 
@@ -5878,9 +6094,12 @@ if __name__ == "__main__":
 
             # translate to the punjabi
             elif "punjabi" in query:
+
                 # telling the user that we are translating the text to the punjabi
+
                 speak("translating to punjabi")
                 # getting the text from the user and replacing the "to punjabi" with nothing so that we can translate the text
+
                 query = query.replace("to punjabi", "")
 
                 # using the goslate library to translate the text
@@ -5888,7 +6107,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the punjabi and storing the result in a variable named result
-                
+
                 result = translator.translate(translate_this, dest="pa")
                 # printing the result
 
@@ -5912,9 +6131,12 @@ if __name__ == "__main__":
 
             # translate to the romanian
             elif "romanian" in query:
+
                 # telling the user that we are translating the text to the romanian
+
                 speak("translating to romanian")
                 # getting the text from the user and replacing the "to romanian" with nothing so that we can translate the text
+
                 query = query.replace("to romanian", "")
 
                 # using the goslate library to translate the text
@@ -5922,7 +6144,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the romanian and storing the result in a variable named result
-                
+
                 result = translator.translate(translate_this, dest="ro")
                 # printing the result
 
@@ -5946,9 +6168,12 @@ if __name__ == "__main__":
 
             # translate to the russian
             elif "russian" in query:
+
                 # telling the user that we are translating the text to the russian
+
                 speak("translating to russian")
                 # getting the text from the user and replacing the "to russian" with nothing so that we can translate the text
+
                 query = query.replace("to russian", "")
 
                 # using the goslate library to translate the text
@@ -5956,7 +6181,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the russian and storing the result in a variable named result
-                
+
                 result = translator.translate(translate_this, dest="ru")
                 # printing the result
 
@@ -5980,9 +6205,12 @@ if __name__ == "__main__":
 
             # translate to the samoan
             elif "samoan" in query:
+
                 # telling the user that we are translating the text to the samoan
+
                 speak("translating to samoan")
                 # getting the text from the user and replacing the "to samoan" with nothing so that we can translate the text
+
                 query = query.replace("to samoan", "")
 
                 # using the goslate library to translate the text
@@ -5990,7 +6218,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the samoan and storing the result in a variable named result
-                
+
                 result = translator.translate(translate_this, dest="sm")
                 # printing the result
 
@@ -6014,9 +6242,12 @@ if __name__ == "__main__":
 
             # translate to the scots gaelic
             elif "scots gaelic" in query:
+
                 # telling the user that we are translating the text to the scots gaelic
+
                 speak("translating to scots gaelic")
                 # getting the text from the user and replacing the "to scots gaelic" with nothing so that we can translate the text
+
                 query = query.replace("to scots gaelic", "")
 
                 # using the goslate library to translate the text
@@ -6024,7 +6255,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the scots gaelic and storing the result in a variable named result
-                
+
                 result = translator.translate(translate_this, dest="gd")
                 # printing the result
 
@@ -6048,9 +6279,12 @@ if __name__ == "__main__":
 
             # translate to the serbian
             elif "serbian" in query:
+
                 # telling the user that we are translating the text to the serbian
+
                 speak("translating to serbian")
                 # getting the text from the user and replacing the "to serbian" with nothing so that we can translate the text
+
                 query = query.replace("to serbian", "")
 
                 # using the goslate library to translate the text
@@ -6058,7 +6292,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the serbian and storing the result in a variable named result
-                
+
                 result = translator.translate(translate_this, dest="sr")
                 # printing the result
 
@@ -6082,9 +6316,12 @@ if __name__ == "__main__":
 
             # translate to the sesotho
             elif "sesotho" in query:
+
                 # telling the user that we are translating the text to the sesotho
+
                 speak("translating to sesotho")
                 # getting the text from the user and replacing the "to sesotho" with nothing so that we can translate the text
+
                 query = query.replace("to sesotho", "")
 
                 # using the goslate library to translate the text
@@ -6092,7 +6329,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the sesotho and storing the result in a variable named result
-                
+
                 result = translator.translate(translate_this, dest="st")
                 # printing the result
 
@@ -6116,9 +6353,12 @@ if __name__ == "__main__":
 
             # translate to the shona
             elif "shona" in query:
+
                 # telling the user that we are translating the text to the shona
+
                 speak("translating to shona")
                 # getting the text from the user and replacing the "to shona" with nothing so that we can translate the text
+
                 query = query.replace("to shona", "")
 
                 # using the goslate library to translate the text
@@ -6126,7 +6366,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the shona and storing the result in a variable named result
-                
+
                 result = translator.translate(translate_this, dest="sn")
                 # printing the result
 
@@ -6150,9 +6390,12 @@ if __name__ == "__main__":
 
             # translate to the sindhi
             elif "sindhi" in query:
+
                 # telling the user that we are translating the text to the sindhi
+
                 speak("translating to sindhi")
                 # getting the text from the user and replacing the "to sindhi" with nothing so that we can translate the text
+
                 query = query.replace("to sindhi", "")
 
                 # using the goslate library to translate the text
@@ -6160,7 +6403,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the sindhi and storing the result in a variable named result
-                
+
                 result = translator.translate(translate_this, dest="sd")
                 # printing the result
 
@@ -6184,9 +6427,12 @@ if __name__ == "__main__":
 
             # translate to the sinhala
             elif "sinhala" in query:
+
                 # telling the user that we are translating the text to the sinhala
+
                 speak("translating to sinhala")
                 # getting the text from the user and replacing the "to sinhala" with nothing so that we can translate the text
+
                 query = query.replace("to sinhala", "")
 
                 # using the goslate library to translate the text
@@ -6194,7 +6440,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the sinhala and storing the result in a variable named result
-                
+
                 result = translator.translate(translate_this, dest="si")
                 # printing the result
 
@@ -6218,9 +6464,12 @@ if __name__ == "__main__":
 
             # translate to the slovak
             elif "slovak" in query:
+
                 # telling the user that we are translating the text to the slovak
+
                 speak("translating to slovak")
                 # getting the text from the user and replacing the "to slovak" with nothing so that we can translate the text
+
                 query = query.replace("to slovak", "")
 
                 # using the goslate library to translate the text
@@ -6228,7 +6477,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the slovak and storing the result in a variable named result
-                
+
                 result = translator.translate(translate_this, dest="sk")
                 # printing the result
 
@@ -6252,9 +6501,12 @@ if __name__ == "__main__":
 
             # translate to the slovenian
             elif "slovenian" in query:
+
                 # telling the user that we are translating the text to the slovenian
+
                 speak("translating to slovenian")
                 # getting the text from the user and replacing the "to slovenian" with nothing so that we can translate the text
+
                 query = query.replace("to slovenian", "")
 
                 # using the goslate library to translate the text
@@ -6262,7 +6514,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the slovenian and storing the result in a variable named result
-                
+
                 result = translator.translate(translate_this, dest="sl")
                 # printing the result
 
@@ -6286,9 +6538,12 @@ if __name__ == "__main__":
 
             # translate to the somali
             elif "somali" in query:
+
                 # telling the user that we are translating the text to the somali
+
                 speak("translating to somali")
                 # getting the text from the user and replacing the "to somali" with nothing so that we can translate the text
+
                 query = query.replace("to somali", "")
 
                 # using the goslate library to translate the text
@@ -6296,7 +6551,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the somali and storing the result in a variable named result
-                
+
                 result = translator.translate(translate_this, dest="so")
                 # printing the result
 
@@ -6322,8 +6577,10 @@ if __name__ == "__main__":
             elif "spanish" in query:
 
                 # telling the user that we are translating the text to the spanish
+
                 speak("translating to spanish")
                 # getting the text from the user and replacing the "to spanish" with nothing so that we can translate the text
+
                 query = query.replace("to spanish", "")
 
                 # using the goslate library to translate the text
@@ -6331,7 +6588,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the spanish and storing the result in a variable named result
-                
+
                 result = translator.translate(translate_this, dest="es")
                 # printing the result
 
@@ -6355,9 +6612,12 @@ if __name__ == "__main__":
 
             # translate to the sundanese
             elif "sundanese" in query:
+
                 # telling the user that we are translating the text to the sundanese
+
                 speak("translating to sundanese")
                 # getting the text from the user and replacing the "to sundanese" with nothing so that we can translate the text
+
                 query = query.replace("to sundanese", "")
 
                 # using the goslate library to translate the text
@@ -6365,7 +6625,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the sundanese and storing the result in a variable named result
-                
+
                 result = translator.translate(translate_this, dest="su")
                 # printing the result
 
@@ -6389,9 +6649,12 @@ if __name__ == "__main__":
 
             # translate to the swahili
             elif "swahili" in query:
+
                 # telling the user that we are translating the text to the swahili
+
                 speak("translating to swahili")
                 # getting the text from the user and replacing the "to swahili" with nothing so that we can translate the text
+
                 query = query.replace("to swahili", "")
 
                 # using the goslate library to translate the text
@@ -6399,7 +6662,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the swahili and storing the result in a variable named result
-                
+
                 result = translator.translate(translate_this, dest="sw")
                 # printing the result
 
@@ -6423,9 +6686,12 @@ if __name__ == "__main__":
 
             # translate to the swedish
             elif "swedish" in query:
+
                 # telling the user that we are translating the text to the swedish
+
                 speak("translating to swedish")
                 # getting the text from the user and replacing the "to swedish" with nothing so that we can translate the text
+
                 query = query.replace("to swedish", "")
 
                 # using the goslate library to translate the text
@@ -6433,7 +6699,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the swedish and storing the result in a variable named result
-                
+
                 result = translator.translate(translate_this, dest="sv")
                 # printing the result
 
@@ -6457,9 +6723,12 @@ if __name__ == "__main__":
 
             # translate to the tajik
             elif "tajik" in query:
+
                 # telling the user that we are translating the text to the tajik
+
                 speak("translating to tajik")
                 # getting the text from the user and replacing the "to tajik" with nothing so that we can translate the text
+
                 query = query.replace("to tajik", "")
 
                 # using the goslate library to translate the text
@@ -6467,7 +6736,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the tajik and storing the result in a variable named result
-                
+
                 result = translator.translate(translate_this, dest="tg")
                 # printing the result
 
@@ -6491,9 +6760,12 @@ if __name__ == "__main__":
 
             # translate to the tamil
             elif "tamil" in query:
+
                 # telling the user that we are translating the text to the tamil
+
                 speak("translating to tamil")
                 # getting the text from the user and replacing the "to tamil" with nothing so that we can translate the text
+
                 query = query.replace("to tamil", "")
 
                 # using the goslate library to translate the text
@@ -6501,7 +6773,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the tamil and storing the result in a variable named result
-                
+
                 result = translator.translate(translate_this, dest="ta")
                 # printing the result
 
@@ -6525,9 +6797,12 @@ if __name__ == "__main__":
 
             # translate to the telugu
             elif "telugu" in query:
+
                 # telling the user that we are translating the text to the telugu
+
                 speak("translating to telugu")
                 # getting the text from the user and replacing the "to telugu" with nothing so that we can translate the text
+
                 query = query.replace("to telugu", "")
 
                 # using the goslate library to translate the text
@@ -6535,7 +6810,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the telugu and storing the result in a variable named result
-                
+
                 result = translator.translate(translate_this, dest="te")
                 # printing the result
 
@@ -6559,9 +6834,12 @@ if __name__ == "__main__":
 
             # translate to the thai
             elif "thai" in query:
+
                 # telling the user that we are translating the text to the thai
+
                 speak("translating to thai")
                 # getting the text from the user and replacing the "to thai" with nothing so that we can translate the text
+
                 query = query.replace("to thai", "")
 
                 # using the goslate library to translate the text
@@ -6569,7 +6847,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the thai and storing the result in a variable named result
-                
+
                 result = translator.translate(translate_this, dest="th")
                 # printing the result
 
@@ -6593,9 +6871,12 @@ if __name__ == "__main__":
 
             # translate to the turkish
             elif "turkish" in query:
+
                 # telling the user that we are translating the text to the turkish
+
                 speak("translating to turkish")
                 # getting the text from the user and replacing the "to turkish" with nothing so that we can translate the text
+
                 query = query.replace("to turkish", "")
 
                 # using the goslate library to translate the text
@@ -6603,7 +6884,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the turkish and storing the result in a variable named result
-                
+
                 result = translator.translate(translate_this, dest="tr")
                 # printing the result
 
@@ -6627,9 +6908,12 @@ if __name__ == "__main__":
 
             # translate to the ukrainian
             elif "ukrainian" in query:
+
                 # telling the user that we are translating the text to the ukrainian
+
                 speak("translating to ukrainian")
                 # getting the text from the user and replacing the "to ukrainian" with nothing so that we can translate the text
+
                 query = query.replace("to ukrainian", "")
 
                 # using the goslate library to translate the text
@@ -6637,7 +6921,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the ukrainian and storing the result in a variable named result
-                
+
                 result = translator.translate(translate_this, dest="uk")
                 # printing the result
 
@@ -6661,9 +6945,12 @@ if __name__ == "__main__":
 
             # translate to the urdu
             elif "urdu" in query:
+
                 # telling the user that we are translating the text to the urdu
+
                 speak("translating to urdu")
                 # getting the text from the user and replacing the "to urdu" with nothing so that we can translate the text
+
                 query = query.replace("to urdu", "")
 
                 # using the goslate library to translate the text
@@ -6671,7 +6958,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the urdu and storing the result in a variable named result
-                
+
                 result = translator.translate(translate_this, dest="ur")
                 # printing the result
 
@@ -6695,9 +6982,12 @@ if __name__ == "__main__":
 
             # translate to the uyghur
             elif "uyghur" in query:
+
                 # telling the user that we are translating the text to the uyghur
+
                 speak("translating to uyghur")
                 # getting the text from the user and replacing the "to uyghur" with nothing so that we can translate the text
+
                 query = query.replace("to uyghur", "")
 
                 # using the goslate library to translate the text
@@ -6705,7 +6995,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the uyghur and storing the result in a variable named result
-                
+
                 result = translator.translate(translate_this, dest="ug")
                 # printing the result
 
@@ -6729,9 +7019,12 @@ if __name__ == "__main__":
 
             # translate to the uzbek
             elif "uzbek" in query:
+
                 # telling the user that we are translating the text to the uzbek
+
                 speak("translating to uzbek")
                 # getting the text from the user and replacing the "to uzbek" with nothing so that we can translate the text
+
                 query = query.replace("to uzbek", "")
 
                 # using the goslate library to translate the text
@@ -6739,7 +7032,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the uzbek and storing the result in a variable named result
-                
+
                 result = translator.translate(translate_this, dest="uz")
                 # printing the result
 
@@ -6763,9 +7056,12 @@ if __name__ == "__main__":
 
             # translate to the vietnamese
             elif "vietnamese" in query:
+
                 # telling the user that we are translating the text to the vietnamese
+
                 speak("translating to vietnamese")
                 # getting the text from the user and replacing the "to vietnamese" with nothing so that we can translate the text
+
                 query = query.replace("to vietnamese", "")
 
                 # using the goslate library to translate the text
@@ -6773,7 +7069,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the vietnamese and storing the result in a variable named result
-                
+
                 result = translator.translate(translate_this, dest="vi")
                 # printing the result
 
@@ -6797,9 +7093,12 @@ if __name__ == "__main__":
 
             # translate to the welsh
             elif "welsh" in query:
+
                 # telling the user that we are translating the text to the welsh
+
                 speak("translating to welsh")
                 # getting the text from the user and replacing the "to welsh" with nothing so that we can translate the text
+
                 query = query.replace("to welsh", "")
 
                 # using the goslate library to translate the text
@@ -6807,7 +7106,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the welsh and storing the result in a variable named result
-                
+
                 result = translator.translate(translate_this, dest="cy")
                 # printing the result
 
@@ -6831,9 +7130,12 @@ if __name__ == "__main__":
 
             # translate to the xhosa
             elif "xhosa" in query:
+
                 # telling the user that we are translating the text to the xhosa
+
                 speak("translating to xhosa")
                 # getting the text from the user and replacing the "to xhosa" with nothing so that we can translate the text
+
                 query = query.replace("to xhosa", "")
 
                 # using the goslate library to translate the text
@@ -6841,7 +7143,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the xhosa and storing the result in a variable named result
-                
+
                 result = translator.translate(translate_this, dest="xh")
                 # printing the result
 
@@ -6865,9 +7167,12 @@ if __name__ == "__main__":
 
             # translate to the yiddish
             elif "yiddish" in query:
+
                 # telling the user that we are translating the text to the yiddish
+
                 speak("translating to yiddish")
                 # getting the text from the user and replacing the "to yiddish" with nothing so that we can translate the text
+
                 query = query.replace("to yiddish", "")
 
                 # using the goslate library to translate the text
@@ -6875,7 +7180,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the yiddish and storing the result in a variable named result
-                
+
                 result = translator.translate(translate_this, dest="yi")
                 # printing the result
 
@@ -6899,9 +7204,12 @@ if __name__ == "__main__":
 
             # translate to the yoruba
             elif "yoruba" in query:
+
                 # telling the user that we are translating the text to the yoruba
+
                 speak("translating to yoruba")
                 # getting the text from the user and replacing the "to yoruba" with nothing so that we can translate the text
+
                 query = query.replace("to yoruba", "")
 
                 # using the goslate library to translate the text
@@ -6909,7 +7217,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the yoruba and storing the result in a variable named result
-                
+
                 result = translator.translate(translate_this, dest="yo")
                 # printing the result
 
@@ -6933,9 +7241,12 @@ if __name__ == "__main__":
 
             # translate to the zulu
             elif "zulu" in query:
+
                 # telling the user that we are translating the text to the zulu
+
                 speak("translating to zulu")
                 # getting the text from the user and replacing the "to zulu" with nothing so that we can translate the text
+
                 query = query.replace("to zulu", "")
 
                 # using the goslate library to translate the text
@@ -6943,7 +7254,7 @@ if __name__ == "__main__":
                 translator = Translator()
 
                 # translating the text to the zulu and storing the result in a variable named result
-                
+
                 result = translator.translate(translate_this, dest="zu")
                 # printing the result
 
