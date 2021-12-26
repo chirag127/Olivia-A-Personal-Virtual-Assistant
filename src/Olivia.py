@@ -44,7 +44,7 @@ headers = {
 # chirag singhal made this virtual voice assistant for his mini-project in his college.
 
 
-# reqiured engine for text to speech
+# required engine for text to speech
 
 engine = pyttsx3.init("sapi5")
 
@@ -130,7 +130,7 @@ def takeCommand():
 
         # convert the audio to text
 
-        # print recongzing the user's voice to know that the program is re cognizing the user's voice
+        # print recognizing the user's voice to know that the program is re cognizing the user's voice
 
         print("Recognizing...")
 
@@ -168,7 +168,7 @@ def takeCommand():
 
         print("Please Check your internet connection")
 
-        # print try after soem time to know that the program is trying to listen again
+        # print try after some time to know that the program is trying to listen again
 
         print("Try after sometime")
 
@@ -419,12 +419,12 @@ def tictactoe():
         # ------------------------------------------------------------------
 
         def convert_logical_to_grid_position(self, logical_position):
-            logical_position = np.array(logical_position, dtype=int)
+            logical_position = np.array(logical_position, d_type=int)
             return (size_of_board / 3) * logical_position + size_of_board / 6
 
         def convert_grid_to_logical_position(self, grid_position):
             grid_position = np.array(grid_position)
-            return np.array(grid_position // (size_of_board / 3), dtype=int)
+            return np.array(grid_position // (size_of_board / 3), d_type=int)
 
         def is_grid_occupied(self, logical_position):
             if self.board_status[logical_position[0]][logical_position[1]] == 0:
@@ -574,14 +574,14 @@ def givejoke():
     speak(joketext)
 
 
-def giveip():
+def give_ip():
     response_API = requests.get("https://api.ipify.org?format=json")
     data = response_API.text
     parse_json = json.loads(data)
     key = parse_json["ip"]
-    iptext = key
+    IP_text = key
     sp("Your IP address is ")
-    sp(iptext)
+    sp(IP_text)
 
 
 def generate_random_password():
@@ -755,7 +755,7 @@ def greeting(text):
     # Greeting response
     GREETING_RESPONSES = ["howdy", "all that good", "hello master", "heythere"]
 
-    # If users input is a greeting, then return a randomly chosen greetng response
+    # If users input is a greeting, then return a randomly chosen greeting response
     for word in text.split():
         if word.lower() in GREETING_INPUTS:
             return random.choice(GREETING_RESPONSES) + "."
@@ -882,7 +882,7 @@ if __name__ == "__main__":
         #         k = w.get_status()
 
         #         x = w.get_temperature(unit='celsius')
-        #         speak('Current weather in %s is %s. The maximum temperature is %0.2f and the minimum temperature is %0.2f degree celcius' % (
+        #         speak('Current weather in %s is %s. The maximum temperature is %0.2f and the minimum temperature is %0.2f degree celsius' % (
         #             city, k, x['temp_max'], x['temp_min']))
 
         elif "random" in query and "advice" in query:
@@ -1092,9 +1092,9 @@ if __name__ == "__main__":
 
             speak("do you want me to type ?")
 
-            typin = takeCommand().lower()
+            sentence_to_be_typed = takeCommand().lower()
 
-            if "yes" in typin:
+            if "yes" in sentence_to_be_typed:
 
                 pyautogui.press("enter")
 
@@ -1226,7 +1226,7 @@ if __name__ == "__main__":
 
                 speak("stopped typing")
 
-            elif "no" in typin:
+            elif "no" in sentence_to_be_typed:
 
                 speak("ok sir")
 
@@ -1901,7 +1901,7 @@ if __name__ == "__main__":
 
         elif "joke" in query:
 
-            if "nuetral" in query:
+            if "neutral" in query:
 
                 sp(neutral_joke())
 
@@ -1910,7 +1910,7 @@ if __name__ == "__main__":
                 givejoke()
 
         elif "ip address" in query:
-            giveip()
+            give_ip()
 
         elif "call me" in query:
             speak("What is your name?")
@@ -2038,7 +2038,7 @@ if __name__ == "__main__":
             givejoke()
 
         elif "ip address" in query:
-            giveip()
+            give_ip()
 
         elif "call me" in query:
             speak("What is your name?")
@@ -2149,7 +2149,7 @@ if __name__ == "__main__":
         #                 print(e)
         #                 speak("Sorry Sir, I am not able to fetch the weather")
 
-        #         elif "date" in query and "curren" in query:
+        #         elif "date" in query and "current" in query:
 
         #             speak("Sir, What date you want to check")
         #             date = takeCommand()
@@ -3178,7 +3178,7 @@ if __name__ == "__main__":
             else:
                 open_url(f"https://duckduckgo.com/?q=%21+{query}&ia=olivia")
 
-        # create a translate feature in the virutal assistant
+        # create a translate feature in the virtual assistant
 
         elif "translate" in query:
             query = query.replace("translate", "")
@@ -3316,7 +3316,7 @@ if __name__ == "__main__":
 
                 query = query.replace("to afrikaans", "")
 
-                # using the goslate library to translate the text
+                # using the google translate library to translate the text
 
                 translator = Translator()
 
@@ -3357,7 +3357,7 @@ if __name__ == "__main__":
 
                 query = query.replace("to albanian", "")
 
-                # using the goslate library to translate the text
+                # using the google translate library to translate the text
 
                 translator = Translator()
 
@@ -3398,7 +3398,7 @@ if __name__ == "__main__":
 
                 query = query.replace("to amharic", "")
 
-                # using the goslate library to translate the text
+                # using the google translate library to translate the text
 
                 translator = Translator()
 
@@ -3439,7 +3439,7 @@ if __name__ == "__main__":
 
                 query = query.replace("to arabic", "")
 
-                # using the goslate library to translate the text
+                # using the google translate library to translate the text
 
                 translator = Translator()
 
@@ -3480,7 +3480,7 @@ if __name__ == "__main__":
 
                 query = query.replace("to armenian", "")
 
-                # using the goslate library to translate the text
+                # using the google translate library to translate the text
 
                 translator = Translator()
 
@@ -3521,7 +3521,7 @@ if __name__ == "__main__":
 
                 query = query.replace("to azerbaijani", "")
 
-                # using the goslate library to translate the text
+                # using the google translate library to translate the text
 
                 translator = Translator()
 
@@ -3563,7 +3563,7 @@ if __name__ == "__main__":
 
                 query = query.replace("to basque", "")
 
-                # using the goslate library to translate the text
+                # using the google translate library to translate the text
 
                 translator = Translator()
 
@@ -3604,7 +3604,7 @@ if __name__ == "__main__":
 
                 query = query.replace("to belarusian", "")
 
-                # using the goslate library to translate the text
+                # using the google translate library to translate the text
 
                 translator = Translator()
 
@@ -3645,7 +3645,7 @@ if __name__ == "__main__":
 
                 query = query.replace("to bengali", "")
 
-                # using the goslate library to translate the text
+                # using the google translate library to translate the text
 
                 translator = Translator()
 
@@ -3686,7 +3686,7 @@ if __name__ == "__main__":
 
                 query = query.replace("to bosnian", "")
 
-                # using the goslate library to translate the text
+                # using the google translate library to translate the text
 
                 translator = Translator()
 
@@ -3726,7 +3726,7 @@ if __name__ == "__main__":
 
                 query = query.replace("to bulgarian", "")
 
-                # using the goslate library to translate the text
+                # using the google translate library to translate the text
 
                 translator = Translator()
 
@@ -3766,7 +3766,7 @@ if __name__ == "__main__":
 
                 query = query.replace("to catalan", "")
 
-                # using the goslate library to translate the text
+                # using the google translate library to translate the text
 
                 translator = Translator()
 
@@ -3806,7 +3806,7 @@ if __name__ == "__main__":
 
                 query = query.replace("to cebuano", "")
 
-                # using the goslate library to translate the text
+                # using the google translate library to translate the text
 
                 translator = Translator()
 
@@ -3846,7 +3846,7 @@ if __name__ == "__main__":
 
                 query = query.replace("to chichewa", "")
 
-                # using the goslate library to translate the text
+                # using the google translate library to translate the text
 
                 translator = Translator()
 
@@ -3886,7 +3886,7 @@ if __name__ == "__main__":
 
                 query = query.replace("to chinese", "")
 
-                # using the goslate library to translate the text
+                # using the google translate library to translate the text
 
                 translator = Translator()
 
@@ -3926,7 +3926,7 @@ if __name__ == "__main__":
 
                 query = query.replace("to corican", "")
 
-                # using the goslate library to translate the text
+                # using the google translate library to translate the text
 
                 translator = Translator()
 
@@ -3966,7 +3966,7 @@ if __name__ == "__main__":
 
                 query = query.replace("to croatian", "")
 
-                # using the goslate library to translate the text
+                # using the google translate library to translate the text
 
                 translator = Translator()
 
@@ -4006,7 +4006,7 @@ if __name__ == "__main__":
 
                 query = query.replace("to czech", "")
 
-                # using the goslate library to translate the text
+                # using the google translate library to translate the text
 
                 translator = Translator()
 
@@ -4046,7 +4046,7 @@ if __name__ == "__main__":
 
                 query = query.replace("to danish", "")
 
-                # using the goslate library to translate the text
+                # using the google translate library to translate the text
 
                 translator = Translator()
 
@@ -4086,7 +4086,7 @@ if __name__ == "__main__":
 
                 query = query.replace("to dutch", "")
 
-                # using the goslate library to translate the text
+                # using the google translate library to translate the text
 
                 translator = Translator()
 
@@ -4126,7 +4126,7 @@ if __name__ == "__main__":
 
                 query = query.replace("to english", "")
 
-                # using the goslate library to translate the text
+                # using the google translate library to translate the text
 
                 translator = Translator()
 
@@ -4167,7 +4167,7 @@ if __name__ == "__main__":
 
                 query = query.replace("to esperanto", "")
 
-                # using the goslate library to translate the text
+                # using the google translate library to translate the text
 
                 translator = Translator()
 
@@ -4207,7 +4207,7 @@ if __name__ == "__main__":
 
                 query = query.replace("to estonian", "")
 
-                # using the goslate library to translate the text
+                # using the google translate library to translate the text
 
                 translator = Translator()
 
@@ -4247,7 +4247,7 @@ if __name__ == "__main__":
 
                 query = query.replace("to filipino", "")
 
-                # using the goslate library to translate the text
+                # using the google translate library to translate the text
 
                 translator = Translator()
 
@@ -4287,7 +4287,7 @@ if __name__ == "__main__":
 
                 query = query.replace("to finnish", "")
 
-                # using the goslate library to translate the text
+                # using the google translate library to translate the text
 
                 translator = Translator()
 
@@ -4327,7 +4327,7 @@ if __name__ == "__main__":
 
                 query = query.replace("to french", "")
 
-                # using the goslate library to translate the text
+                # using the google translate library to translate the text
 
                 translator = Translator()
 
@@ -4367,7 +4367,7 @@ if __name__ == "__main__":
 
                 query = query.replace("to frisian", "")
 
-                # using the goslate library to translate the text
+                # using the google translate library to translate the text
 
                 translator = Translator()
 
@@ -4407,7 +4407,7 @@ if __name__ == "__main__":
 
                 query = query.replace("to galician", "")
 
-                # using the goslate library to translate the text
+                # using the google translate library to translate the text
 
                 translator = Translator()
 
@@ -4447,7 +4447,7 @@ if __name__ == "__main__":
 
                 query = query.replace("to georgian", "")
 
-                # using the goslate library to translate the text
+                # using the google translate library to translate the text
 
                 translator = Translator()
 
@@ -4487,7 +4487,7 @@ if __name__ == "__main__":
 
                 query = query.replace("to german", "")
 
-                # using the goslate library to translate the text
+                # using the google translate library to translate the text
 
                 translator = Translator()
 
@@ -4527,7 +4527,7 @@ if __name__ == "__main__":
 
                 query = query.replace("to greek", "")
 
-                # using the goslate library to translate the text
+                # using the google translate library to translate the text
 
                 translator = Translator()
 
@@ -4567,7 +4567,7 @@ if __name__ == "__main__":
 
                 query = query.replace("to gujarati", "")
 
-                # using the goslate library to translate the text
+                # using the google translate library to translate the text
 
                 translator = Translator()
 
@@ -4607,7 +4607,7 @@ if __name__ == "__main__":
 
                 query = query.replace("to haitian creole", "")
 
-                # using the goslate library to translate the text
+                # using the google translate library to translate the text
 
                 translator = Translator()
 
@@ -4647,7 +4647,7 @@ if __name__ == "__main__":
 
                 query = query.replace("to hausa", "")
 
-                # using the goslate library to translate the text
+                # using the google translate library to translate the text
 
                 translator = Translator()
 
@@ -4687,7 +4687,7 @@ if __name__ == "__main__":
 
                 query = query.replace("to hawaiian", "")
 
-                # using the goslate library to translate the text
+                # using the google translate library to translate the text
 
                 translator = Translator()
 
@@ -4727,7 +4727,7 @@ if __name__ == "__main__":
 
                 query = query.replace("to hebrew", "")
 
-                # using the goslate library to translate the text
+                # using the google translate library to translate the text
 
                 translator = Translator()
 
@@ -4767,7 +4767,7 @@ if __name__ == "__main__":
 
                 query = query.replace("to hindi", "")
 
-                # using the goslate library to translate the text
+                # using the google translate library to translate the text
 
                 translator = Translator()
 
@@ -4807,7 +4807,7 @@ if __name__ == "__main__":
 
                 query = query.replace("to hmong", "")
 
-                # using the goslate library to translate the text
+                # using the google translate library to translate the text
 
                 translator = Translator()
 
@@ -4847,7 +4847,7 @@ if __name__ == "__main__":
 
                 query = query.replace("to hungarian", "")
 
-                # using the goslate library to translate the text
+                # using the google translate library to translate the text
 
                 translator = Translator()
 
@@ -4887,7 +4887,7 @@ if __name__ == "__main__":
 
                 query = query.replace("to icelandic", "")
 
-                # using the goslate library to translate the text
+                # using the google translate library to translate the text
 
                 translator = Translator()
 
@@ -4927,7 +4927,7 @@ if __name__ == "__main__":
 
                 query = query.replace("to igbo", "")
 
-                # using the goslate library to translate the text
+                # using the google translate library to translate the text
 
                 translator = Translator()
 
@@ -4967,7 +4967,7 @@ if __name__ == "__main__":
 
                 query = query.replace("to indonesian", "")
 
-                # using the goslate library to translate the text
+                # using the google translate library to translate the text
 
                 translator = Translator()
 
@@ -5007,7 +5007,7 @@ if __name__ == "__main__":
 
                 query = query.replace("to irish", "")
 
-                # using the goslate library to translate the text
+                # using the google translate library to translate the text
 
                 translator = Translator()
 
@@ -5047,7 +5047,7 @@ if __name__ == "__main__":
 
                 query = query.replace("to italian", "")
 
-                # using the goslate library to translate the text
+                # using the google translate library to translate the text
 
                 translator = Translator()
 
@@ -5087,7 +5087,7 @@ if __name__ == "__main__":
 
                 query = query.replace("to japanese", "")
 
-                # using the goslate library to translate the text
+                # using the google translate library to translate the text
 
                 translator = Translator()
 
@@ -5127,7 +5127,7 @@ if __name__ == "__main__":
 
                 query = query.replace("to javanese", "")
 
-                # using the goslate library to translate the text
+                # using the google translate library to translate the text
 
                 translator = Translator()
 
@@ -5167,7 +5167,7 @@ if __name__ == "__main__":
 
                 query = query.replace("to kannada", "")
 
-                # using the goslate library to translate the text
+                # using the google translate library to translate the text
 
                 translator = Translator()
 
@@ -5207,7 +5207,7 @@ if __name__ == "__main__":
 
                 query = query.replace("to kazakh", "")
 
-                # using the goslate library to translate the text
+                # using the google translate library to translate the text
 
                 translator = Translator()
 
@@ -5247,7 +5247,7 @@ if __name__ == "__main__":
 
                 query = query.replace("to khmer", "")
 
-                # using the goslate library to translate the text
+                # using the google translate library to translate the text
 
                 translator = Translator()
 
@@ -5287,7 +5287,7 @@ if __name__ == "__main__":
 
                 query = query.replace("to korean", "")
 
-                # using the goslate library to translate the text
+                # using the google translate library to translate the text
 
                 translator = Translator()
 
@@ -5327,7 +5327,7 @@ if __name__ == "__main__":
 
                 query = query.replace("to kurdish", "")
 
-                # using the goslate library to translate the text
+                # using the google translate library to translate the text
 
                 translator = Translator()
 
@@ -5367,7 +5367,7 @@ if __name__ == "__main__":
 
                 query = query.replace("to kurmanji", "")
 
-                # using the goslate library to translate the text
+                # using the google translate library to translate the text
 
                 translator = Translator()
 
@@ -5407,7 +5407,7 @@ if __name__ == "__main__":
 
                 query = query.replace("to kyrgyz", "")
 
-                # using the goslate library to translate the text
+                # using the google translate library to translate the text
 
                 translator = Translator()
 
@@ -5447,7 +5447,7 @@ if __name__ == "__main__":
 
                 query = query.replace("to lao", "")
 
-                # using the goslate library to translate the text
+                # using the google translate library to translate the text
 
                 translator = Translator()
 
@@ -5487,7 +5487,7 @@ if __name__ == "__main__":
 
                 query = query.replace("to latin", "")
 
-                # using the goslate library to translate the text
+                # using the google translate library to translate the text
 
                 translator = Translator()
 
@@ -5527,7 +5527,7 @@ if __name__ == "__main__":
 
                 query = query.replace("to latvian", "")
 
-                # using the goslate library to translate the text
+                # using the google translate library to translate the text
 
                 translator = Translator()
 
@@ -5567,7 +5567,7 @@ if __name__ == "__main__":
 
                 query = query.replace("to lithuanian", "")
 
-                # using the goslate library to translate the text
+                # using the google translate library to translate the text
 
                 translator = Translator()
 
@@ -5607,7 +5607,7 @@ if __name__ == "__main__":
 
                 query = query.replace("to luxembourgish", "")
 
-                # using the goslate library to translate the text
+                # using the google translate library to translate the text
 
                 translator = Translator()
 
@@ -5647,7 +5647,7 @@ if __name__ == "__main__":
 
                 query = query.replace("to macedonian", "")
 
-                # using the goslate library to translate the text
+                # using the google translate library to translate the text
 
                 translator = Translator()
 
@@ -5687,7 +5687,7 @@ if __name__ == "__main__":
 
                 query = query.replace("to malagasy", "")
 
-                # using the goslate library to translate the text
+                # using the google translate library to translate the text
 
                 translator = Translator()
 
@@ -5727,7 +5727,7 @@ if __name__ == "__main__":
 
                 query = query.replace("to malay", "")
 
-                # using the goslate library to translate the text
+                # using the google translate library to translate the text
 
                 translator = Translator()
 
@@ -5767,7 +5767,7 @@ if __name__ == "__main__":
 
                 query = query.replace("to malayalam", "")
 
-                # using the goslate library to translate the text
+                # using the google translate library to translate the text
 
                 translator = Translator()
 
@@ -5807,7 +5807,7 @@ if __name__ == "__main__":
 
                 query = query.replace("to maltese", "")
 
-                # using the goslate library to translate the text
+                # using the google translate library to translate the text
 
                 translator = Translator()
 
@@ -5847,7 +5847,7 @@ if __name__ == "__main__":
 
                 query = query.replace("to maori", "")
 
-                # using the goslate library to translate the text
+                # using the google translate library to translate the text
 
                 translator = Translator()
 
@@ -5887,7 +5887,7 @@ if __name__ == "__main__":
 
                 query = query.replace("to marathi", "")
 
-                # using the goslate library to translate the text
+                # using the google translate library to translate the text
 
                 translator = Translator()
 
@@ -5927,7 +5927,7 @@ if __name__ == "__main__":
 
                 query = query.replace("to mongolian", "")
 
-                # using the goslate library to translate the text
+                # using the google translate library to translate the text
 
                 translator = Translator()
 
@@ -5967,7 +5967,7 @@ if __name__ == "__main__":
 
                 query = query.replace("to myanmar", "")
 
-                # using the goslate library to translate the text
+                # using the google translate library to translate the text
 
                 translator = Translator()
 
@@ -6007,7 +6007,7 @@ if __name__ == "__main__":
 
                 query = query.replace("to burmese", "")
 
-                # using the goslate library to translate the text
+                # using the google translate library to translate the text
 
                 translator = Translator()
 
@@ -6047,7 +6047,7 @@ if __name__ == "__main__":
 
                 query = query.replace("to nepali", "")
 
-                # using the goslate library to translate the text
+                # using the google translate library to translate the text
 
                 translator = Translator()
 
@@ -6087,7 +6087,7 @@ if __name__ == "__main__":
 
                 query = query.replace("to norwegian", "")
 
-                # using the goslate library to translate the text
+                # using the google translate library to translate the text
 
                 translator = Translator()
 
@@ -6127,7 +6127,7 @@ if __name__ == "__main__":
 
                 query = query.replace("to odia", "")
 
-                # using the goslate library to translate the text
+                # using the google translate library to translate the text
 
                 translator = Translator()
 
@@ -6167,7 +6167,7 @@ if __name__ == "__main__":
 
                 query = query.replace("to pashto", "")
 
-                # using the goslate library to translate the text
+                # using the google translate library to translate the text
 
                 translator = Translator()
 
@@ -6207,7 +6207,7 @@ if __name__ == "__main__":
 
                 query = query.replace("to persian", "")
 
-                # using the goslate library to translate the text
+                # using the google translate library to translate the text
 
                 translator = Translator()
 
@@ -6247,7 +6247,7 @@ if __name__ == "__main__":
 
                 query = query.replace("to polish", "")
 
-                # using the goslate library to translate the text
+                # using the google translate library to translate the text
 
                 translator = Translator()
 
@@ -6287,7 +6287,7 @@ if __name__ == "__main__":
 
                 query = query.replace("to portuguese", "")
 
-                # using the goslate library to translate the text
+                # using the google translate library to translate the text
 
                 translator = Translator()
 
@@ -6327,7 +6327,7 @@ if __name__ == "__main__":
 
                 query = query.replace("to punjabi", "")
 
-                # using the goslate library to translate the text
+                # using the google translate library to translate the text
 
                 translator = Translator()
 
@@ -6367,7 +6367,7 @@ if __name__ == "__main__":
 
                 query = query.replace("to romanian", "")
 
-                # using the goslate library to translate the text
+                # using the google translate library to translate the text
 
                 translator = Translator()
 
@@ -6407,7 +6407,7 @@ if __name__ == "__main__":
 
                 query = query.replace("to russian", "")
 
-                # using the goslate library to translate the text
+                # using the google translate library to translate the text
 
                 translator = Translator()
 
@@ -6447,7 +6447,7 @@ if __name__ == "__main__":
 
                 query = query.replace("to samoan", "")
 
-                # using the goslate library to translate the text
+                # using the google translate library to translate the text
 
                 translator = Translator()
 
@@ -6487,7 +6487,7 @@ if __name__ == "__main__":
 
                 query = query.replace("to scots gaelic", "")
 
-                # using the goslate library to translate the text
+                # using the google translate library to translate the text
 
                 translator = Translator()
 
@@ -6527,7 +6527,7 @@ if __name__ == "__main__":
 
                 query = query.replace("to serbian", "")
 
-                # using the goslate library to translate the text
+                # using the google translate library to translate the text
 
                 translator = Translator()
 
@@ -6567,7 +6567,7 @@ if __name__ == "__main__":
 
                 query = query.replace("to sesotho", "")
 
-                # using the goslate library to translate the text
+                # using the google translate library to translate the text
 
                 translator = Translator()
 
@@ -6607,7 +6607,7 @@ if __name__ == "__main__":
 
                 query = query.replace("to shona", "")
 
-                # using the goslate library to translate the text
+                # using the google translate library to translate the text
 
                 translator = Translator()
 
@@ -6647,7 +6647,7 @@ if __name__ == "__main__":
 
                 query = query.replace("to sindhi", "")
 
-                # using the goslate library to translate the text
+                # using the google translate library to translate the text
 
                 translator = Translator()
 
@@ -6687,7 +6687,7 @@ if __name__ == "__main__":
 
                 query = query.replace("to sinhala", "")
 
-                # using the goslate library to translate the text
+                # using the google translate library to translate the text
 
                 translator = Translator()
 
@@ -6727,7 +6727,7 @@ if __name__ == "__main__":
 
                 query = query.replace("to slovak", "")
 
-                # using the goslate library to translate the text
+                # using the google translate library to translate the text
 
                 translator = Translator()
 
@@ -6767,7 +6767,7 @@ if __name__ == "__main__":
 
                 query = query.replace("to slovenian", "")
 
-                # using the goslate library to translate the text
+                # using the google translate library to translate the text
 
                 translator = Translator()
 
@@ -6807,7 +6807,7 @@ if __name__ == "__main__":
 
                 query = query.replace("to somali", "")
 
-                # using the goslate library to translate the text
+                # using the google translate library to translate the text
 
                 translator = Translator()
 
@@ -6847,7 +6847,7 @@ if __name__ == "__main__":
 
                 query = query.replace("to spanish", "")
 
-                # using the goslate library to translate the text
+                # using the google translate library to translate the text
 
                 translator = Translator()
 
@@ -6887,7 +6887,7 @@ if __name__ == "__main__":
 
                 query = query.replace("to sundanese", "")
 
-                # using the goslate library to translate the text
+                # using the google translate library to translate the text
 
                 translator = Translator()
 
@@ -6927,7 +6927,7 @@ if __name__ == "__main__":
 
                 query = query.replace("to swahili", "")
 
-                # using the goslate library to translate the text
+                # using the google translate library to translate the text
 
                 translator = Translator()
 
@@ -6967,7 +6967,7 @@ if __name__ == "__main__":
 
                 query = query.replace("to swedish", "")
 
-                # using the goslate library to translate the text
+                # using the google translate library to translate the text
 
                 translator = Translator()
 
@@ -7007,7 +7007,7 @@ if __name__ == "__main__":
 
                 query = query.replace("to tajik", "")
 
-                # using the goslate library to translate the text
+                # using the google translate library to translate the text
 
                 translator = Translator()
 
@@ -7047,7 +7047,7 @@ if __name__ == "__main__":
 
                 query = query.replace("to tamil", "")
 
-                # using the goslate library to translate the text
+                # using the google translate library to translate the text
 
                 translator = Translator()
 
@@ -7087,7 +7087,7 @@ if __name__ == "__main__":
 
                 query = query.replace("to telugu", "")
 
-                # using the goslate library to translate the text
+                # using the google translate library to translate the text
 
                 translator = Translator()
 
@@ -7127,7 +7127,7 @@ if __name__ == "__main__":
 
                 query = query.replace("to thai", "")
 
-                # using the goslate library to translate the text
+                # using the google translate library to translate the text
 
                 translator = Translator()
 
@@ -7167,7 +7167,7 @@ if __name__ == "__main__":
 
                 query = query.replace("to turkish", "")
 
-                # using the goslate library to translate the text
+                # using the google translate library to translate the text
 
                 translator = Translator()
 
@@ -7207,7 +7207,7 @@ if __name__ == "__main__":
 
                 query = query.replace("to ukrainian", "")
 
-                # using the goslate library to translate the text
+                # using the google translate library to translate the text
 
                 translator = Translator()
 
@@ -7247,7 +7247,7 @@ if __name__ == "__main__":
 
                 query = query.replace("to urdu", "")
 
-                # using the goslate library to translate the text
+                # using the google translate library to translate the text
 
                 translator = Translator()
 
@@ -7287,7 +7287,7 @@ if __name__ == "__main__":
 
                 query = query.replace("to uyghur", "")
 
-                # using the goslate library to translate the text
+                # using the google translate library to translate the text
 
                 translator = Translator()
 
@@ -7327,7 +7327,7 @@ if __name__ == "__main__":
 
                 query = query.replace("to uzbek", "")
 
-                # using the goslate library to translate the text
+                # using the google translate library to translate the text
 
                 translator = Translator()
 
@@ -7367,7 +7367,7 @@ if __name__ == "__main__":
 
                 query = query.replace("to vietnamese", "")
 
-                # using the goslate library to translate the text
+                # using the google translate library to translate the text
 
                 translator = Translator()
 
@@ -7407,7 +7407,7 @@ if __name__ == "__main__":
 
                 query = query.replace("to welsh", "")
 
-                # using the goslate library to translate the text
+                # using the google translate library to translate the text
 
                 translator = Translator()
 
@@ -7447,7 +7447,7 @@ if __name__ == "__main__":
 
                 query = query.replace("to xhosa", "")
 
-                # using the goslate library to translate the text
+                # using the google translate library to translate the text
 
                 translator = Translator()
 
@@ -7487,7 +7487,7 @@ if __name__ == "__main__":
 
                 query = query.replace("to yiddish", "")
 
-                # using the goslate library to translate the text
+                # using the google translate library to translate the text
 
                 translator = Translator()
 
@@ -7527,7 +7527,7 @@ if __name__ == "__main__":
 
                 query = query.replace("to yoruba", "")
 
-                # using the goslate library to translate the text
+                # using the google translate library to translate the text
 
                 translator = Translator()
 
@@ -7567,7 +7567,7 @@ if __name__ == "__main__":
 
                 query = query.replace("to zulu", "")
 
-                # using the goslate library to translate the text
+                # using the google translate library to translate the text
 
                 translator = Translator()
 
@@ -7786,7 +7786,7 @@ if __name__ == "__main__":
 
         elif "what is your favorite song" in query:
 
-            speak("My favorite song is the one by the Justin bieber")
+            speak("My favorite song is the one by the Justin Bieber")
 
         elif "what is your favorite movie" in query:
 
@@ -7884,7 +7884,7 @@ if __name__ == "__main__":
 
         elif "your god" in query:
 
-            sp("chriag singhal is my god")
+            sp("Chriag singhal is my god")
 
         elif (
             "who made you" in query
@@ -7906,7 +7906,7 @@ if __name__ == "__main__":
 
             speak("I like to answer your questions")
 
-        elif "what is special about oliva" in query:
+        elif "what is special about olivia" in query:
 
             speak("I try to be as helpful as possible")
 
@@ -7914,7 +7914,7 @@ if __name__ == "__main__":
 
             speak("My favorite movie is the dead poet Society")
 
-        elif "Should iisc remove the ceiling fans in the hostels" in query:
+        elif "Should IISC remove the ceiling fans in the hostels" in query:
 
             speak("NO, It's a very bad idea to remove the ceiling fans in the hostels to protect the students from su*c*d*ing")
 
@@ -7935,7 +7935,7 @@ if __name__ == "__main__":
 
             wishMe()
 
-        # if the query contains 'tell me about (something)', then return the information of that person/organisation from the wikipedia using the information from the wikipedia library
+        # if the query contains 'tell me about (something)', then return the information of that person/organization from the wikipedia using the information from the wikipedia library
         elif "tell me about" in query or "who is" in query:
 
             # remove the stop words from the query
@@ -7952,7 +7952,7 @@ if __name__ == "__main__":
                 # search for the topic on wikipedia
                 results = wikipedia.summary(topic, sentences=2)
 
-                # speak the Accoridng to wikipedia
+                # speak the According to wikipedia
                 speak("According to Wikipedia")
 
                 # print the result
@@ -7970,7 +7970,7 @@ if __name__ == "__main__":
                 url = "https://www.google.com/search?q=" + query
                 webbrowser.get().open(url)
 
-        # if the query contains 'what is' then return the information of that person/organisation from the wikipedia using the information from the wikipedia library
+        # if the query contains 'what is' then return the information of that person/organization from the wikipedia using the information from the wikipedia library
         elif "what is" in query:
 
             # remove the stop words from the query
@@ -8006,7 +8006,7 @@ if __name__ == "__main__":
 
                     results = wikipedia.summary(topic, sentences=2)
 
-                    # speak the Accoridng to wikipedia
+                    # speak the According to wikipedia
 
                     speak("According to Wikipedia")
 
@@ -8071,18 +8071,18 @@ if __name__ == "__main__":
         # # or open the query in youtube or open the query in stackoverflow or open the query in github or open the query in
         # # facebook or open the query in instagram or open the query in twitter or open the query in linkedin or open the query in
         # # gmail or open the query in whatsapp or open the query in skype or open the query in snapchat or open the query in
-        # # pinterest or open the query in tinder or open the query in reddit or open the query in quora or open the query in
+        # # pinterest or open the query in tinder or open the query in reddit or open the query in Quora or open the query in
         # # stackoverflow or open the query in amazon or open the query in flipkart or open the query in gmail or open the query in
         # # yahoo or open the query in google or open the query in wikipedia or open the query in youtube or open the query in
         # # stackoverflow or open the query in github or open the query in facebook or open the query in instagram or open the
         # # query in twitter or open the query in linkedin or open the query in gmail or open the query in whatsapp or open the
         # # query in skype or open the query in snapchat or open the query in pinterest or open the query in tinder or open the
-        # # query in reddit or open the query in quora or open the query in stackoverflow or open the query in amazon or open the
+        # # query in reddit or open the query in Quora or open the query in stackoverflow or open the query in amazon or open the
         # # query in flipkart or open the query in gmail or open the query in yahoo or open the query in google or open the query in
         # # wikipedia or open the query in youtube or open the query in stackoverflow or open the query in github or open the query
         # # in facebook or open the query in instagram or open the query in twitter or open the query in linkedin or open the query
         # # in gmail or open the query in whatsapp or open the query in skype or open the query in snapchat or open the query in
-        # # pinterest or open the query in tinder or open the query in reddit or open the query in quora or open the query in
+        # # pinterest or open the query in tinder or open the query in reddit or open the query in Quora or open the query in
         # # stackoverflow or open the query in amazon or open the query in flipkart or open the query in gmail or open the query
         # # in yahoo or open the query in google or open the query in wikipedia or open the query in youtube or open the query in
         # # stackoverflow or open the query in github or open the query in facebook or open the query in instagram or open the query
