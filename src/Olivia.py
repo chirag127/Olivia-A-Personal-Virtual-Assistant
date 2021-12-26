@@ -3323,7 +3323,6 @@ if __name__ == "__main__":
                 # translating the text to the afrikaans and storing the result in a variable named result
                 result = translator.translate(translate_this, dest="af")
 
-
                 # printing the result
 
                 print(f"The Translated Text is: {result.text}")
@@ -3337,7 +3336,7 @@ if __name__ == "__main__":
                 if result.pronunciation is None or result.pronunciation == translate_this:
 
                     # speaking the result.text
-                    
+
                     speak(result.text)
 
                 else:
@@ -3378,7 +3377,7 @@ if __name__ == "__main__":
                 if result.pronunciation is None or result.pronunciation == translate_this:
 
                     # speaking the result.text
-                    
+
                     speak(result.text)
 
                 else:
@@ -3419,7 +3418,7 @@ if __name__ == "__main__":
                 if result.pronunciation is None or result.pronunciation == translate_this:
 
                     # speaking the result.text
-                    
+
                     speak(result.text)
 
                 else:
@@ -3460,7 +3459,7 @@ if __name__ == "__main__":
                 if result.pronunciation is None or result.pronunciation == translate_this:
 
                     # speaking the result.text
-                    
+
                     speak(result.text)
 
                 else:
@@ -3501,7 +3500,7 @@ if __name__ == "__main__":
                 if result.pronunciation is None or result.pronunciation == translate_this:
 
                     # speaking the result.text
-                    
+
                     speak(result.text)
 
                 else:
@@ -3542,7 +3541,7 @@ if __name__ == "__main__":
                 if result.pronunciation is None or result.pronunciation == translate_this:
 
                     # speaking the result.text
-                    
+
                     speak(result.text)
 
                 else:
@@ -3584,7 +3583,7 @@ if __name__ == "__main__":
                 if result.pronunciation is None or result.pronunciation == translate_this:
 
                     # speaking the result.text
-                    
+
                     speak(result.text)
 
                 else:
@@ -3625,7 +3624,7 @@ if __name__ == "__main__":
                 if result.pronunciation is None or result.pronunciation == translate_this:
 
                     # speaking the result.text
-                    
+
                     speak(result.text)
 
                 else:
@@ -3666,7 +3665,7 @@ if __name__ == "__main__":
                 if result.pronunciation is None or result.pronunciation == translate_this:
 
                     # speaking the result.text
-                    
+
                     speak(result.text)
 
                 else:
@@ -3707,7 +3706,7 @@ if __name__ == "__main__":
                 if result.pronunciation is None or result.pronunciation == translate_this:
 
                     # speaking the result.text
-                    
+
                     speak(result.text)
 
                 else:
@@ -3747,7 +3746,7 @@ if __name__ == "__main__":
                 if result.pronunciation is None or result.pronunciation == translate_this:
 
                     # speaking the result.text
-                    
+
                     speak(result.text)
 
                 else:
@@ -3787,7 +3786,7 @@ if __name__ == "__main__":
                 if result.pronunciation is None or result.pronunciation == translate_this:
 
                     # speaking the result.text
-                    
+
                     speak(result.text)
 
                 else:
@@ -3827,7 +3826,7 @@ if __name__ == "__main__":
                 if result.pronunciation is None or result.pronunciation == translate_this:
 
                     # speaking the result.text
-                    
+
                     speak(result.text)
 
                 else:
@@ -3867,7 +3866,7 @@ if __name__ == "__main__":
                 if result.pronunciation is None or result.pronunciation == translate_this:
 
                     # speaking the result.text
-                    
+
                     speak(result.text)
 
                 else:
@@ -3907,7 +3906,7 @@ if __name__ == "__main__":
                 if result.pronunciation is None or result.pronunciation == translate_this:
 
                     # speaking the result.text
-                    
+
                     speak(result.text)
 
                 else:
@@ -3947,7 +3946,7 @@ if __name__ == "__main__":
                 if result.pronunciation is None or result.pronunciation == translate_this:
 
                     # speaking the result.text
-                    
+
                     speak(result.text)
 
                 else:
@@ -3987,7 +3986,7 @@ if __name__ == "__main__":
                 if result.pronunciation is None or result.pronunciation == translate_this:
 
                     # speaking the result.text
-                    
+
                     speak(result.text)
 
                 else:
@@ -4027,7 +4026,7 @@ if __name__ == "__main__":
                 if result.pronunciation is None or result.pronunciation == translate_this:
 
                     # speaking the result.text
-                    
+
                     speak(result.text)
 
                 else:
@@ -4067,7 +4066,7 @@ if __name__ == "__main__":
                 if result.pronunciation is None or result.pronunciation == translate_this:
 
                     # speaking the result.text
-                    
+
                     speak(result.text)
 
                 else:
@@ -4107,7 +4106,7 @@ if __name__ == "__main__":
                 if result.pronunciation is None or result.pronunciation == translate_this:
 
                     # speaking the result.text
-                    
+
                     speak(result.text)
 
                 else:
@@ -4134,7 +4133,6 @@ if __name__ == "__main__":
 
                 result = translator.translate(translate_this, dest="en")
 
-
                 # printing the result
 
                 print(f"The Translated Text is: {result.text}")
@@ -4148,7 +4146,7 @@ if __name__ == "__main__":
                 if result.pronunciation is None or result.pronunciation == translate_this:
 
                     # speaking the result.text
-                    
+
                     speak(result.text)
 
                 else:
@@ -4188,7 +4186,7 @@ if __name__ == "__main__":
                 if result.pronunciation is None or result.pronunciation == translate_this:
 
                     # speaking the result.text
-                    
+
                     speak(result.text)
 
                 else:
@@ -4228,7 +4226,7 @@ if __name__ == "__main__":
                 if result.pronunciation is None or result.pronunciation == translate_this:
 
                     # speaking the result.text
-                    
+
                     speak(result.text)
 
                 else:
@@ -4268,7 +4266,7 @@ if __name__ == "__main__":
                 if result.pronunciation is None or result.pronunciation == translate_this:
 
                     # speaking the result.text
-                    
+
                     speak(result.text)
 
                 else:
@@ -4308,7 +4306,7 @@ if __name__ == "__main__":
                 if result.pronunciation is None or result.pronunciation == translate_this:
 
                     # speaking the result.text
-                    
+
                     speak(result.text)
 
                 else:
@@ -4348,7 +4346,7 @@ if __name__ == "__main__":
                 if result.pronunciation is None or result.pronunciation == translate_this:
 
                     # speaking the result.text
-                    
+
                     speak(result.text)
 
                 else:
@@ -4388,7 +4386,7 @@ if __name__ == "__main__":
                 if result.pronunciation is None or result.pronunciation == translate_this:
 
                     # speaking the result.text
-                    
+
                     speak(result.text)
 
                 else:
@@ -4428,7 +4426,7 @@ if __name__ == "__main__":
                 if result.pronunciation is None or result.pronunciation == translate_this:
 
                     # speaking the result.text
-                    
+
                     speak(result.text)
 
                 else:
@@ -4468,7 +4466,7 @@ if __name__ == "__main__":
                 if result.pronunciation is None or result.pronunciation == translate_this:
 
                     # speaking the result.text
-                    
+
                     speak(result.text)
 
                 else:
@@ -4508,7 +4506,7 @@ if __name__ == "__main__":
                 if result.pronunciation is None or result.pronunciation == translate_this:
 
                     # speaking the result.text
-                    
+
                     speak(result.text)
 
                 else:
@@ -4548,7 +4546,7 @@ if __name__ == "__main__":
                 if result.pronunciation is None or result.pronunciation == translate_this:
 
                     # speaking the result.text
-                    
+
                     speak(result.text)
 
                 else:
@@ -4588,7 +4586,7 @@ if __name__ == "__main__":
                 if result.pronunciation is None or result.pronunciation == translate_this:
 
                     # speaking the result.text
-                    
+
                     speak(result.text)
 
                 else:
@@ -4628,7 +4626,7 @@ if __name__ == "__main__":
                 if result.pronunciation is None or result.pronunciation == translate_this:
 
                     # speaking the result.text
-                    
+
                     speak(result.text)
 
                 else:
@@ -4668,7 +4666,7 @@ if __name__ == "__main__":
                 if result.pronunciation is None or result.pronunciation == translate_this:
 
                     # speaking the result.text
-                    
+
                     speak(result.text)
 
                 else:
@@ -4708,7 +4706,7 @@ if __name__ == "__main__":
                 if result.pronunciation is None or result.pronunciation == translate_this:
 
                     # speaking the result.text
-                    
+
                     speak(result.text)
 
                 else:
@@ -4748,7 +4746,7 @@ if __name__ == "__main__":
                 if result.pronunciation is None or result.pronunciation == translate_this:
 
                     # speaking the result.text
-                    
+
                     speak(result.text)
 
                 else:
@@ -4788,7 +4786,7 @@ if __name__ == "__main__":
                 if result.pronunciation is None or result.pronunciation == translate_this:
 
                     # speaking the result.text
-                    
+
                     speak(result.text)
 
                 else:
@@ -4828,7 +4826,7 @@ if __name__ == "__main__":
                 if result.pronunciation is None or result.pronunciation == translate_this:
 
                     # speaking the result.text
-                    
+
                     speak(result.text)
 
                 else:
@@ -4868,7 +4866,7 @@ if __name__ == "__main__":
                 if result.pronunciation is None or result.pronunciation == translate_this:
 
                     # speaking the result.text
-                    
+
                     speak(result.text)
 
                 else:
@@ -4908,7 +4906,7 @@ if __name__ == "__main__":
                 if result.pronunciation is None or result.pronunciation == translate_this:
 
                     # speaking the result.text
-                    
+
                     speak(result.text)
 
                 else:
@@ -4948,7 +4946,7 @@ if __name__ == "__main__":
                 if result.pronunciation is None or result.pronunciation == translate_this:
 
                     # speaking the result.text
-                    
+
                     speak(result.text)
 
                 else:
@@ -4988,7 +4986,7 @@ if __name__ == "__main__":
                 if result.pronunciation is None or result.pronunciation == translate_this:
 
                     # speaking the result.text
-                    
+
                     speak(result.text)
 
                 else:
@@ -5028,7 +5026,7 @@ if __name__ == "__main__":
                 if result.pronunciation is None or result.pronunciation == translate_this:
 
                     # speaking the result.text
-                    
+
                     speak(result.text)
 
                 else:
@@ -5068,7 +5066,7 @@ if __name__ == "__main__":
                 if result.pronunciation is None or result.pronunciation == translate_this:
 
                     # speaking the result.text
-                    
+
                     speak(result.text)
 
                 else:
@@ -5108,7 +5106,7 @@ if __name__ == "__main__":
                 if result.pronunciation is None or result.pronunciation == translate_this:
 
                     # speaking the result.text
-                    
+
                     speak(result.text)
 
                 else:
@@ -5148,7 +5146,7 @@ if __name__ == "__main__":
                 if result.pronunciation is None or result.pronunciation == translate_this:
 
                     # speaking the result.text
-                    
+
                     speak(result.text)
 
                 else:
@@ -5188,7 +5186,7 @@ if __name__ == "__main__":
                 if result.pronunciation is None or result.pronunciation == translate_this:
 
                     # speaking the result.text
-                    
+
                     speak(result.text)
 
                 else:
@@ -5228,7 +5226,7 @@ if __name__ == "__main__":
                 if result.pronunciation is None or result.pronunciation == translate_this:
 
                     # speaking the result.text
-                    
+
                     speak(result.text)
 
                 else:
@@ -5268,7 +5266,7 @@ if __name__ == "__main__":
                 if result.pronunciation is None or result.pronunciation == translate_this:
 
                     # speaking the result.text
-                    
+
                     speak(result.text)
 
                 else:
@@ -5308,7 +5306,7 @@ if __name__ == "__main__":
                 if result.pronunciation is None or result.pronunciation == translate_this:
 
                     # speaking the result.text
-                    
+
                     speak(result.text)
 
                 else:
@@ -5348,7 +5346,7 @@ if __name__ == "__main__":
                 if result.pronunciation is None or result.pronunciation == translate_this:
 
                     # speaking the result.text
-                    
+
                     speak(result.text)
 
                 else:
@@ -5388,7 +5386,7 @@ if __name__ == "__main__":
                 if result.pronunciation is None or result.pronunciation == translate_this:
 
                     # speaking the result.text
-                    
+
                     speak(result.text)
 
                 else:
@@ -5428,7 +5426,7 @@ if __name__ == "__main__":
                 if result.pronunciation is None or result.pronunciation == translate_this:
 
                     # speaking the result.text
-                    
+
                     speak(result.text)
 
                 else:
@@ -5468,7 +5466,7 @@ if __name__ == "__main__":
                 if result.pronunciation is None or result.pronunciation == translate_this:
 
                     # speaking the result.text
-                    
+
                     speak(result.text)
 
                 else:
@@ -5508,7 +5506,7 @@ if __name__ == "__main__":
                 if result.pronunciation is None or result.pronunciation == translate_this:
 
                     # speaking the result.text
-                    
+
                     speak(result.text)
 
                 else:
@@ -5548,7 +5546,7 @@ if __name__ == "__main__":
                 if result.pronunciation is None or result.pronunciation == translate_this:
 
                     # speaking the result.text
-                    
+
                     speak(result.text)
 
                 else:
@@ -5588,7 +5586,7 @@ if __name__ == "__main__":
                 if result.pronunciation is None or result.pronunciation == translate_this:
 
                     # speaking the result.text
-                    
+
                     speak(result.text)
 
                 else:
@@ -5628,7 +5626,7 @@ if __name__ == "__main__":
                 if result.pronunciation is None or result.pronunciation == translate_this:
 
                     # speaking the result.text
-                    
+
                     speak(result.text)
 
                 else:
@@ -5668,7 +5666,7 @@ if __name__ == "__main__":
                 if result.pronunciation is None or result.pronunciation == translate_this:
 
                     # speaking the result.text
-                    
+
                     speak(result.text)
 
                 else:
@@ -5708,7 +5706,7 @@ if __name__ == "__main__":
                 if result.pronunciation is None or result.pronunciation == translate_this:
 
                     # speaking the result.text
-                    
+
                     speak(result.text)
 
                 else:
@@ -5748,7 +5746,7 @@ if __name__ == "__main__":
                 if result.pronunciation is None or result.pronunciation == translate_this:
 
                     # speaking the result.text
-                    
+
                     speak(result.text)
 
                 else:
@@ -5788,7 +5786,7 @@ if __name__ == "__main__":
                 if result.pronunciation is None or result.pronunciation == translate_this:
 
                     # speaking the result.text
-                    
+
                     speak(result.text)
 
                 else:
@@ -5828,7 +5826,7 @@ if __name__ == "__main__":
                 if result.pronunciation is None or result.pronunciation == translate_this:
 
                     # speaking the result.text
-                    
+
                     speak(result.text)
 
                 else:
@@ -5868,7 +5866,7 @@ if __name__ == "__main__":
                 if result.pronunciation is None or result.pronunciation == translate_this:
 
                     # speaking the result.text
-                    
+
                     speak(result.text)
 
                 else:
@@ -5908,7 +5906,7 @@ if __name__ == "__main__":
                 if result.pronunciation is None or result.pronunciation == translate_this:
 
                     # speaking the result.text
-                    
+
                     speak(result.text)
 
                 else:
@@ -5948,7 +5946,7 @@ if __name__ == "__main__":
                 if result.pronunciation is None or result.pronunciation == translate_this:
 
                     # speaking the result.text
-                    
+
                     speak(result.text)
 
                 else:
@@ -5988,7 +5986,7 @@ if __name__ == "__main__":
                 if result.pronunciation is None or result.pronunciation == translate_this:
 
                     # speaking the result.text
-                    
+
                     speak(result.text)
 
                 else:
@@ -6028,7 +6026,7 @@ if __name__ == "__main__":
                 if result.pronunciation is None or result.pronunciation == translate_this:
 
                     # speaking the result.text
-                    
+
                     speak(result.text)
 
                 else:
@@ -6068,7 +6066,7 @@ if __name__ == "__main__":
                 if result.pronunciation is None or result.pronunciation == translate_this:
 
                     # speaking the result.text
-                    
+
                     speak(result.text)
 
                 else:
@@ -6108,7 +6106,7 @@ if __name__ == "__main__":
                 if result.pronunciation is None or result.pronunciation == translate_this:
 
                     # speaking the result.text
-                    
+
                     speak(result.text)
 
                 else:
@@ -6148,7 +6146,7 @@ if __name__ == "__main__":
                 if result.pronunciation is None or result.pronunciation == translate_this:
 
                     # speaking the result.text
-                    
+
                     speak(result.text)
 
                 else:
@@ -6188,7 +6186,7 @@ if __name__ == "__main__":
                 if result.pronunciation is None or result.pronunciation == translate_this:
 
                     # speaking the result.text
-                    
+
                     speak(result.text)
 
                 else:
@@ -6228,7 +6226,7 @@ if __name__ == "__main__":
                 if result.pronunciation is None or result.pronunciation == translate_this:
 
                     # speaking the result.text
-                    
+
                     speak(result.text)
 
                 else:
@@ -6268,7 +6266,7 @@ if __name__ == "__main__":
                 if result.pronunciation is None or result.pronunciation == translate_this:
 
                     # speaking the result.text
-                    
+
                     speak(result.text)
 
                 else:
@@ -6308,7 +6306,7 @@ if __name__ == "__main__":
                 if result.pronunciation is None or result.pronunciation == translate_this:
 
                     # speaking the result.text
-                    
+
                     speak(result.text)
 
                 else:
@@ -6348,7 +6346,7 @@ if __name__ == "__main__":
                 if result.pronunciation is None or result.pronunciation == translate_this:
 
                     # speaking the result.text
-                    
+
                     speak(result.text)
 
                 else:
@@ -6388,7 +6386,7 @@ if __name__ == "__main__":
                 if result.pronunciation is None or result.pronunciation == translate_this:
 
                     # speaking the result.text
-                    
+
                     speak(result.text)
 
                 else:
@@ -6428,7 +6426,7 @@ if __name__ == "__main__":
                 if result.pronunciation is None or result.pronunciation == translate_this:
 
                     # speaking the result.text
-                    
+
                     speak(result.text)
 
                 else:
@@ -6468,7 +6466,7 @@ if __name__ == "__main__":
                 if result.pronunciation is None or result.pronunciation == translate_this:
 
                     # speaking the result.text
-                    
+
                     speak(result.text)
 
                 else:
@@ -6508,7 +6506,7 @@ if __name__ == "__main__":
                 if result.pronunciation is None or result.pronunciation == translate_this:
 
                     # speaking the result.text
-                    
+
                     speak(result.text)
 
                 else:
@@ -6548,7 +6546,7 @@ if __name__ == "__main__":
                 if result.pronunciation is None or result.pronunciation == translate_this:
 
                     # speaking the result.text
-                    
+
                     speak(result.text)
 
                 else:
@@ -6588,7 +6586,7 @@ if __name__ == "__main__":
                 if result.pronunciation is None or result.pronunciation == translate_this:
 
                     # speaking the result.text
-                    
+
                     speak(result.text)
 
                 else:
@@ -6628,7 +6626,7 @@ if __name__ == "__main__":
                 if result.pronunciation is None or result.pronunciation == translate_this:
 
                     # speaking the result.text
-                    
+
                     speak(result.text)
 
                 else:
@@ -6668,7 +6666,7 @@ if __name__ == "__main__":
                 if result.pronunciation is None or result.pronunciation == translate_this:
 
                     # speaking the result.text
-                    
+
                     speak(result.text)
 
                 else:
@@ -6708,7 +6706,7 @@ if __name__ == "__main__":
                 if result.pronunciation is None or result.pronunciation == translate_this:
 
                     # speaking the result.text
-                    
+
                     speak(result.text)
 
                 else:
@@ -6748,7 +6746,7 @@ if __name__ == "__main__":
                 if result.pronunciation is None or result.pronunciation == translate_this:
 
                     # speaking the result.text
-                    
+
                     speak(result.text)
 
                 else:
@@ -6788,7 +6786,7 @@ if __name__ == "__main__":
                 if result.pronunciation is None or result.pronunciation == translate_this:
 
                     # speaking the result.text
-                    
+
                     speak(result.text)
 
                 else:
@@ -6828,7 +6826,7 @@ if __name__ == "__main__":
                 if result.pronunciation is None or result.pronunciation == translate_this:
 
                     # speaking the result.text
-                    
+
                     speak(result.text)
 
                 else:
@@ -6868,7 +6866,7 @@ if __name__ == "__main__":
                 if result.pronunciation is None or result.pronunciation == translate_this:
 
                     # speaking the result.text
-                    
+
                     speak(result.text)
 
                 else:
@@ -6908,7 +6906,7 @@ if __name__ == "__main__":
                 if result.pronunciation is None or result.pronunciation == translate_this:
 
                     # speaking the result.text
-                    
+
                     speak(result.text)
 
                 else:
@@ -6948,7 +6946,7 @@ if __name__ == "__main__":
                 if result.pronunciation is None or result.pronunciation == translate_this:
 
                     # speaking the result.text
-                    
+
                     speak(result.text)
 
                 else:
@@ -6988,7 +6986,7 @@ if __name__ == "__main__":
                 if result.pronunciation is None or result.pronunciation == translate_this:
 
                     # speaking the result.text
-                    
+
                     speak(result.text)
 
                 else:
@@ -7028,7 +7026,7 @@ if __name__ == "__main__":
                 if result.pronunciation is None or result.pronunciation == translate_this:
 
                     # speaking the result.text
-                    
+
                     speak(result.text)
 
                 else:
@@ -7068,7 +7066,7 @@ if __name__ == "__main__":
                 if result.pronunciation is None or result.pronunciation == translate_this:
 
                     # speaking the result.text
-                    
+
                     speak(result.text)
 
                 else:
@@ -7108,7 +7106,7 @@ if __name__ == "__main__":
                 if result.pronunciation is None or result.pronunciation == translate_this:
 
                     # speaking the result.text
-                    
+
                     speak(result.text)
 
                 else:
@@ -7148,7 +7146,7 @@ if __name__ == "__main__":
                 if result.pronunciation is None or result.pronunciation == translate_this:
 
                     # speaking the result.text
-                    
+
                     speak(result.text)
 
                 else:
@@ -7188,7 +7186,7 @@ if __name__ == "__main__":
                 if result.pronunciation is None or result.pronunciation == translate_this:
 
                     # speaking the result.text
-                    
+
                     speak(result.text)
 
                 else:
@@ -7228,7 +7226,7 @@ if __name__ == "__main__":
                 if result.pronunciation is None or result.pronunciation == translate_this:
 
                     # speaking the result.text
-                    
+
                     speak(result.text)
 
                 else:
@@ -7268,7 +7266,7 @@ if __name__ == "__main__":
                 if result.pronunciation is None or result.pronunciation == translate_this:
 
                     # speaking the result.text
-                    
+
                     speak(result.text)
 
                 else:
@@ -7308,7 +7306,7 @@ if __name__ == "__main__":
                 if result.pronunciation is None or result.pronunciation == translate_this:
 
                     # speaking the result.text
-                    
+
                     speak(result.text)
 
                 else:
@@ -7348,7 +7346,7 @@ if __name__ == "__main__":
                 if result.pronunciation is None or result.pronunciation == translate_this:
 
                     # speaking the result.text
-                    
+
                     speak(result.text)
 
                 else:
@@ -7388,7 +7386,7 @@ if __name__ == "__main__":
                 if result.pronunciation is None or result.pronunciation == translate_this:
 
                     # speaking the result.text
-                    
+
                     speak(result.text)
 
                 else:
@@ -7428,7 +7426,7 @@ if __name__ == "__main__":
                 if result.pronunciation is None or result.pronunciation == translate_this:
 
                     # speaking the result.text
-                    
+
                     speak(result.text)
 
                 else:
@@ -7468,7 +7466,7 @@ if __name__ == "__main__":
                 if result.pronunciation is None or result.pronunciation == translate_this:
 
                     # speaking the result.text
-                    
+
                     speak(result.text)
 
                 else:
@@ -7508,7 +7506,7 @@ if __name__ == "__main__":
                 if result.pronunciation is None or result.pronunciation == translate_this:
 
                     # speaking the result.text
-                    
+
                     speak(result.text)
 
                 else:
@@ -7548,7 +7546,7 @@ if __name__ == "__main__":
                 if result.pronunciation is None or result.pronunciation == translate_this:
 
                     # speaking the result.text
-                    
+
                     speak(result.text)
 
                 else:
@@ -7588,7 +7586,7 @@ if __name__ == "__main__":
                 if result.pronunciation is None or result.pronunciation == translate_this:
 
                     # speaking the result.text
-                    
+
                     speak(result.text)
 
                 else:
