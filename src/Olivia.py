@@ -14,11 +14,9 @@ import tkinter as tk  # The tkinter is used for gui
 import webbrowser
 from time import sleep
 from tkinter import *
-
 import numpy as np
 import psutil
 import pyautogui
-import pyfiglet
 import pyperclip
 import pyttsx3
 import pywhatkit
@@ -800,11 +798,28 @@ def username():
 
 if __name__ == "__main__":
 
-    columns_shutil = shutil.get_terminal_size().columns
+    # columns_shutil = shutil.get_terminal_size().columns
 
-    result = pyfiglet.figlet_format("WELCOME TO OLIVIA", font="banner3-D")
+    # result = pyfiglet.figlet_format("WELCOME TO OLIVIA", font="banner3-D")
 
-    print(result.center(columns_shutil))
+    # print(result.center(columns_shutil))
+    print("""
+'##:::::'##:'########:'##::::::::'######:::'#######::'##::::'##:'########:
+ ##:'##: ##: ##.....:: ##:::::::'##... ##:'##.... ##: ###::'###: ##.....::
+ ##: ##: ##: ##::::::: ##::::::: ##:::..:: ##:::: ##: ####'####: ##:::::::
+ ##: ##: ##: ######::: ##::::::: ##::::::: ##:::: ##: ## ### ##: ######:::
+ ##: ##: ##: ##...:::: ##::::::: ##::::::: ##:::: ##: ##. #: ##: ##...::::
+ ##: ##: ##: ##::::::: ##::::::: ##::: ##: ##:::: ##: ##:.:: ##: ##:::::::
+. ###. ###:: ########: ########:. ######::. #######:: ##:::: ##: ########:
+:...::...:::........::........:::......::::.......:::..:::::..::........::
+'########::'#######::::::'#######::'##:::::::'####:'##::::'##:'####::::'###::::
+... ##..::'##.... ##::::'##.... ##: ##:::::::. ##:: ##:::: ##:. ##::::'## ##:::
+::: ##:::: ##:::: ##:::: ##:::: ##: ##:::::::: ##:: ##:::: ##:: ##:::'##:. ##::
+::: ##:::: ##:::: ##:::: ##:::: ##: ##:::::::: ##:: ##:::: ##:: ##::'##:::. ##:
+::: ##:::: ##:::: ##:::: ##:::: ##: ##:::::::: ##::. ##:: ##::: ##:: #########:
+::: ##:::: ##:::: ##:::: ##:::: ##: ##:::::::: ##:::. ## ##:::: ##:: ##.... ##:
+::: ##::::. #######:::::. #######:: ########:'####:::. ###::::'####: ##:::: ##:
+:::..::::::.......:::::::.......:::........::....:::::...:::::....::..:::::..::""")
 
     sp(wishMe())
 
@@ -1389,11 +1404,15 @@ if __name__ == "__main__":
 
                 query = takeCommand().lower()
 
+                print("In while loop of the play video")
+
+                # if query == none:
+
+                #     continue
+
                 # pause the video if 'pause' is in query
 
                 # trim the query
-
-                query.strip()
 
                 if query == "bye" or query == "goodbye" or query == "bye bye":
 
@@ -1493,14 +1512,6 @@ if __name__ == "__main__":
 
                     pyautogui.hotkey("ctrl", "m")
 
-                # turn on subtitles if the query contains 'subtitles' or 'subtitle' or 'subtitles on' or 'subtitle on' or
-
-                # 'captions' by pressing c
-
-                elif "subtitle" or "caption" in query:
-
-                    pyautogui.press("c")
-
                 # enter the miniplayer by pressing i
 
                 # if the query contains 'miniplayer' or 'mini player' or 'miniplayer on' or 'mini player on' or 'miniplayer off' or 'mini player off'
@@ -1519,7 +1530,13 @@ if __name__ == "__main__":
 
                 elif "dislike" in query:
 
-                    pyautogui.hotkey("d")
+                    pyautogui.press("d")
+
+                    print("Disliked the video")
+
+                    sleep(0.1)
+
+                    pyautogui.hotkey("shift", "n")
 
                 # like the video by pressing s if the query contains 'like'
 
@@ -1527,17 +1544,23 @@ if __name__ == "__main__":
 
                     pyautogui.hotkey("s")
 
+                    print("Liked the video")
+
                 # seek backward by pressing  left arrow if the query contains 'backward' or 'rewind'
 
                 if "backward" in query or "rewind" in query:
 
                     pyautogui.hotkey("left")
 
+                    print("Seeked backward")
+
                 # seek forward by pressing right arrow if the query contains 'forward' or 'fast forward'
 
                 elif "forward" in query:
 
                     pyautogui.hotkey("right")
+
+                    print("Seeked forward")
 
                 # move to full screen mode by pressing f
 
@@ -1548,6 +1571,10 @@ if __name__ == "__main__":
                 elif "full" in query and "screen" in query or "mode" in query:
 
                     pyautogui.press("f")
+
+                    print("Moved to full screen mode")
+
+                # move to windowed mode by pressing f
 
                 # go to download page
 
@@ -1564,6 +1591,8 @@ if __name__ == "__main__":
 
                     pyautogui.hotkey("ctrl", "j")
 
+                    print("Moved to download page")
+
                 # go to the history page by pressing control + h
 
                 # if the query contains 'history' and 'page'
@@ -1573,6 +1602,8 @@ if __name__ == "__main__":
                 elif "history" in query and "page" in query:
 
                     pyautogui.hotkey("ctrl", "h")
+
+                    print("Moved to history page")
 
                 # go to the bookmark page by pressing control + shift + o
 
@@ -1584,6 +1615,8 @@ if __name__ == "__main__":
 
                     pyautogui.hotkey("ctrl", "shift", "o")
 
+                    print("Moved to bookmark page")
+
                 # show the bookmark mark bar by pressing control + shift + b
 
                 # if the query contains 'bookmark bar' or 'bookmark bar'
@@ -1593,6 +1626,8 @@ if __name__ == "__main__":
                 elif "bookmark bar" in query:
 
                     pyautogui.hotkey("ctrl", "shift", "b")
+
+                    print("Showed the bookmark bar")
 
                 # increase the volume by pressing up arrow
 
@@ -1685,6 +1720,8 @@ if __name__ == "__main__":
                     or "speed up" in query
                     or "faster" in query
                 ):
+                    key_to_increase_speed = "]"
+
 
                     query = query.replace("increase speed by", "")
                     query = query.replace("speed up by", "")
@@ -1707,13 +1744,13 @@ if __name__ == "__main__":
 
                         no_of_shift_dot_presses = int(percent / 25)
                         for i in range(no_of_shift_dot_presses):
-                            pyautogui.hotkey(">")
+                            pyautogui.press(key_to_increase_speed)
                             sleep(0.5)
 
                     else:
 
                         # speed is increased by 25 percentage by one shift + . press
-                        pyautogui.hotkey(">")
+                        pyautogui.press(key_to_increase_speed)
 
                 # decrease the speed of the video by pressing shift + , arrow
 
@@ -1730,6 +1767,8 @@ if __name__ == "__main__":
                     query = query.replace("decrease speed by", "")
                     query = query.replace("speed down by", "")
                     query = query.replace("slower", "")
+
+                    key_to_decrease_speed = "["
 
                     if "percent" in query or "percentage" in query or "%" in query:
                         query = query.replace("percent", "")
@@ -1748,10 +1787,10 @@ if __name__ == "__main__":
 
                         no_of_shift_dot_presses = int(percent / 25)
                         for i in range(no_of_shift_dot_presses):
-                            pyautogui.hotkey("<")
+                            pyautogui.hotkey(key_to_decrease_speed)
                             sleep(0.5)
 
-                    pyautogui.hotkey("<")
+                    pyautogui.hotkey(key_to_decrease_speed)
 
                 # exit the video by pressing alt + f4
 
