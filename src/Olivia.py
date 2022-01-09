@@ -1862,6 +1862,9 @@ if __name__ == "__main__":
 
         elif "start" in query and "youtube" in query:
 
+            print("starting youtube")
+            print("enjoy watching")
+
             enjoy_watching()
 
         elif "press" in query:
@@ -2453,6 +2456,31 @@ if __name__ == "__main__":
                     sp("I am not sure what application you want to launch")
 
         elif "search" in query:
+            query = query.replace("search", "")
+            speak("searching " + query)
+
+            if 'on youtube' in query:
+                query = query.replace("on youtube", "")
+                webbrowser.open(
+                    "https://www.youtube.com/results?search_query=" + query
+                )    
+
+            elif 'on google' in query:
+                query = query.replace("on google", "")
+                webbrowser.open(
+                    "https://www.google.com/search?q=" + query
+                )
+
+            elif 'on wikipedia' in query:
+                query = query.replace("on wikipedia", "")
+                webbrowser.open(
+                    "https://en.wikipedia.org/wiki/" + query
+                )
+
+            else:
+                open_url("https://www.google.com/search?q=" + query)
+
+        elif "find" in query:
 
             sp("What do you want to search for?")
 
